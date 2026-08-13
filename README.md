@@ -38,7 +38,7 @@ The command checks the Astro and TypeScript files before generating the static s
 
 Business facts that were not supplied were not invented. Confirm these items before publishing:
 
-1. Replace `hello@valetphiladelphia.com` in `src/data/site.ts` if that mailbox is not active.
+1. Confirm that `hello@valetparkingphiladelphia.com` is active; replace it in `src/data/site.ts` if a different mailbox should be public.
 2. Confirm the service areas and municipality examples in `src/data/locations.ts`.
 3. Confirm service descriptions and operating policies in `src/data/services.ts`.
 4. The production domain is `https://valetparkingphiladelphia.com`; update both `astro.config.mjs` and `src/data/site.ts` if it ever changes.

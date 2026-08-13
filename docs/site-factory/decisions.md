@@ -18,3 +18,4 @@
 - Use repository-local Git configuration pinned to an existing verified `redpath1` SSH identity for pushes. Reason: this checkout reliably uses SSH without changing the machine-wide Git transport configuration.
 - Keep the Cloudflare Worker name aligned with the Wrangler project name: `valet-philadelphia`. Reason: Workers Builds uses the Wrangler configuration as the deployment source of truth.
 - Use `https://valetparkingphiladelphia.com` as the canonical production URL and connect both the root and `www` hostnames to the Worker. Reason: this is the matching active Philadelphia valet zone in the owner's Cloudflare account.
+- Publish `hello@valetparkingphiladelphia.com` as the contact address. Reason: it preserves the existing `hello` convention while matching the verified production domain.

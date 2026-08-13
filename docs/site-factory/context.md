@@ -7,6 +7,7 @@
 - Five original photorealistic valet images are optimized as WebP files in `public/images/`
 - No testimonials and no unsupported operating history, ratings, certifications, price, response time, phone number, or street address
 - Contact form prepares a reviewable email to the centralized address in `src/data/site.ts`
+- Published contact address: `hello@valetparkingphiladelphia.com`, aligned with the production domain
 - Build, internal links, metadata uniqueness, schema parsing, desktop, and mobile checks pass
 - Local Git repository is initialized on `main`
 - GitHub repository: `redpath1/valet-philadelphia`
@@ -15,4 +16,4 @@
 - Live Worker endpoint: `https://valet-philadelphia.evans-keith.workers.dev`
 - Production domain: `https://valetparkingphiladelphia.com`; root and `www` are connected to the Worker
 - Local `origin` uses SSH and `main` tracks `origin/main`
-- Next best action after deployment: confirm the business email and coverage claims before directing paid or organic traffic to the site
+- Next best action after deployment: confirm mailbox delivery and coverage claims before directing paid or organic traffic to the site

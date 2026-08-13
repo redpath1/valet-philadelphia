@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: 'Valet Philadelphia',
   domain: 'valetparkingphiladelphia.com',
   url: 'https://valetparkingphiladelphia.com',
-  email: 'hello@valetphiladelphia.com',
+  email: 'hello@valetparkingphiladelphia.com',
   primaryCta: 'Request a parking plan',
   description:
     'Valet parking and parking operations for events, restaurants, hotels, healthcare properties, and private venues in Philadelphia and nearby communities.',

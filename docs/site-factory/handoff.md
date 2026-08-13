@@ -16,6 +16,7 @@
 - Verified an automatic production rebuild from SSH push commit `e06876d`
 - Connected `valetparkingphiladelphia.com` and `www.valetparkingphiladelphia.com` to the Worker
 - Updated the Astro and shared site canonical URL to `https://valetparkingphiladelphia.com`
+- Updated the published email and contact form recipient to `hello@valetparkingphiladelphia.com`
 
 ## Main Files
 
@@ -45,7 +46,7 @@
 
 ## Confirm Before Launch
 
-- Confirm or replace `hello@valetphiladelphia.com`
+- Confirm that `hello@valetparkingphiladelphia.com` receives mail
 - Confirm all service-area municipalities and coverage language
 - Decide whether to retain the email-preparation form or connect a server-side form provider
 - Confirm the production email and coverage language before advertising the site

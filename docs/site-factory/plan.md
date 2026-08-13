@@ -6,7 +6,7 @@ Complete and deployed
 
 ## Next
 
-- Confirm the production email mailbox and coverage claims
+- Confirm mailbox delivery and coverage claims
 
 ## Done
 
@@ -26,10 +26,11 @@ Complete and deployed
 - Verified that SSH push commit `e06876d` triggered and completed an automatic production build
 - Verified `valetparkingphiladelphia.com` as the matching active Cloudflare zone and connected both the root and `www` hostnames to the Worker
 - Updated the site canonical URL to `https://valetparkingphiladelphia.com`
+- Updated the published contact address to `hello@valetparkingphiladelphia.com`
 
 ## Launch Confirmations
 
-- Confirm that `hello@valetphiladelphia.com` is active or replace it
+- Confirm that `hello@valetparkingphiladelphia.com` receives mail
 - Confirm the location coverage examples
 - Decide whether the email-preparation form should later be replaced with server-side lead capture
 
