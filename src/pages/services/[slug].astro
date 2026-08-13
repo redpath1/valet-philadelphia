@@ -28,16 +28,8 @@ const schema = [
     image: new URL(service.image, siteConfig.url).toString(),
     serviceType: service.title,
     areaServed: { '@type': 'City', name: 'Philadelphia' },
-    provider: { '@id': `${siteConfig.url}/#business` },
-  },
-  {
-    '@type': 'FAQPage',
-    '@id': `${pageUrl}#faq`,
-    mainEntity: service.faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-    })),
+    provider: { '@id': `${siteConfig.url}/#organization` },
+    mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
   },
   {
     '@type': 'BreadcrumbList',
@@ -50,14 +42,14 @@ const schema = [
 ];
 ---
 
-<BaseLayout title={`${service.title} in Philadelphia`} description={service.seoDescription} canonicalPath={`/services/${service.slug}/`} image={service.image} schema={schema}>
+<BaseLayout title={`${service.title} in Philadelphia`} description={service.seoDescription} canonicalPath={`/services/${service.slug}/`} image={service.image} imageAlt={service.imageAlt} pageType="ItemPage" pageSchema={{ mainEntity: { '@id': `${pageUrl}#service` } }} schema={schema}>
   <section class="site-frame section-gap" aria-labelledby="service-title">
     <div class="panel grid bg-paper lg:grid-cols-[0.94fr_1.06fr]">
       <div class="section-pad flex flex-col justify-between gap-14">
         <div>
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: service.title }]} />
           <p class="eyebrow mt-10">{service.eyebrow}</p>
-          <h1 id="service-title" class="display-title mt-7 max-w-[12ch]">{service.title}</h1>
+          <h1 id="service-title" class="display-title mt-7 max-w-[12ch]">{service.title} in Philadelphia</h1>
           <p class="body-large mt-7 text-ink/68">{service.description}</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="/contact/" class="button-primary">Plan this service<Arrow /></a>

@@ -1,21 +1,33 @@
 ---
 import Arrow from '../components/Arrow.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import QuoteCta from '../components/QuoteCta.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
 ---
 
 <BaseLayout
-  title="About Valet Philadelphia"
+  title="About Our Philadelphia Valet Service"
   description="Learn how Valet Philadelphia, LLC approaches valet parking through site planning, clear handoffs, controlled keys, and accountable shift leadership."
   canonicalPath="/about/"
   image="/images/valet-team-briefing.webp"
+  imageAlt="Uniformed valet team reviewing a Philadelphia curb plan before service"
+  pageType="AboutPage"
+  schema={{
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
+      { '@type': 'ListItem', position: 2, name: 'About Valet Philadelphia', item: `${siteConfig.url}/about/` },
+    ],
+  }}
 >
   <section class="site-frame section-gap" aria-labelledby="about-title">
     <div class="panel section-pad bg-paper">
       <div class="grid gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:items-end">
         <div>
-          <p class="eyebrow">About Valet Philadelphia, LLC</p>
-          <h1 id="about-title" class="display-title mt-7 max-w-[12ch]">Parking service is a chain of <em class="text-brick">handoffs.</em></h1>
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
+          <p class="eyebrow mt-8">About Valet Philadelphia, LLC</p>
+          <h1 id="about-title" class="display-title mt-7 max-w-[12ch]">Philadelphia valet service is a chain of <em class="text-brick">handoffs.</em></h1>
         </div>
         <div>
           <p class="body-large text-ink/70">The guest sees a greeting and a returned vehicle. The operation behind that moment includes a curb plan, a parking route, controlled keys, clear staff positions, and one person accountable for the live shift.</p>

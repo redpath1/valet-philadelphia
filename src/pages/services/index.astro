@@ -1,23 +1,35 @@
 ---
 import Arrow from '../../components/Arrow.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import QuoteCta from '../../components/QuoteCta.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { services } from '../../data/services';
+import { siteConfig } from '../../data/site';
 ---
 
 <BaseLayout
-  title="Valet Parking Services"
-  description="Explore event, restaurant, wedding, hotel, healthcare, and parking management services from Valet Philadelphia, LLC."
+  title="Valet Parking Services in Philadelphia"
+  description="Compare event, restaurant, wedding, hotel, and healthcare valet parking plus parking management services in Philadelphia and nearby communities."
   canonicalPath="/services/"
   image="/images/event-valet-team.webp"
+  imageAlt="Uniformed valet team coordinating vehicle arrivals at a Philadelphia event venue"
+  pageType="CollectionPage"
+  schema={{
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
+      { '@type': 'ListItem', position: 2, name: 'Valet parking services', item: `${siteConfig.url}/services/` },
+    ],
+  }}
 >
   <section class="site-frame section-gap" aria-labelledby="services-page-title">
     <div class="panel panel-river section-pad">
       <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
         <div>
-          <p class="eyebrow">Service hub</p>
-          <h1 id="services-page-title" class="display-title mt-7 max-w-[12ch]">Valet service built around the <em class="text-brick">site.</em></h1>
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />
+          <p class="eyebrow mt-8">Service hub</p>
+          <h1 id="services-page-title" class="display-title mt-7 max-w-[12ch]">Valet parking services built around the <em class="text-brick">site.</em></h1>
         </div>
         <div>
           <p class="body-large text-ink/70">The uniform is only one part of the service. The useful work begins with the curb, the parking route, the timing, and the handoffs guests never need to think about.</p>

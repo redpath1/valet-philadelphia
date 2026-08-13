@@ -8,12 +8,18 @@
 - No testimonials and no unsupported operating history, ratings, certifications, price, response time, phone number, or street address
 - Contact form prepares a reviewable email to the centralized address in `src/data/site.ts`
 - Published contact address: `hello@valetparkingphiladelphia.com`, aligned with the production domain
-- Build, internal links, metadata uniqueness, schema parsing, desktop, and mobile checks pass
+- 19 indexable pages and two non-index pages are generated; the noindex pages are excluded from both sitemaps
+- Page titles, descriptions, H1s, and hub copy are aligned to Philadelphia valet search intent without repeating boilerplate
+- XML sitemap contains all 19 canonical URLs, accurate release modification dates, and image entries where a page has a primary photograph
+- Human sitemap uses descriptive anchor text and covers every canonical public route
+- Structured data uses factual `Organization`, `WebSite`, page-type, breadcrumb, service, and FAQ entities without inventing an address, phone number, ratings, or hours
+- Open Graph and X cards include page-specific alternative text and image dimensions
+- `npm run verify` performs the build and the SEO regression; all current checks pass
 - Local Git repository is initialized on `main`
 - GitHub repository: `redpath1/valet-philadelphia`
 - Cloudflare Worker configuration: `wrangler.jsonc`, using the `dist` static asset build
 - Production deployment target: Cloudflare Workers Builds connected to GitHub `main`
 - Live Worker endpoint: `https://valet-philadelphia.evans-keith.workers.dev`
-- Production domain: `https://valetparkingphiladelphia.com`; root and `www` are connected to the Worker
+- Production domain: `https://valetparkingphiladelphia.com`; root and `www` are connected to the Worker, and Cloudflare permanently redirects `www` to the root while preserving paths and query strings
 - Local `origin` uses SSH and `main` tracks `origin/main`
-- Next best action after deployment: confirm mailbox delivery and coverage claims before directing paid or organic traffic to the site
+- Next best actions after deployment: confirm mailbox delivery and coverage claims, then verify Google Search Console and submit `/sitemap.xml`

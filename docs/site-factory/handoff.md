@@ -6,8 +6,9 @@
 - Implemented Home, Services, six service detail pages, About, Contact, FAQ, Locations, six location detail pages, Sitemap, Style Guide, and 404
 - Created five original photorealistic valet images and optimized them for delivery
 - Added responsive navigation, mobile layouts, accessible FAQ disclosures, and a reviewable email contact flow
-- Added unique metadata, canonicals, Open Graph, X cards, supported LocalBusiness, Service, FAQ, and breadcrumb schema
-- Added XML sitemap, human sitemap, robots.txt, llms.txt, and shared public route inventory
+- Added search-intent-aligned metadata, canonicals, complete Open Graph and X cards, factual Organization and WebSite entities, page-specific schema, Service, FAQ, and breadcrumb relationships
+- Added an XML sitemap with accurate modification dates and primary-image entries, a descriptive human sitemap, robots.txt, llms.txt, and a shared public route inventory
+- Added an automated SEO regression for metadata uniqueness, canonicals, H1s, social tags, JSON-LD, sitemap parity, robots discovery, human sitemap coverage, and image weights
 - Added Cloudflare Workers Static Assets headers, Wrangler configuration, Node version, deployment settings, and launch-edit documentation
 - Initialized a local Git repository on the `main` branch
 - Created the GitHub repository `redpath1/valet-philadelphia`
@@ -17,6 +18,7 @@
 - Connected `valetparkingphiladelphia.com` and `www.valetparkingphiladelphia.com` to the Worker
 - Updated the Astro and shared site canonical URL to `https://valetparkingphiladelphia.com`
 - Updated the published email and contact form recipient to `hello@valetparkingphiladelphia.com`
+- Added a permanent Cloudflare redirect from `www.valetparkingphiladelphia.com` to the canonical root hostname with path and query preservation
 
 ## Main Files
 
@@ -27,20 +29,26 @@
 - `src/data/locations.ts`: six local detail records
 - `src/styles/global.css`: design tokens and shared styling
 - `src/layouts/BaseLayout.astro`: metadata and structured data
+- `scripts/seo-audit.mjs`: built-output SEO regression
 - `public/images/`: final original imagery
+- `public/logo.svg`: structured-data organization logo
 - `docs/site-factory/image-prompts.md`: image prompt record
+- `docs/site-factory/seo-audit.md`: findings, completed work, and next actions
 
 ## Checks Performed
 
 - `npm install`
-- `npm run build`
+- `npm run verify`
 - Astro and TypeScript diagnostics: 0 errors, 0 warnings, 0 hints
 - 21-page static build
 - Desktop review at 1440 x 900
 - Mobile review at 390 x 844
 - 1,018 internal references checked with 0 missing targets
-- 20 unique page titles and 20 unique descriptions across index pages
-- JSON-LD parse check
+- 19 unique page titles and 19 unique descriptions across indexable pages
+- 19 canonicals exactly aligned with the 19 XML sitemap URLs
+- JSON-LD parse and page-entity relationship checks
+- XML sitemap modification-date and image-entry checks
+- Human sitemap and robots discovery checks
 - Missing-image and horizontal-overflow checks
 - `npm audit`: 0 vulnerabilities at installation
 
@@ -59,6 +67,7 @@
 - Live endpoint: `https://valet-philadelphia.evans-keith.workers.dev`
 - Production domain: `https://valetparkingphiladelphia.com`
 - Additional hostname: `https://www.valetparkingphiladelphia.com`
+- Host behavior: `www` responds with a permanent redirect to the root domain and preserves paths and query strings
 - Build command: `npm run build`
 - Deploy command: `npx wrangler deploy`
 - Static assets directory: `dist`

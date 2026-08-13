@@ -7,6 +7,7 @@ Complete and deployed
 ## Next
 
 - Confirm mailbox delivery and coverage claims
+- Verify the domain in Google Search Console and submit `https://valetparkingphiladelphia.com/sitemap.xml`
 
 ## Done
 
@@ -27,6 +28,11 @@ Complete and deployed
 - Verified `valetparkingphiladelphia.com` as the matching active Cloudflare zone and connected both the root and `www` hostnames to the Worker
 - Updated the site canonical URL to `https://valetparkingphiladelphia.com`
 - Updated the published contact address to `hello@valetparkingphiladelphia.com`
+- Completed a best-in-class on-page SEO pass across all 19 indexable URLs
+- Added a build-time SEO regression that validates page metadata, canonicals, schema, sitemaps, robots directives, internal discovery, and search image weights
+- Added accurate sitemap modification dates and image sitemap entries
+- Added visible and structured breadcrumbs to all public hub and company pages
+- Deployed a permanent Cloudflare redirect from `www` to the canonical root domain with path and query preservation
 
 ## Launch Confirmations
 
@@ -44,6 +50,8 @@ Complete and deployed
 - [x] Mobile visual review passes
 - [x] Keyboard navigation and reduced-motion behavior pass
 - [x] Metadata, schema, sitemap.xml, robots.txt, HTML sitemap, and llms.txt pass
+- [x] All 19 indexable pages pass the automated SEO regression
+- [x] `www` permanently redirects to the preferred root hostname
 - [x] Cloudflare Workers Static Assets project configuration is complete
 - [x] Git-triggered Cloudflare production deploy is verified
 - [x] Production custom domain is connected to the Worker

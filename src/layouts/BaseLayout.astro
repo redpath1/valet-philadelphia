@@ -1,15 +1,18 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { siteConfig } from '../data/site';
+import { imageMetadata, siteConfig } from '../data/site';
 import '../styles/global.css';
 
 interface Props {
   title: string;
   description: string;
   image?: string;
+  imageAlt?: string;
   canonicalPath?: string;
   noindex?: boolean;
+  pageType?: string | string[];
+  pageSchema?: Record<string, unknown>;
   schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -17,15 +20,21 @@ const {
   title,
   description,
   image = '/images/valet-hero-philadelphia.webp',
+  imageAlt = 'Uniformed valet attendant receiving a guest vehicle in Philadelphia',
   canonicalPath = Astro.url.pathname,
   noindex = false,
+  pageType = 'WebPage',
+  pageSchema = {},
   schema = [],
 } = Astro.props;
 
 const pageTitle = title.includes(siteConfig.shortName) ? title : `${title} | ${siteConfig.shortName}`;
 const canonical = new URL(canonicalPath, siteConfig.url).toString();
 const socialImage = new URL(image, siteConfig.url).toString();
+const socialImageDimensions = imageMetadata[image] ?? { width: 1536, height: 1024 };
 const additionalSchema = Array.isArray(schema) ? schema : [schema];
+const organizationId = `${siteConfig.url}/#organization`;
+const pageId = `${canonical}#webpage`;
 const schemaGraph = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -34,17 +43,52 @@ const schemaGraph = {
       '@id': `${siteConfig.url}/#website`,
       url: siteConfig.url,
       name: siteConfig.shortName,
+      alternateName: siteConfig.alternateName,
       description: siteConfig.description,
-      inLanguage: 'en-US',
+      inLanguage: siteConfig.language,
+      publisher: { '@id': organizationId },
     },
     {
-      '@type': 'LocalBusiness',
-      '@id': `${siteConfig.url}/#business`,
-      name: siteConfig.name,
+      '@type': 'Organization',
+      '@id': organizationId,
+      name: siteConfig.shortName,
+      legalName: siteConfig.name,
+      alternateName: siteConfig.alternateName,
       url: siteConfig.url,
+      email: siteConfig.email,
       description: siteConfig.description,
       image: new URL('/images/valet-hero-philadelphia.webp', siteConfig.url).toString(),
+      logo: {
+        '@type': 'ImageObject',
+        url: new URL('/logo.svg', siteConfig.url).toString(),
+        contentUrl: new URL('/logo.svg', siteConfig.url).toString(),
+        width: 512,
+        height: 512,
+      },
       areaServed: siteConfig.areaServed.map((name) => ({ '@type': 'Place', name })),
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        email: siteConfig.email,
+        url: `${siteConfig.url}/contact/`,
+        availableLanguage: 'English',
+      },
+    },
+    {
+      '@type': pageType,
+      '@id': pageId,
+      url: canonical,
+      name: pageTitle,
+      description,
+      inLanguage: siteConfig.language,
+      isPartOf: { '@id': `${siteConfig.url}/#website` },
+      about: { '@id': organizationId },
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: socialImage,
+        contentUrl: socialImage,
+      },
+      ...pageSchema,
     },
     ...additionalSchema,
   ],
@@ -52,7 +96,7 @@ const schemaGraph = {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -62,19 +106,25 @@ const schemaGraph = {
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#102a3d" />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {noindex && <meta name="robots" content="noindex" />}
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteConfig.shortName} />
+    <meta property="og:locale" content={siteConfig.locale} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
-    <meta property="og:image:alt" content="Professional valet parking service in Philadelphia" />
+    <meta property="og:image:secure_url" content={socialImage} />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content={String(socialImageDimensions.width)} />
+    <meta property="og:image:height" content={String(socialImageDimensions.height)} />
+    <meta property="og:image:alt" content={imageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={imageAlt} />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaGraph)}></script>
   </head>
   <body>

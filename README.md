@@ -9,8 +9,8 @@ A static marketing and local-discovery website for a Philadelphia valet parking 
 - Home, about, contact, FAQ, service hub, and location hub
 - Six individual service pages
 - Six individual location pages
-- Human-readable sitemap, XML sitemap, robots.txt, and llms.txt
-- Unique page metadata, canonical links, social previews, and supported JSON-LD
+- Descriptive human-readable sitemap plus an XML sitemap with accurate modification dates and image entries
+- Unique page metadata, canonical links, complete social previews, and supported page-level JSON-LD
 - Responsive navigation and layouts
 - Provider-neutral contact flow that prepares an email in the visitor's email app
 - Cloudflare Static Assets security and cache headers
@@ -29,10 +29,12 @@ Astro will print the local preview address. Open that address in a browser.
 ## Check And Build
 
 ```sh
-npm run build
+npm run verify
 ```
 
-The command checks the Astro and TypeScript files before generating the static site in `dist/`.
+The command checks the Astro and TypeScript files, generates the static site in `dist/`, and audits all built pages. The SEO audit verifies unique titles and descriptions, preferred-host canonicals, one H1 per page, Open Graph and X metadata, parseable JSON-LD, robots and sitemap alignment, HTML sitemap coverage, modification dates, image sitemap entries, and image weights.
+
+Run only the SEO regression against an existing `dist/` build with `npm run audit:seo`.
 
 ## Important Launch Edits
 
@@ -44,6 +46,7 @@ Business facts that were not supplied were not invented. Confirm these items bef
 4. The production domain is `https://valetparkingphiladelphia.com`; update both `astro.config.mjs` and `src/data/site.ts` if it ever changes.
 5. Add a phone number or business address only if the company wants them public.
 6. Replace the email-preparation contact flow with a form provider later if server-side lead capture is preferred.
+7. Update `sitemapLastModified` in `src/data/site.ts` when a release materially changes indexable page content.
 
 ## Common Content Edits
 
@@ -62,6 +65,7 @@ Production is configured around the `main` branch of `redpath1/valet-philadelphi
 
 - GitHub: `https://github.com/redpath1/valet-philadelphia`
 - Production domain: `https://valetparkingphiladelphia.com`
+- Canonical host rule: `www` permanently redirects to the root domain while retaining paths and query strings
 - Cloudflare Worker: `https://valet-philadelphia.evans-keith.workers.dev`
 
 Cloudflare Workers Builds settings:

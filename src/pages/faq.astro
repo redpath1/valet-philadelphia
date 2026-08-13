@@ -1,5 +1,6 @@
 ---
 import Arrow from '../components/Arrow.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import FAQList from '../components/FAQList.astro';
 import QuoteCta from '../components/QuoteCta.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -34,25 +35,31 @@ const coverageFaqs = [
 ];
 
 const allFaqs = [...planningFaqs, ...operationsFaqs, ...serviceFaqs, ...coverageFaqs];
-const schema = {
-  '@type': 'FAQPage',
-  '@id': `${siteConfig.url}/faq/#faq`,
-  mainEntity: allFaqs.map((faq) => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })),
+const faqMainEntity = allFaqs.map((faq) => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } }));
+const breadcrumbSchema = {
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
+    { '@type': 'ListItem', position: 2, name: 'Valet parking FAQ', item: `${siteConfig.url}/faq/` },
+  ],
 };
 ---
 
 <BaseLayout
-  title="Valet Parking FAQ"
-  description="Answers about valet parking costs and staffing inputs, site planning, key control, events, recurring service, weather, accessibility, and Philadelphia coverage."
+  title="Philadelphia Valet Parking FAQ"
+  description="Answers about valet staffing, site reviews, key control, event and recurring service, weather, accessible arrivals, and Philadelphia-area coverage."
   canonicalPath="/faq/"
-  schema={schema}
+  pageType="FAQPage"
+  pageSchema={{ mainEntity: faqMainEntity }}
+  schema={breadcrumbSchema}
 >
   <section class="site-frame section-gap" aria-labelledby="faq-page-title">
     <div class="panel panel-river section-pad">
       <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
         <div>
-          <p class="eyebrow">Frequently asked questions</p>
-          <h1 id="faq-page-title" class="display-title mt-7 max-w-[12ch]">Useful answers before the <em class="text-brick">site walk.</em></h1>
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'FAQ' }]} />
+          <p class="eyebrow mt-8">Frequently asked questions</p>
+          <h1 id="faq-page-title" class="display-title mt-7 max-w-[12ch]">Philadelphia valet parking questions, <em class="text-brick">answered.</em></h1>
         </div>
         <div>
           <p class="body-large text-ink/70">Valet planning is specific to the property, but the same practical questions appear early. Start here, then bring the address and operating details.</p>

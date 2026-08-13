@@ -1,21 +1,32 @@
 ---
 import Arrow from '../components/Arrow.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { services } from '../data/services';
 import { siteConfig } from '../data/site';
 ---
 
 <BaseLayout
-  title="Request a Valet Parking Plan"
-  description="Request a valet parking plan for an event, restaurant, hotel, healthcare property, wedding, or parking operation in the Philadelphia region."
+  title="Request Philadelphia Valet Parking"
+  description="Request valet parking in Philadelphia for an event, wedding, restaurant, hotel, healthcare property, or recurring parking operation."
   canonicalPath="/contact/"
   image="/images/valet-team-briefing.webp"
+  imageAlt="Uniformed valet team reviewing a parking plan before a Philadelphia shift"
+  pageType="ContactPage"
+  schema={{
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
+      { '@type': 'ListItem', position: 2, name: 'Request valet parking', item: `${siteConfig.url}/contact/` },
+    ],
+  }}
 >
   <section class="site-frame section-gap" aria-labelledby="contact-title">
     <div class="panel grid bg-paper lg:grid-cols-[0.78fr_1.22fr]">
       <div class="section-pad bg-navy-deep text-white">
-        <p class="eyebrow">Contact Valet Philadelphia</p>
-        <h1 id="contact-title" class="display-title mt-7 max-w-[10ch]">Start with what happens at the <em class="text-signal">entrance.</em></h1>
+        <Breadcrumbs inverse items={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
+        <p class="eyebrow mt-8">Contact Valet Philadelphia</p>
+        <h1 id="contact-title" class="display-title mt-7 max-w-[10ch]">Request Philadelphia valet parking for your <em class="text-signal">entrance.</em></h1>
         <p class="body-large mt-7 text-white/66">Share the site, timing, vehicle estimate, and parking arrangement. You do not need to know the final staffing number before reaching out.</p>
 
         <div class="mt-12 border-t border-white/14 pt-6">

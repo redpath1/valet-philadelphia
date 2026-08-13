@@ -1,22 +1,34 @@
 ---
 import Arrow from '../../components/Arrow.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import LocationCard from '../../components/LocationCard.astro';
 import QuoteCta from '../../components/QuoteCta.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { locations } from '../../data/locations';
+import { siteConfig } from '../../data/site';
 ---
 
 <BaseLayout
-  title="Valet Parking Locations"
-  description="Explore valet parking service areas across Philadelphia, Center City, the Main Line, King of Prussia, Bucks County, and South Jersey."
+  title="Philadelphia Valet Parking Service Areas"
+  description="Explore valet parking service areas in Philadelphia, Center City, the Main Line, King of Prussia, Bucks County, and South Jersey."
   canonicalPath="/locations/"
   image="/images/valet-hero-philadelphia.webp"
+  imageAlt="Uniformed valet attendant working at a Philadelphia curb in direct afternoon light"
+  pageType="CollectionPage"
+  schema={{
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
+      { '@type': 'ListItem', position: 2, name: 'Service areas', item: `${siteConfig.url}/locations/` },
+    ],
+  }}
 >
   <section class="site-frame section-gap" aria-labelledby="locations-page-title">
-    <div class="panel grid bg-navy-deep text-white lg:grid-cols-[0.94fr_1.06fr]">
+    <div class="panel panel-dark grid text-white lg:grid-cols-[0.94fr_1.06fr]">
       <div class="section-pad flex flex-col justify-center">
-        <p class="eyebrow">Locations hub</p>
-        <h1 id="locations-page-title" class="display-title mt-7 max-w-[11ch]">Local knowledge starts at the <em class="text-signal">curb.</em></h1>
+        <Breadcrumbs inverse items={[{ label: 'Home', href: '/' }, { label: 'Locations' }]} />
+        <p class="eyebrow mt-8">Locations hub</p>
+        <h1 id="locations-page-title" class="display-title mt-7 max-w-[11ch]">Philadelphia valet parking service <em class="text-signal">areas.</em></h1>
         <p class="body-large mt-7 text-white/66">Philadelphia is not one parking condition. Dense blocks, private drives, regional venues, garages, and remote lots each need a different operating plan.</p>
         <a href="#location-list" class="button-light mt-8 self-start">Find your area<Arrow direction="down" /></a>
       </div>

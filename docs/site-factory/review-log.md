@@ -12,8 +12,14 @@
 | Navigation | Mobile menu | 390 x 844 | Disclosure opens, closes, overlays cleanly, exposes all primary links, and preserves focus visibility | Complete |
 | Containment | Home | 1440 x 900 | All seven main sections measure 1377 pixels wide inside a 1440-pixel viewport | Complete |
 | Links | All built HTML | Static crawl | 1,018 internal references checked; 0 missing targets | Complete |
-| SEO | 20 index pages | Built HTML | 20 unique titles, 20 unique descriptions, valid canonicals, and parseable JSON-LD | Complete |
+| SEO | 19 indexable pages | Built HTML | 19 unique intent-aligned titles, 19 unique descriptions, one H1 per page, preferred-host canonicals, complete social metadata, and parseable JSON-LD | Complete |
 | Discoverability | Public route inventory | Built output | HTML sitemap, sitemap.xml, robots.txt, and llms.txt generated from shared data | Complete |
+| XML sitemap | 19 canonical URLs | Built output | Canonical inventory matches indexable HTML exactly; every URL has an accurate release `lastmod` and primary images have image sitemap entries | Complete |
+| Human sitemap | All public routes | Built HTML | Descriptive link labels and summaries cover every indexable service, location, company, FAQ, and contact page | Complete |
+| Structured data | Full site | Built HTML | Factual Organization and WebSite entities plus page-type, breadcrumb, Service, and FAQ relationships parse successfully; no unsupported local-business facts added | Complete |
+| Canonical host | `www` and root domain | Live HTTP | `www` returns 301 to the root domain and retains the full path and query string; root returns 200 | Complete |
+| SEO regression | Full static output | `npm run audit:seo` | 19 indexable pages, 21 HTML files, 19 sitemap URLs, and five WebP images pass automated checks | Complete |
+| Visual regression | Locations hub and dark home panel | Desktop | Corrected shared panel-background specificity so white text renders on the intended navy surfaces; inverse breadcrumbs verified | Complete |
 | Images | Five original photographs | WebP output | All images load; optimized set is under 1 MB and the full static build is about 1.5 MB | Complete |
 | Accessibility | Shared components | Desktop and mobile | Skip link, visible focus, semantic regions, labeled form controls, reduced-motion support, and native FAQ disclosures verified | Complete |
 | Deployment config | Full site | Cloudflare Workers Static Assets | Wrangler project targets `dist`, uses 404-page handling, and pins the Worker name to `valet-philadelphia` | Complete |

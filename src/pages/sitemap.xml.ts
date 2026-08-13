@@ -9,10 +9,15 @@ const escapeXml = (value: string) =>
 
 export const GET: APIRoute = () => {
   const urls = publicRoutes
-    .map((route) => `  <url>\n    <loc>${escapeXml(new URL(route.href, siteConfig.url).toString())}</loc>\n  </url>`)
+    .map((route) => {
+      const image = route.image
+        ? `\n    <image:image>\n      <image:loc>${escapeXml(new URL(route.image, siteConfig.url).toString())}</image:loc>\n    </image:image>`
+        : '';
+      return `  <url>\n    <loc>${escapeXml(new URL(route.href, siteConfig.url).toString())}</loc>\n    <lastmod>${siteConfig.sitemapLastModified}</lastmod>${image}\n  </url>`;
+    })
     .join('\n');
 
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urls}\n</urlset>\n`;
 
   return new Response(xml, {
     headers: {

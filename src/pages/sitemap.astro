@@ -1,17 +1,28 @@
 ---
 import Arrow from '../components/Arrow.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { routesByGroup } from '../lib/routes';
+import { siteConfig } from '../data/site';
 ---
 
 <BaseLayout
-  title="Sitemap"
+  title="Valet Philadelphia HTML Sitemap"
   description="Browse every public page on the Valet Philadelphia website, including services, locations, planning answers, and contact information."
   canonicalPath="/sitemap/"
+  pageType="CollectionPage"
+  schema={{
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
+      { '@type': 'ListItem', position: 2, name: 'HTML sitemap', item: `${siteConfig.url}/sitemap/` },
+    ],
+  }}
 >
   <section class="site-frame section-gap" aria-labelledby="sitemap-title">
     <div class="panel panel-river section-pad">
-      <p class="eyebrow">Human-readable sitemap</p>
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Sitemap' }]} />
+      <p class="eyebrow mt-8">Human-readable sitemap</p>
       <h1 id="sitemap-title" class="display-title mt-7 max-w-[11ch]">Every useful page, in one <em class="text-brick">place.</em></h1>
       <p class="body-large mt-7 text-ink/68">Browse the main site, compare valet services, or open a local planning page for Philadelphia and nearby areas.</p>
     </div>

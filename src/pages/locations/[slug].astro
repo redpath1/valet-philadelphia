@@ -27,7 +27,8 @@ const schema = [
     image: new URL(location.image, siteConfig.url).toString(),
     serviceType: 'Valet parking and parking management',
     areaServed: { '@type': 'Place', name: location.name },
-    provider: { '@id': `${siteConfig.url}/#business` },
+    provider: { '@id': `${siteConfig.url}/#organization` },
+    mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
   },
   {
     '@type': 'BreadcrumbList',
@@ -40,7 +41,7 @@ const schema = [
 ];
 ---
 
-<BaseLayout title={`Valet Parking in ${location.name}`} description={location.seoDescription} canonicalPath={`/locations/${location.slug}/`} image={location.image} schema={schema}>
+<BaseLayout title={`Valet Parking in ${location.name}`} description={location.seoDescription} canonicalPath={`/locations/${location.slug}/`} image={location.image} imageAlt={location.imageAlt} pageType="ItemPage" pageSchema={{ mainEntity: { '@id': `${pageUrl}#service` } }} schema={schema}>
   <section class="site-frame section-gap" aria-labelledby="location-title">
     <div class="panel grid bg-paper lg:grid-cols-[0.94fr_1.06fr]">
       <div class="section-pad flex flex-col justify-between gap-14">

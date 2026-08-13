@@ -7,6 +7,7 @@ export type PublicRoute = {
   label: string;
   description: string;
   group: 'Main' | 'Services' | 'Locations';
+  image?: string;
 };
 
 export const publicRoutes: PublicRoute[] = [
@@ -16,12 +17,14 @@ export const publicRoutes: PublicRoute[] = [
     label: service.title,
     description: service.seoDescription,
     group: 'Services' as const,
+    image: service.image,
   })),
   ...locations.map((location) => ({
     href: `/locations/${location.slug}/`,
     label: `Valet parking in ${location.name}`,
     description: location.seoDescription,
     group: 'Locations' as const,
+    image: location.image,
   })),
 ];
 
