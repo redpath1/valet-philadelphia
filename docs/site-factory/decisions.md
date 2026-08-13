@@ -15,5 +15,5 @@
 ## 2026-08-13
 
 - Use the public GitHub repository `redpath1/valet-philadelphia` with `main` as the production branch. Reason: it matches the owner's requested account and keeps the deployment path simple.
-- Use a repository-specific SSH deploy key with write access for local pushes. Reason: it scopes this checkout's SSH credential to this repository instead of granting account-wide access.
+- Use repository-local Git configuration pinned to an existing verified `redpath1` SSH identity for pushes. Reason: this checkout reliably uses SSH without changing the machine-wide Git transport configuration.
 - Keep the Cloudflare Worker name aligned with the Wrangler project name: `valet-philadelphia`. Reason: Workers Builds uses the Wrangler configuration as the deployment source of truth.
