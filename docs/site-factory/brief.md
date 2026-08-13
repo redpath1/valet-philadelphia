@@ -62,8 +62,8 @@
 
 - Astro 7+
 - Tailwind CSS 4 through the Vite plugin
-- Static output for Git and Cloudflare Pages
-- Git repository initialized locally
+- Static output for Git and Cloudflare Workers Static Assets
+- Git repository initialized locally and intended to publish from `redpath1/valet-philadelphia`
 
 ## Assumptions
 

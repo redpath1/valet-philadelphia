@@ -9,4 +9,7 @@
 - Contact form prepares a reviewable email to the centralized address in `src/data/site.ts`
 - Build, internal links, metadata uniqueness, schema parsing, desktop, and mobile checks pass
 - Local Git repository is initialized on `main`
-- Next best action: confirm business details, push to a remote Git provider, and connect Cloudflare Pages using the README settings
+- GitHub repository: `redpath1/valet-philadelphia`
+- Cloudflare Worker configuration: `wrangler.jsonc`, using the `dist` static asset build
+- Production deployment target: Cloudflare Workers Builds connected to GitHub `main`
+- Next best action after deployment: confirm the business email and coverage claims before directing paid or organic traffic to the site

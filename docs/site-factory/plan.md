@@ -2,13 +2,14 @@
 
 ## Current Phase
 
-Complete and ready for Git handoff
+Deployment setup in progress
 
 ## Next
 
 - Confirm the production email mailbox and coverage claims
-- Push the `main` branch to the owner's Git provider
-- Connect the repository to Cloudflare Pages
+- Push the `main` branch to `redpath1/valet-philadelphia` over SSH
+- Connect the repository to Cloudflare Workers Builds
+- Verify that a push to `main` triggers a production deploy
 
 ## Done
 
@@ -19,7 +20,7 @@ Complete and ready for Git handoff
 - Built shared layout, navigation, footer, data, and SEO layers
 - Built all requested hubs and individual pages
 - Added HTML and XML sitemaps, robots.txt, llms.txt, supported schema, and social metadata
-- Added Cloudflare Pages headers and deployment documentation
+- Added Cloudflare Static Assets headers and Workers deployment documentation
 - Completed desktop, mobile, link, metadata, image, accessibility, and build reviews
 - Initialized the local Git repository on `main`
 
@@ -39,4 +40,5 @@ Complete and ready for Git handoff
 - [x] Mobile visual review passes
 - [x] Keyboard navigation and reduced-motion behavior pass
 - [x] Metadata, schema, sitemap.xml, robots.txt, HTML sitemap, and llms.txt pass
-- [x] Cloudflare Pages handoff is complete
+- [x] Cloudflare Workers Static Assets project configuration is complete
+- [ ] Git-triggered Cloudflare production deploy is verified

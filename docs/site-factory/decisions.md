@@ -10,4 +10,10 @@
 - Keep the contact form provider-neutral. Reason: no form backend was selected.
 - Use a reviewable mailto workflow for the contact form. Reason: it works on a static site without pretending to store or deliver a lead through an unconfigured backend.
 - Use Astro 7.2.1 and Tailwind CSS 4.3.3. Reason: these were the current compatible releases resolved and verified during the build.
-- Use static Cloudflare Pages output without an adapter. Reason: the site has no server runtime requirements.
+- Use Cloudflare Workers Static Assets without an Astro adapter. Reason: the site has no server runtime requirements, and Workers Builds can deploy the generated `dist` directory directly after each Git push.
+
+## 2026-08-13
+
+- Use the public GitHub repository `redpath1/valet-philadelphia` with `main` as the production branch. Reason: it matches the owner's requested account and keeps the deployment path simple.
+- Use a repository-specific SSH deploy key with write access for local pushes. Reason: it scopes this checkout's SSH credential to this repository instead of granting account-wide access.
+- Keep the Cloudflare Worker name aligned with the Wrangler project name: `valet-philadelphia`. Reason: Workers Builds uses the Wrangler configuration as the deployment source of truth.

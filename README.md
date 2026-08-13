@@ -1,6 +1,6 @@
 # Valet Philadelphia, LLC
 
-A static marketing and local-discovery website for a Philadelphia valet parking company. The site is built with Astro 7 and Tailwind CSS 4, generates 21 pages, and is ready to publish from Git through Cloudflare Pages.
+A static marketing and local-discovery website for a Philadelphia valet parking company. The site is built with Astro 7 and Tailwind CSS 4, generates 21 pages, and deploys from Git through Cloudflare Workers Static Assets.
 
 ## What Is Included
 
@@ -13,7 +13,7 @@ A static marketing and local-discovery website for a Philadelphia valet parking 
 - Unique page metadata, canonical links, social previews, and supported JSON-LD
 - Responsive navigation and layouts
 - Provider-neutral contact flow that prepares an email in the visitor's email app
-- Cloudflare Pages security and cache headers
+- Cloudflare Static Assets security and cache headers
 
 ## Run Locally
 
@@ -56,19 +56,30 @@ Business facts that were not supplied were not invented. Confirm these items bef
 
 Dynamic service and location pages are generated from their data files, so a content change is applied consistently across hubs, detail pages, the sitemap, and llms.txt.
 
-## Cloudflare Pages Setup
+## Git And Cloudflare Deployment
 
-After pushing this repository to GitHub or another supported Git provider:
+Production is configured around the `main` branch of `redpath1/valet-philadelphia`.
 
-1. In Cloudflare, create a new Pages project and connect this repository.
-2. Choose the Astro framework preset if Cloudflare offers it.
-3. Use `npm run build` as the build command.
-4. Use `dist` as the build output directory.
-5. Use Node.js 22 for the build environment.
-6. No Astro Cloudflare adapter is required because this project uses static output.
-7. Add the custom domain after the first successful deploy.
+Cloudflare Workers Builds settings:
 
-No environment variables are required for the current static build.
+- Worker name: `valet-philadelphia`
+- Git repository: `redpath1/valet-philadelphia`
+- Production branch: `main`
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- Root directory: `/`
+- Node version: 22
+- Static asset directory: `dist`, defined in `wrangler.jsonc`
+
+Every push to `main` triggers a production build and deploy. Pull-request branches can receive preview builds from the same connection.
+
+For an authorized manual deployment from this checkout:
+
+```sh
+npm run deploy
+```
+
+No Astro Cloudflare adapter is required because this project uses static output. No environment variables are required for the current build.
 
 ## Contact Form Behavior
 

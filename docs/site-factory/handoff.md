@@ -8,12 +8,14 @@
 - Added responsive navigation, mobile layouts, accessible FAQ disclosures, and a reviewable email contact flow
 - Added unique metadata, canonicals, Open Graph, X cards, supported LocalBusiness, Service, FAQ, and breadcrumb schema
 - Added XML sitemap, human sitemap, robots.txt, llms.txt, and shared public route inventory
-- Added Cloudflare Pages headers, Node version, deployment settings, and launch-edit documentation
+- Added Cloudflare Workers Static Assets headers, Wrangler configuration, Node version, deployment settings, and launch-edit documentation
 - Initialized a local Git repository on the `main` branch
+- Created the GitHub repository `redpath1/valet-philadelphia`
 
 ## Main Files
 
-- `README.md`: setup, editing, and Cloudflare Pages instructions
+- `README.md`: setup, editing, and Cloudflare Workers instructions
+- `wrangler.jsonc`: Worker name and static asset deployment settings
 - `src/data/site.ts`: company settings, domain, email, and navigation
 - `src/data/services.ts`: six service detail records
 - `src/data/locations.ts`: six local detail records
@@ -42,12 +44,16 @@
 - Confirm all service-area municipalities and coverage language
 - Confirm the final production domain in `astro.config.mjs` and `src/data/site.ts`
 - Decide whether to retain the email-preparation form or connect a server-side form provider
-- Push the local `main` branch to a new remote repository
+- Confirm the production email and coverage language before advertising the site
 
-## Cloudflare Pages
+## Cloudflare Workers Builds
 
+- Worker name: `valet-philadelphia`
+- Repository: `redpath1/valet-philadelphia`
+- Production branch: `main`
 - Build command: `npm run build`
-- Output directory: `dist`
+- Deploy command: `npx wrangler deploy`
+- Static assets directory: `dist`
 - Node version: 22
 - Adapter: none required for static output
 - Environment variables: none required for the current build
