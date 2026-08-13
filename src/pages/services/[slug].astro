@@ -48,20 +48,20 @@ const schema = [
 <BaseLayout title={keywordLabel(seo.primaryKeyword)} description={service.seoDescription} canonicalPath={pagePath} image={service.image} imageAlt={service.imageAlt} pageType="ItemPage" pageSchema={{ mainEntity: { '@id': `${pageUrl}#service` } }} schema={schema}>
   <section class="site-frame section-gap" aria-labelledby="service-title">
     <div class="panel grid bg-paper lg:grid-cols-[0.94fr_1.06fr]">
-      <div class="section-pad flex flex-col justify-between gap-14">
+      <div class="section-pad flex flex-col justify-between gap-10 lg:gap-12">
         <div>
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: service.title }]} />
-          <p class="eyebrow mt-10">{service.eyebrow}</p>
-          <h1 id="service-title" class="display-title mt-7 max-w-[12ch]">{keywordLabel(seo.primaryKeyword)}</h1>
-          <p class="body-large mt-7 text-ink/68">{service.description}</p>
-          <div class="mt-8 flex flex-wrap gap-3">
+          <p class="eyebrow mt-6">{service.eyebrow}</p>
+          <h1 id="service-title" class="display-title mt-4 max-w-[12ch]">{keywordLabel(seo.primaryKeyword)}</h1>
+          <p class="body-large mt-5 text-ink/68">{service.description}</p>
+          <div class="mt-6 flex flex-wrap gap-3">
             <a href="/contact/" class="button-primary">Plan this service<Arrow /></a>
             <a href="#service-details" class="button-secondary">See what is included<Arrow direction="down" /></a>
           </div>
         </div>
         <p class="m-0 max-w-sm border-t border-line pt-5 text-sm text-ink/55">Philadelphia and nearby communities. Site conditions and availability are confirmed for each request.</p>
       </div>
-      <div class="relative min-h-[34rem] overflow-hidden border-t border-line lg:min-h-[50rem] lg:border-t-0 lg:border-l">
+      <div class="relative min-h-[26rem] overflow-hidden border-t border-line lg:min-h-[42rem] lg:border-t-0 lg:border-l">
         <img src={service.image} alt={service.imageAlt} width="1600" height="1200" fetchpriority="high" class="absolute inset-0 h-full w-full object-cover" />
       </div>
     </div>
@@ -69,13 +69,13 @@ const schema = [
 
   <section id="service-details" class="site-frame section-gap" aria-labelledby="details-title">
     <div class="panel section-pad">
-      <div class="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
+      <div class="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-14">
         <div>
           <p class="eyebrow">What the plan covers</p>
-          <h2 id="details-title" class="section-title mt-6">Defined before the shift.</h2>
-          <p class="mt-6 text-ink/65">The exact operating plan follows the site. These are the core decisions this service typically requires.</p>
+          <h2 id="details-title" class="section-title mt-4">Typical scope for {service.title.toLowerCase()}.</h2>
+          <p class="mt-4 text-ink/65">Final scope follows the site. These are the core decisions this service typically requires.</p>
         </div>
-        <div class="grid gap-10 md:grid-cols-2">
+        <div class="grid gap-8 md:grid-cols-2">
           <div>
             <h3 class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">Best suited to</h3>
             <ul class="rule-list mt-5 border-t border-line p-0" role="list">
@@ -95,17 +95,17 @@ const schema = [
 
   <section class="site-frame section-gap" aria-labelledby="planning-factors-title">
     <div class="panel section-pad">
-      <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+      <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14">
         <div>
           <p class="eyebrow">Plan-shaping factors</p>
-          <h2 id="planning-factors-title" class="section-title mt-6">What changes the crew, route, and handoff.</h2>
-          <p class="mt-6 text-ink/65">These details turn a service category into an operating plan for the property. They are resolved before staffing is finalized.</p>
+          <h2 id="planning-factors-title" class="section-title mt-4">What changes {service.shortTitle.toLowerCase()} staffing and vehicle flow.</h2>
+          <p class="mt-4 text-ink/65">These details turn a service category into an operating plan for the property. They are resolved before staffing is finalized.</p>
         </div>
         <div class="grid gap-px border border-line bg-line sm:grid-cols-2">
           {service.planningFactors.map((factor, index) => (
             <article data-planning-factor class="bg-paper p-6 sm:p-8">
               <span class="text-xs font-extrabold text-brick">0{index + 1}</span>
-              <h3 class="card-title mt-8">{factor.title}</h3>
+              <h3 class="card-title mt-5">{factor.title}</h3>
               <p class="mt-4 text-sm text-ink/66">{factor.description}</p>
             </article>
           ))}
@@ -119,15 +119,15 @@ const schema = [
       <div class="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">
         <div>
           <p class="eyebrow">Three working phases</p>
-          <h2 id="service-process-title" class="section-title mt-6">From site conditions to a live shift.</h2>
+          <h2 id="service-process-title" class="section-title mt-4">How {service.title.toLowerCase()} is planned and supervised.</h2>
         </div>
         <p class="text-white/62">The crew should not discover the important details at guest arrival. The sequence turns site facts into positions, handoffs, and live decisions.</p>
       </div>
-      <ol class="mt-12 grid gap-4 lg:grid-cols-3" role="list">
+      <ol class="mt-8 grid gap-4 lg:grid-cols-3" role="list">
         {service.process.map((step) => (
           <li class="border border-white/12 bg-white/[0.04] p-6 sm:p-8">
             <span class="text-xs font-extrabold text-signal">{step.number}</span>
-            <h3 class="card-title mt-12">{step.title}</h3>
+            <h3 class="card-title mt-6">{step.title}</h3>
             <p class="mt-4 text-sm text-white/62">{step.description}</p>
           </li>
         ))}
@@ -137,12 +137,12 @@ const schema = [
 
   <section class="site-frame section-gap" aria-labelledby="service-faq-title">
     <div class="panel section-pad">
-      <div class="grid gap-12 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
+      <div class="grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-14">
         <div>
           <p class="eyebrow">Questions about {service.shortTitle.toLowerCase()}</p>
-          <h2 id="service-faq-title" class="section-title mt-6">Questions to resolve before service.</h2>
-          <p class="mt-6 text-ink/64">The answers establish what is known, what still requires a site review, and which property contacts should join the planning conversation.</p>
-          <a href="/faq/" class="button-secondary mt-8">All valet FAQs<Arrow /></a>
+          <h2 id="service-faq-title" class="section-title mt-4">{service.shortTitle} planning questions.</h2>
+          <p class="mt-4 text-ink/64">The answers establish what is known, what still requires a site review, and which property contacts should join the planning conversation.</p>
+          <a href="/faq/" class="button-secondary mt-6">All valet FAQs<Arrow /></a>
         </div>
         <FAQList items={service.faqs} />
       </div>
@@ -154,15 +154,15 @@ const schema = [
       <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p class="eyebrow">Related services</p>
-          <h2 id="related-title" class="section-title mt-6">The arrival may need more than one layer.</h2>
+          <h2 id="related-title" class="section-title mt-4">Services related to {service.shortTitle.toLowerCase()}.</h2>
         </div>
         <a href="/services/" class="text-link">All services <span class="arrow-circle"><Arrow /></span></a>
       </div>
-      <div class="mt-10 grid gap-4 md:grid-cols-2">
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
         {relatedServices.map((item, index) => <ServiceCard service={item} index={index} />)}
       </div>
     </div>
   </section>
 
-  <QuoteCta eyebrow={`Planning ${service.shortTitle.toLowerCase()}`} title="Start with the arrival window and the parking route." body="Share the property, schedule, expected volume, and anything that already creates pressure at the curb." />
+  <QuoteCta eyebrow="Request service details" title={`Send the ${service.title.toLowerCase()} schedule and expected vehicle volume.`} body="Include the guest entrance, available parking, vehicle route, and any known curb constraint." />
 </BaseLayout>

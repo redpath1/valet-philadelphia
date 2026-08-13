@@ -19,6 +19,9 @@
 - Documentary-style valet photography in mixed light, mostly direct daylight, with uniformed attendants and real street or venue texture
 - About page uses a light background and limited photography
 - No testimonials
+- Editorial restraint is required: headlines should state a service, condition, or decision rather than rely on slogans, fragments, metaphors, or generic improvement language
+- Display headings should stay at or below 80px on wide desktop screens and roughly 50px on phones; section headings should stay at or below 56px on desktop and 40px on phones
+- Section padding and internal gaps should create clear grouping without turning every panel into an oversized presentation slide
 
 ## Page Inventory
 

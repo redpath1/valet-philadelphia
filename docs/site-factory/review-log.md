@@ -33,3 +33,8 @@
 | Deployment config | Full site | Cloudflare Workers Static Assets | Wrangler project targets `dist`, uses 404-page handling, and pins the Worker name to `valet-philadelphia` | Complete |
 | Production deploy | Full site | Cloudflare Workers Builds | GitHub repository cloned, dependencies installed with 0 vulnerabilities, 21 pages built, 31 changed assets uploaded, and the Worker returned HTTP 200 | Complete |
 | Git rebuild | Commit `e06876d` | GitHub SSH → Cloudflare Workers Builds | Push to `main` triggered build `d71c1443`, which completed successfully and updated the production Worker | Complete |
+| Editorial refinement | All page families | Source and built HTML | Prominent slogans and repeated framing replaced with specific service, property, traffic, staffing, custody, and request language; blocked-pattern copy audit passes | Complete |
+| Heading scale | Home, hubs, details, About, Contact, FAQ | 1440 x 900 and 390 x 900 | Rendered display titles top out at 75.6px desktop and 42.9px phone; section titles top out at 46.08px and 31.98px | Complete |
+| Spacing refinement | All shared templates and cards | Desktop and mobile | Section padding, large grid gaps, hero heights, title margins, card title offsets, and repeated CTA spacing reduced without removing content | Complete |
+| Responsive refinement | Nine representative public routes | 1440 x 900 and 390 x 900 | No horizontal overflow, no empty headings, and no typography-cap violations | Complete |
+| Copy regression | 21 built HTML files | `npm run audit:copy` | 333 rendered headings and visible page copy avoid blocked hype, synthetic framing, repeated headings, and em dashes | Complete |

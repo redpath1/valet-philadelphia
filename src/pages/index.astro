@@ -14,7 +14,7 @@ const seo = getKeywordTarget('/');
 const homeFaqs = [
   {
     question: 'What information do you need to plan valet parking?',
-    answer: 'A useful starting point includes the address, date or operating schedule, expected vehicle volume, guest arrival pattern, entrance location, and available vehicle storage. Site conditions determine the final staffing and traffic plan.',
+    answer: 'Send the address, date or operating schedule, expected vehicle volume, guest arrival pattern, entrance location, and available vehicle storage. Site conditions determine the final staffing and traffic plan.',
   },
   {
     question: 'Do you handle both one-time events and recurring service?',
@@ -34,13 +34,13 @@ const homeFaqs = [
   imageAlt="Uniformed valet attendant receiving a guest's keys outside a Philadelphia venue"
 >
   <section class="site-frame section-gap" aria-labelledby="home-title">
-    <div class="panel grid min-h-[calc(100svh-7rem)] bg-paper lg:grid-cols-[0.92fr_1.08fr]">
-      <div class="section-pad flex flex-col justify-between gap-14">
+    <div class="panel grid bg-paper lg:min-h-[42rem] lg:grid-cols-[0.92fr_1.08fr]">
+      <div class="section-pad flex flex-col justify-between gap-10 lg:gap-12">
         <div class="hero-enter">
           <p class="eyebrow">Valet parking, planned for Philadelphia</p>
-          <h1 id="home-title" class="display-title mt-7">{seo.primaryKeyword}, planned from the <em class="text-brick">curb.</em></h1>
-          <p class="body-large mt-7 text-ink/68">Valet Philadelphia, LLC plans and staffs {seo.supportingKeywords[0]} and {seo.supportingKeywords[1]}, plus hotel, wedding, healthcare, and private-venue operations across the Philadelphia region.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
+          <h1 id="home-title" class="display-title mt-4">{seo.primaryKeyword} for events and properties.</h1>
+          <p class="body-large mt-5 text-ink/68">Valet Philadelphia, LLC plans and staffs {seo.supportingKeywords[0]} and {seo.supportingKeywords[1]}, plus hotel, wedding, healthcare, and private-venue operations across the Philadelphia region.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
             <a href="/contact/" class="button-primary">{siteConfig.primaryCta}<Arrow /></a>
             <a href="/services/" class="button-secondary">Explore services<Arrow direction="down" /></a>
           </div>
@@ -52,7 +52,7 @@ const homeFaqs = [
         </div>
       </div>
 
-      <div class="hero-enter-delay relative min-h-[34rem] overflow-hidden border-t border-line lg:min-h-full lg:border-t-0 lg:border-l">
+      <div class="hero-enter-delay relative min-h-[26rem] overflow-hidden border-t border-line lg:min-h-full lg:border-t-0 lg:border-l">
         <img
           src="/images/valet-hero-philadelphia.webp"
           alt="Valet attendant receiving a guest's keys outside a Philadelphia venue"
@@ -71,12 +71,12 @@ const homeFaqs = [
 
   <section class="site-frame section-gap" aria-labelledby="services-title">
     <div class="panel panel-dark section-pad">
-      <div class="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+      <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14">
         <div>
           <p class="eyebrow">Service hub</p>
-          <h2 id="services-title" class="section-title mt-6">Parking operations for the moment that matters.</h2>
-          <p class="mt-6 max-w-xl text-white/64">Each service starts with the same question: how will people, vehicles, and keys move through this specific site?</p>
-          <a href="/services/" class="button-light mt-8">View all services<Arrow /></a>
+          <h2 id="services-title" class="section-title mt-4">Valet and parking services by property type.</h2>
+          <p class="mt-4 max-w-xl text-white/64">Event, restaurant, wedding, hotel, healthcare, and parking-management work each put different pressure on the entrance.</p>
+          <a href="/services/" class="button-light mt-6">View all services<Arrow /></a>
         </div>
 
         <div class="rule-list border-t border-white/15">
@@ -97,26 +97,26 @@ const homeFaqs = [
     <div class="panel section-pad">
       <div class="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">
         <div>
-          <p class="eyebrow">Before the uniform comes the plan</p>
-          <h2 id="process-title" class="section-title mt-6">A better shift starts before the first key.</h2>
+          <p class="eyebrow">Site review and shift planning</p>
+          <h2 id="process-title" class="section-title mt-4">Three decisions before service begins.</h2>
         </div>
         <p class="body-large text-ink/65">We plan from the street inward: curb conditions, pedestrian movement, vehicle storage, key custody, peak timing, and the person making decisions on site.</p>
       </div>
 
-      <ol class="mt-12 grid gap-px overflow-hidden border border-line bg-line lg:grid-cols-3" role="list">
+      <ol class="mt-8 grid gap-px overflow-hidden border border-line bg-line lg:grid-cols-3" role="list">
         <li class="bg-paper p-6 sm:p-8">
           <span class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">01 · Site read</span>
-          <h3 class="card-title mt-8">Walk the movement.</h3>
+          <h3 class="card-title mt-5">Map the route.</h3>
           <p class="mt-4 text-ink/64">Arrival lane, pedestrian path, vehicle storage, retrieval distance, lighting, and nearby conflicts.</p>
         </li>
         <li class="bg-paper p-6 sm:p-8">
           <span class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">02 · Operating plan</span>
-          <h3 class="card-title mt-8">Assign the handoffs.</h3>
+          <h3 class="card-title mt-5">Assign staff and custody.</h3>
           <p class="mt-4 text-ink/64">Staff posts, key control, ticketing, traffic direction, guest communication, and an overflow response.</p>
         </li>
         <li class="bg-paper p-6 sm:p-8">
           <span class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">03 · Live adjustment</span>
-          <h3 class="card-title mt-8">Manage the peaks.</h3>
+          <h3 class="card-title mt-5">Prepare for peak demand.</h3>
           <p class="mt-4 text-ink/64">A shift lead watches the line, retrieval pace, curb capacity, weather, and the final departure wave.</p>
         </li>
       </ol>
@@ -125,19 +125,19 @@ const homeFaqs = [
 
   <section class="site-frame section-gap" aria-labelledby="working-title">
     <div class="panel grid !bg-navy text-white lg:grid-cols-[1.08fr_0.92fr]">
-      <div class="relative min-h-[34rem] overflow-hidden">
+      <div class="relative min-h-[26rem] overflow-hidden lg:min-h-[38rem]">
         <img src="/images/event-valet-team.webp" alt="Valet attendants working an event arrival lane in direct sunlight" width="1600" height="1200" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
       </div>
       <div class="section-pad flex flex-col justify-center">
-        <p class="eyebrow">Professional, not precious</p>
-        <h2 id="working-title" class="section-title mt-6">Real pavement. Real traffic. A clear standard.</h2>
-        <p class="mt-6 text-lg text-white/68">Good valet work is visible in small details: an entrance that stays open, a key that is where it belongs, a guest who knows where to stop, and a line that never becomes a surprise.</p>
-        <ul class="rule-list mt-8 border-t border-white/15 p-0" role="list">
+        <p class="eyebrow">On-shift controls</p>
+        <h2 id="working-title" class="section-title mt-4">Visible staff, controlled keys, and an open entrance.</h2>
+        <p class="mt-4 text-lg text-white/68">The shift lead watches curb capacity, key location, vehicle flow, guest direction, and the departure queue as conditions change.</p>
+        <ul class="rule-list mt-6 border-t border-white/15 p-0" role="list">
           {['Uniformed, identifiable attendants', 'One accountable shift lead', 'Controlled keys and vehicle locations', 'A site-specific weather and overflow response'].map((item) => (
             <li class="flex items-center gap-3 py-4 text-sm font-semibold"><span class="h-2 w-2 bg-signal"></span>{item}</li>
           ))}
         </ul>
-        <a href="/about/" class="button-light mt-8 self-start">How we approach the work<Arrow /></a>
+        <a href="/about/" class="button-light mt-6 self-start">See the operating approach<Arrow /></a>
       </div>
     </div>
   </section>
@@ -147,14 +147,14 @@ const homeFaqs = [
       <div class="grid gap-8 lg:grid-cols-[1fr_0.7fr] lg:items-end">
         <div>
           <p class="eyebrow">Philadelphia and nearby</p>
-          <h2 id="locations-title" class="section-title mt-6">Local pages built around how the place moves.</h2>
+          <h2 id="locations-title" class="section-title mt-4">Service-area guidance for different property conditions.</h2>
         </div>
         <div>
           <p class="text-ink/65">A dense Center City curb needs a different setup than a Main Line estate or a large King of Prussia property. Explore the planning considerations for each area.</p>
           <a href="/locations/" class="text-link mt-5">See all locations <span class="arrow-circle"><Arrow /></span></a>
         </div>
       </div>
-      <div class="mt-10 grid gap-4 lg:grid-cols-3">
+      <div class="mt-8 grid gap-4 lg:grid-cols-3">
         {locations.slice(0, 3).map((location, index) => <LocationCard location={location} index={index} />)}
       </div>
     </div>
@@ -162,11 +162,11 @@ const homeFaqs = [
 
   <section class="site-frame section-gap" aria-labelledby="home-faq-title">
     <div class="panel section-pad">
-      <div class="grid gap-12 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
+      <div class="grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-14">
         <div>
           <p class="eyebrow">Common questions</p>
-          <h2 id="home-faq-title" class="section-title mt-6">Start with the practical details.</h2>
-          <a href="/faq/" class="button-secondary mt-8">Read every answer<Arrow /></a>
+          <h2 id="home-faq-title" class="section-title mt-4">Planning questions before you request service.</h2>
+          <a href="/faq/" class="button-secondary mt-6">Read every answer<Arrow /></a>
         </div>
         <FAQList items={homeFaqs} />
       </div>

@@ -153,7 +153,7 @@ export const locations: Location[] = [
     areas: ['Camden waterfront', 'Cherry Hill', 'Collingswood', 'Haddonfield', 'Moorestown', 'Mount Laurel area'],
     venueTypes: ['Restaurants and hotels', 'Wedding and event venues', 'Healthcare and senior communities', 'Private homes and corporate sites'],
     operatingConditions: [
-      { title: 'The setting can change quickly', description: 'A downtown restaurant, suburban hotel, healthcare entrance, private home, and wedding property have very different curb and lot conditions. The crew plan starts with the actual entrance rather than a regional assumption.' },
+      { title: 'Property setting', description: 'A downtown restaurant, suburban hotel, healthcare entrance, private home, and wedding property have very different curb and lot conditions. The crew plan follows the actual entrance rather than a regional assumption.' },
       { title: 'Curb or lot organization', description: 'Compact business districts may require a short, clearly marked handoff, while suburban sites may need directional posts across a larger lot. Both depend on separating guests from deliveries, rideshare vehicles, and through traffic.' },
       { title: 'Remote parking route', description: 'Event properties may use a distant lot or overflow area. Access permission, lighting, surface condition, road crossings, and the return route determine whether attendants can cycle vehicles safely and predictably.' },
       { title: 'Regional event timing', description: 'Guest travel patterns, venue schedules, hotel activity, and nearby events can compress arrivals even when the property has ample parking. The invitation or reservation schedule remains a key staffing input.' },

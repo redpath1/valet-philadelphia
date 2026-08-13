@@ -24,3 +24,6 @@
 - Do not add a `meta keywords` tag or repeat exact-match phrases mechanically. Reason: modern search discovery is better served by useful visible content, clear titles and headings, internal links, and factual structured data.
 - Set the service and location detail-page content floor at 600 visible main-content words, with required explained planning items and page-specific questions. Reason: the guardrail prevents thin pages, while the structural requirements discourage padding words without visitor value.
 - Keep the hub-page content floor lower at 450 words. Reason: hubs should help visitors compare and choose without duplicating the full detail content.
+- Cap display titles at 80 pixels on wide screens and roughly 50 pixels on phones, with section titles capped at 56 and 40 pixels. Reason: the editorial type should establish hierarchy without dominating the service content or producing excessive wrapping.
+- Prefer headings that name a service, condition, planning decision, or next action. Reason: direct operational language is more credible and useful than slogans, sentence fragments, or generic improvement claims.
+- Add automated copy and spacing checks to the normal verification command. Reason: the restrained tone and scale should remain enforceable as new service or location pages are added.

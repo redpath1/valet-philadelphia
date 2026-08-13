@@ -61,12 +61,12 @@ const breadcrumbSchema = {
       <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
         <div>
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'FAQ' }]} />
-          <p class="eyebrow mt-8">Frequently asked questions</p>
-          <h1 id="faq-page-title" class="display-title mt-7 max-w-[12ch]">{seo.primaryKeyword}: practical questions <em class="text-brick">answered.</em></h1>
+          <p class="eyebrow mt-6">Frequently asked questions</p>
+          <h1 id="faq-page-title" class="display-title mt-4 max-w-[12ch]">{seo.primaryKeyword}.</h1>
         </div>
         <div>
-          <p class="body-large text-ink/70">Valet planning is specific to the property, but the same questions about {seo.supportingKeywords[0]}, {seo.supportingKeywords[1]}, traffic, and weather appear early. Start here, then bring the address and operating details.</p>
-          <a href="#planning" class="button-secondary mt-7">Read the answers<Arrow direction="down" /></a>
+          <p class="body-large text-ink/70">{seo.supportingKeywords[0][0].toUpperCase() + seo.supportingKeywords[0].slice(1)}, {seo.supportingKeywords[1]}, traffic, weather, and the parking route all affect the operating plan. The answers below explain what to confirm before requesting service.</p>
+          <a href="#planning" class="button-secondary mt-6">Read the answers<Arrow direction="down" /></a>
         </div>
       </div>
     </div>
@@ -80,11 +80,10 @@ const breadcrumbSchema = {
   ].map(([id, title, intro, items]) => (
     <section id={id as string} class="site-frame section-gap" aria-labelledby={`${id}-title`}>
       <div class="panel section-pad">
-        <div class="grid gap-12 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
+        <div class="grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-14">
           <div>
-            <p class="eyebrow">FAQ section</p>
-            <h2 id={`${id}-title`} class="section-title mt-6">{title}</h2>
-            <p class="mt-6 text-ink/64">{intro}</p>
+            <h2 id={`${id}-title`} class="section-title">{title}</h2>
+            <p class="mt-4 text-ink/64">{intro}</p>
           </div>
           <FAQList items={items as typeof planningFaqs} />
         </div>
@@ -92,5 +91,5 @@ const breadcrumbSchema = {
     </section>
   ))}
 
-  <QuoteCta eyebrow="Still deciding what to ask?" title="Send the address and the pressure point." body="A useful first message can be simple: where the entrance is, when vehicles arrive, where they can park, and what is currently difficult." />
+  <QuoteCta eyebrow="Request details" title="Send the address, schedule, and parking arrangement." body="Include the guest entrance, expected vehicle volume, and any curb or storage constraint already known." />
 </BaseLayout>

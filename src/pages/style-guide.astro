@@ -13,16 +13,16 @@ const sampleFaqs = [
   <section class="site-frame section-gap">
     <div class="panel section-pad">
       <p class="eyebrow">Internal design reference</p>
-      <h1 class="display-title mt-7">Valet Philadelphia style guide.</h1>
-      <p class="body-large mt-7 text-ink/65">A practical inventory of the tokens and components used across the site.</p>
+      <h1 class="display-title mt-4">Valet Philadelphia style guide.</h1>
+      <p class="body-large mt-5 text-ink/65">A practical inventory of the tokens and components used across the site.</p>
     </div>
   </section>
 
   <section class="site-frame section-gap">
     <div class="panel section-pad">
       <p class="eyebrow">Color</p>
-      <h2 class="section-title mt-6">Philadelphia in working tones.</h2>
-      <div class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <h2 class="section-title mt-4">Site colors.</h2>
+      <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {[
           ['Navy', 'bg-navy text-white', '#102A3D'],
           ['Limestone', 'bg-limestone', '#F1EEE5'],
@@ -35,7 +35,7 @@ const sampleFaqs = [
         ].map(([name, classes, value]) => (
           <div class={`border border-line p-5 ${classes}`}>
             <strong>{name}</strong>
-            <span class="mt-8 block text-xs opacity-60">{value}</span>
+            <span class="mt-5 block text-xs opacity-60">{value}</span>
           </div>
         ))}
       </div>
@@ -45,10 +45,10 @@ const sampleFaqs = [
   <section class="site-frame section-gap">
     <div class="panel section-pad">
       <p class="eyebrow">Typography</p>
-      <h2 class="display-title mt-7">Display title with a <em class="text-brick">human note.</em></h2>
-      <h3 class="section-title mt-12">Section titles keep the editorial rhythm.</h3>
-      <h4 class="card-title mt-10">Card and subsection title.</h4>
-      <p class="body-large mt-8 text-ink/65">Large body copy explains the important premise without turning every paragraph into a headline.</p>
+      <h2 class="display-title mt-4">Display title example.</h2>
+      <h3 class="section-title mt-8">Section title example.</h3>
+      <h4 class="card-title mt-6">Card and subsection title.</h4>
+      <p class="body-large mt-5 text-ink/65">Large body copy explains the important premise without turning every paragraph into a headline.</p>
       <p class="mt-5 max-w-2xl text-ink/65">Standard body copy handles details, qualifications, and practical explanations.</p>
     </div>
   </section>
@@ -56,13 +56,13 @@ const sampleFaqs = [
   <section class="site-frame section-gap">
     <div class="panel section-pad">
       <p class="eyebrow">Actions and disclosure</p>
-      <h2 class="section-title mt-6">Clear labels, restrained use.</h2>
-      <div class="mt-8 flex flex-wrap gap-3">
+      <h2 class="section-title mt-4">Actions and disclosures.</h2>
+      <div class="mt-6 flex flex-wrap gap-3">
         <a class="button-primary" href="#">Primary action<Arrow /></a>
         <a class="button-secondary" href="#">Secondary action<Arrow /></a>
         <a class="text-link" href="#">Text action <span class="arrow-circle"><Arrow /></span></a>
       </div>
-      <div class="mt-12"><FAQList items={sampleFaqs} /></div>
+      <div class="mt-8"><FAQList items={sampleFaqs} /></div>
     </div>
   </section>
 
@@ -73,8 +73,8 @@ const sampleFaqs = [
       </div>
       <div class="section-pad flex flex-col justify-center">
         <p class="eyebrow">Photography</p>
-        <h2 class="section-title mt-6">Direct light and operational texture.</h2>
-        <p class="mt-6 text-ink/65">Images show working attendants, real curbs, mixed light, practical uniforms, and recognizable parking activity. They avoid staged team portraits and showroom polish.</p>
+        <h2 class="section-title mt-4">Photography direction.</h2>
+        <p class="mt-4 text-ink/65">Images show working attendants, real curbs, mixed light, practical uniforms, and recognizable parking activity. They avoid staged team portraits and showroom polish.</p>
       </div>
     </div>
   </section>

@@ -25,9 +25,9 @@ const seo = getKeywordTarget('/sitemap/');
   <section class="site-frame section-gap" aria-labelledby="sitemap-title">
     <div class="panel panel-river section-pad">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Sitemap' }]} />
-      <p class="eyebrow mt-8">Human-readable sitemap</p>
-      <h1 id="sitemap-title" class="display-title mt-7 max-w-[11ch]">Every useful page, in one <em class="text-brick">place.</em></h1>
-      <p class="body-large mt-7 text-ink/68">Browse the main site, compare {seo.supportingKeywords[0]}, or open one of the local {seo.supportingKeywords[1]} for Philadelphia and nearby areas.</p>
+      <p class="eyebrow mt-6">Human-readable sitemap</p>
+      <h1 id="sitemap-title" class="display-title mt-4 max-w-[12ch]">{seo.primaryKeyword}.</h1>
+      <p class="body-large mt-5 text-ink/68">Browse the main site, compare {seo.supportingKeywords[0]}, or open one of the local {seo.supportingKeywords[1]} for Philadelphia and nearby areas.</p>
     </div>
   </section>
 
@@ -35,8 +35,8 @@ const seo = getKeywordTarget('/sitemap/');
     <section class="site-frame section-gap" aria-labelledby={`${group.toLowerCase()}-routes`}>
       <div class="panel section-pad">
         <p class="eyebrow">{group}</p>
-        <h2 id={`${group.toLowerCase()}-routes`} class="section-title mt-6">{group === 'Main' ? 'Start here.' : group}</h2>
-        <div class="rule-list mt-10 border-t border-line">
+        <h2 id={`${group.toLowerCase()}-routes`} class="section-title mt-4">{group === 'Main' ? 'Primary pages' : group}</h2>
+        <div class="rule-list mt-8 border-t border-line">
           {routes.map((route) => (
             <a href={route.href} class="group grid gap-3 py-5 no-underline sm:grid-cols-[0.65fr_1.35fr_auto] sm:items-center">
               <h3 class="m-0 text-lg font-bold tracking-[-0.02em]">{route.label}</h3>

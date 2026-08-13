@@ -8,8 +8,9 @@
     "build": "astro check && astro build",
     "audit:seo": "node scripts/seo-audit.mjs",
     "audit:design": "node scripts/design-audit.mjs",
+    "audit:copy": "node scripts/copy-audit.mjs",
     "audit:content": "node scripts/content-audit.mjs",
-    "verify": "npm run build && npm run audit:seo && npm run audit:design && npm run audit:content",
+    "verify": "npm run build && npm run audit:seo && npm run audit:design && npm run audit:copy && npm run audit:content",
     "preview": "astro preview",
     "check": "astro check",
     "deploy": "npm run build && wrangler deploy"

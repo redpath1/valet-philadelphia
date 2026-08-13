@@ -10,12 +10,12 @@ const year = new Date().getFullYear();
 
 <footer class="site-frame section-gap pb-3 sm:pb-4">
   <div class="panel panel-dark section-pad">
-    <div class="grid gap-14 lg:grid-cols-[1.3fr_0.7fr]">
+    <div class="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:gap-14">
       <div>
-        <p class="eyebrow">Plan the curb before the first car</p>
-        <h2 class="section-title mt-6 max-w-[13ch]">A better arrival starts with the site.</h2>
-        <p class="body-large mt-6 max-w-2xl text-white/68">Tell us where guests arrive, when the rush begins, and what parking is available. We will help shape the questions that belong in the operating plan.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
+        <p class="eyebrow">Request service</p>
+        <h2 class="section-title mt-4 max-w-[15ch]">Send the address, schedule, and parking details.</h2>
+        <p class="body-large mt-4 max-w-2xl text-white/68">Include the guest entrance, expected vehicle volume, arrival window, and available parking. Those facts establish the first site review.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
           <a href="/contact/" class="button-primary">{siteConfig.primaryCta}<Arrow /></a>
           <a href={`mailto:${siteConfig.email}`} class="button-secondary">{siteConfig.email}</a>
         </div>
@@ -43,7 +43,7 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
-    <div class="mt-16 flex flex-col gap-5 border-t border-white/12 pt-6 text-xs text-white/48 sm:flex-row sm:items-end sm:justify-between">
+    <div class="mt-12 flex flex-col gap-5 border-t border-white/12 pt-6 text-xs text-white/48 sm:flex-row sm:items-end sm:justify-between">
       <a href="/" class="flex items-center gap-3 text-white no-underline">
         <BrandMark />
         <span><strong class="block text-sm">{siteConfig.name}</strong>Valet parking and parking operations</span>

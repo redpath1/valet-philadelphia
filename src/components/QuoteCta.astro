@@ -9,19 +9,19 @@ interface Props {
 }
 
 const {
-  eyebrow = 'Start with the site',
-  title = 'Tell us what happens at your curb.',
-  body = 'Share the venue, date or operating schedule, expected volume, and available parking. We will start with the movement plan.',
+  eyebrow = 'Request a parking plan',
+  title = 'Share the address and operating schedule.',
+  body = 'Include the expected vehicle volume, guest entrance, and available parking. Those details determine the next site questions.',
 } = Astro.props;
 ---
 
 <section class="site-frame section-gap" aria-labelledby="quote-cta-title">
   <div class="panel panel-river section-pad">
-    <div class="grid items-end gap-10 lg:grid-cols-[1fr_auto]">
+    <div class="grid items-end gap-8 lg:grid-cols-[1fr_auto] lg:gap-12">
       <div>
         <p class="eyebrow">{eyebrow}</p>
-        <h2 id="quote-cta-title" class="section-title mt-6 max-w-[14ch]">{title}</h2>
-        <p class="body-large mt-6 text-ink/68">{body}</p>
+        <h2 id="quote-cta-title" class="section-title mt-4 max-w-[16ch]">{title}</h2>
+        <p class="body-large mt-4 text-ink/68">{body}</p>
       </div>
       <a href="/contact/" class="button-primary whitespace-nowrap">{siteConfig.primaryCta}<Arrow /></a>
     </div>

@@ -25,6 +25,9 @@
 - Updated the Astro and shared site canonical URL to `https://valetparkingphiladelphia.com`
 - Updated the published email and contact form recipient to `hello@valetparkingphiladelphia.com`
 - Added a permanent Cloudflare redirect from `www.valetparkingphiladelphia.com` to the canonical root hostname with path and query preservation
+- Rewrote prominent headings and calls to action in direct operational language, removing formulaic slogans and repeated page framing
+- Reduced shared display and section-heading scales plus large vertical gaps for a more compact desktop and mobile rhythm
+- Added `scripts/copy-audit.mjs` and extended `scripts/design-audit.mjs` to protect the refined language, spacing, and typography limits
 
 ## Main Files
 
@@ -38,6 +41,7 @@
 - `src/layouts/BaseLayout.astro`: metadata and structured data
 - `scripts/seo-audit.mjs`: built-output SEO regression
 - `scripts/design-audit.mjs`: square-corner source regression
+- `scripts/copy-audit.mjs`: visible-copy and rendered-heading regression
 - `scripts/content-audit.mjs`: service and location content-depth regression
 - `public/images/`: final original imagery
 - `public/logo.svg`: structured-data organization logo
@@ -64,6 +68,8 @@
 - XML sitemap modification-date and image-entry checks
 - Human sitemap and robots discovery checks
 - Missing-image and horizontal-overflow checks
+- Responsive heading-size checks across nine representative public routes at 1440 and 390 pixels
+- Copy-pattern, repeated-heading, oversized-spacing, viewport-height, and heading-scale regressions
 - `npm audit`: 0 vulnerabilities at installation
 
 ## Confirm Before Launch

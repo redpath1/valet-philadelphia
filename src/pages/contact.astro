@@ -28,16 +28,16 @@ const seo = getKeywordTarget('/contact/');
     <div class="panel grid bg-paper lg:grid-cols-[0.78fr_1.22fr]">
       <div class="section-pad bg-navy-deep text-white">
         <Breadcrumbs inverse items={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
-        <p class="eyebrow mt-8">Contact Valet Philadelphia</p>
-        <h1 id="contact-title" class="display-title mt-7 max-w-[10ch]">{keywordLabel(seo.primaryKeyword)} for your <em class="text-signal">entrance.</em></h1>
-        <p class="body-large mt-7 text-white/66">To make a {seo.supportingKeywords[0]}, share the site, timing, vehicle estimate, and parking arrangement. You do not need a final staffing number before asking for a {seo.supportingKeywords[1]}.</p>
+        <p class="eyebrow mt-6">Contact Valet Philadelphia</p>
+        <h1 id="contact-title" class="display-title mt-4 max-w-[11ch]">{keywordLabel(seo.primaryKeyword)}.</h1>
+        <p class="body-large mt-5 text-white/66">Send the address, schedule, vehicle estimate, guest entrance, and parking arrangement with your {seo.supportingKeywords[0]}. A staffing number is not required for the first {seo.supportingKeywords[1]} review.</p>
 
-        <div class="mt-12 border-t border-white/14 pt-6">
+        <div class="mt-8 border-t border-white/14 pt-5">
           <p class="text-xs font-bold tracking-[0.14em] text-white/42 uppercase">Direct email</p>
           <a href={`mailto:${siteConfig.email}`} class="mt-3 inline-block text-lg font-bold text-white no-underline hover:text-signal">{siteConfig.email}</a>
         </div>
 
-        <div class="mt-10">
+        <div class="mt-8">
           <p class="text-xs font-bold tracking-[0.14em] text-white/42 uppercase">Helpful first details</p>
           <ul class="rule-list mt-4 border-t border-white/14 p-0 text-sm text-white/72" role="list">
             {['Service address', 'Date or recurring schedule', 'Expected vehicles or guest count', 'Arrival and departure window', 'Known parking or storage area'].map((item) => <li class="flex gap-3 py-3"><span class="mt-2 h-2 w-2 flex-none bg-signal"></span>{item}</li>)}
@@ -47,10 +47,10 @@ const seo = getKeywordTarget('/contact/');
 
       <div class="section-pad">
         <p class="eyebrow">Request form</p>
-        <h2 class="section-title mt-6 max-w-[13ch]">Build the first site picture.</h2>
-        <p class="mt-5 max-w-2xl text-ink/62">Submitting this form opens your email app with the details prepared. You can review the message before sending. This website does not store the form data.</p>
+        <h2 class="section-title mt-4 max-w-[13ch]">Information for the first site review.</h2>
+        <p class="mt-4 max-w-2xl text-ink/62">Submitting this form opens your email app with the details prepared. You can review the message before sending. This website does not store the form data.</p>
 
-        <form id="quote-form" data-contact-email={siteConfig.email} class="mt-10 grid gap-5" novalidate>
+        <form id="quote-form" data-contact-email={siteConfig.email} class="mt-8 grid gap-5" novalidate>
           <div class="grid gap-5 sm:grid-cols-2">
             <label class="grid gap-2 text-sm font-bold">
               Your name <span class="text-brick">*</span>
@@ -119,20 +119,20 @@ const seo = getKeywordTarget('/contact/');
 
   <section class="site-frame section-gap" aria-labelledby="after-submit-title">
     <div class="panel panel-river section-pad">
-      <div class="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+      <div class="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-14">
         <div>
           <p class="eyebrow">What happens next</p>
-          <h2 id="after-submit-title" class="section-title mt-6">The first conversation stays practical.</h2>
+          <h2 id="after-submit-title" class="section-title mt-4">How the request is reviewed.</h2>
         </div>
         <ol class="grid gap-4 md:grid-cols-3" role="list">
           {[
-            ['01', 'Confirm the basics', 'Address, timing, property type, expected volume, and available parking.'],
-            ['02', 'Resolve the site questions', 'Handoff point, pedestrian path, storage route, permissions, and peak conditions.'],
-            ['03', 'Shape the operating plan', 'Staff posts, key controls, communication, overflow, weather, and closing checks.'],
+            ['01', 'Verify site facts', 'Address, timing, property type, expected volume, and available parking.'],
+            ['02', 'Identify access questions', 'Handoff point, pedestrian path, storage route, permissions, and peak conditions.'],
+            ['03', 'Outline staffing and controls', 'Staff posts, key controls, communication, overflow, weather, and closing checks.'],
           ].map(([number, title, body]) => (
             <li class="border border-navy/12 bg-paper/60 p-6">
               <span class="text-xs font-extrabold text-brick">{number}</span>
-              <h3 class="mt-8 text-lg font-bold">{title}</h3>
+              <h3 class="mt-5 text-lg font-bold">{title}</h3>
               <p class="mt-3 text-sm text-ink/62">{body}</p>
             </li>
           ))}

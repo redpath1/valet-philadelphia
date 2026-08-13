@@ -2,11 +2,10 @@
 
 ## Current Phase
 
-Content-depth pass complete and ready to deploy
+Editorial and interface refinement complete
 
 ## Next
 
-- Deploy the content-depth pass through the existing SSH and Cloudflare workflow
 - Confirm mailbox delivery and coverage claims
 - Verify the domain in Google Search Console and submit `https://valetparkingphiladelphia.com/sitemap.xml`
 
@@ -40,6 +39,11 @@ Content-depth pass complete and ready to deploy
 - Added accurate sitemap modification dates and image sitemap entries
 - Added visible and structured breadcrumbs to all public hub and company pages
 - Deployed a permanent Cloudflare redirect from `www` to the canonical root domain with path and query preservation
+- Replaced slogan-like and repetitive headings with concrete service, site, staffing, traffic, and request language
+- Reduced display titles to an 80px desktop cap and roughly 50px phone cap; reduced section titles to 56px and 40px
+- Tightened section padding, hero height, component margins, card spacing, and page-grid gaps across every public page family
+- Added a copy regression that blocks common hype language, synthetic heading phrases, em dashes, repeated headings, and overly long headings
+- Extended the design regression to block oversized vertical spacing, full-viewport treatments, and oversized heading utilities
 
 ## Launch Confirmations
 
@@ -66,3 +70,6 @@ Content-depth pass complete and ready to deploy
 - [x] Cloudflare Workers Static Assets project configuration is complete
 - [x] Git-triggered Cloudflare production deploy is verified
 - [x] Production custom domain is connected to the Worker
+- [x] Representative page families have no horizontal overflow at 1440px and 390px
+- [x] Rendered H1 and H2 sizes stay below the documented desktop and phone limits
+- [x] Copy audit passes across all 21 rendered HTML files

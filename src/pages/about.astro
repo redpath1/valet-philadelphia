@@ -29,12 +29,12 @@ const seo = getKeywordTarget('/about/');
       <div class="grid gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:items-end">
         <div>
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
-          <p class="eyebrow mt-8">About Valet Philadelphia, LLC</p>
-          <h1 id="about-title" class="display-title mt-7 max-w-[12ch]">A {seo.primaryKeyword} built around clear <em class="text-brick">handoffs.</em></h1>
+          <p class="eyebrow mt-6">About Valet Philadelphia, LLC</p>
+          <h1 id="about-title" class="display-title mt-4 max-w-[13ch]">How a {seo.primaryKeyword} plans each shift.</h1>
         </div>
         <div>
-          <p class="body-large text-ink/70">The guest sees a greeting and a returned vehicle. The operation behind that moment includes {seo.supportingKeywords[0]}, {seo.supportingKeywords[1]}, a parking route, clear staff positions, and one person accountable for the live shift.</p>
-          <a href="#approach" class="button-secondary mt-7">Our approach<Arrow direction="down" /></a>
+          <p class="body-large text-ink/70">Guests see a greeting and a returned vehicle. Behind it are {seo.supportingKeywords[0]}, {seo.supportingKeywords[1]}, a defined parking route, assigned staff positions, and a shift lead responsible for live decisions.</p>
+          <a href="#approach" class="button-secondary mt-6">Planning approach<Arrow direction="down" /></a>
         </div>
       </div>
     </div>
@@ -42,31 +42,31 @@ const seo = getKeywordTarget('/about/');
 
   <section id="approach" class="site-frame section-gap" aria-labelledby="approach-title">
     <div class="panel section-pad bg-paper">
-      <div class="grid gap-14 lg:grid-cols-[0.68fr_1.32fr] lg:gap-24">
+      <div class="grid gap-8 lg:grid-cols-[0.68fr_1.32fr] lg:gap-14">
         <div>
-          <p class="eyebrow">The working premise</p>
-          <h2 id="approach-title" class="section-title mt-6">Plan the movement, then staff it.</h2>
+          <p class="eyebrow">Operating method</p>
+          <h2 id="approach-title" class="section-title mt-4">Map the site before assigning the crew.</h2>
         </div>
         <div class="rich-copy body-large text-ink/68">
           <p>Valet is often described as a convenience. At a busy entrance, it is also a traffic and custody operation. Vehicles arrive at different speeds, guests step into pedestrian space, keys change hands, and parked cars move out of sight.</p>
-          <p>Valet Philadelphia begins with those facts. The goal is not to make the operation feel complicated. It is to handle the complexity early so guests receive a clear, calm handoff.</p>
+          <p>Valet Philadelphia begins with those facts. That work happens before service so the guest handoff can remain simple even when the curb, storage route, and timing are not.</p>
         </div>
       </div>
 
-      <div class="mt-14 grid gap-px overflow-hidden border border-line bg-line md:grid-cols-3">
+      <div class="mt-10 grid gap-px overflow-hidden border border-line bg-line md:grid-cols-3">
         <article class="bg-paper p-6 sm:p-8">
           <span class="text-xs font-extrabold text-brick">01</span>
-          <h3 class="card-title mt-10">Site before script.</h3>
+          <h3 class="card-title mt-5">Match the plan to the property.</h3>
           <p class="mt-4 text-ink/64">A narrow city curb, a private drive, and a medical entrance cannot share the same operating assumptions.</p>
         </article>
         <article class="bg-paper p-6 sm:p-8">
           <span class="text-xs font-extrabold text-brick">02</span>
-          <h3 class="card-title mt-10">Control every handoff.</h3>
+          <h3 class="card-title mt-5">Assign custody.</h3>
           <p class="mt-4 text-ink/64">The ticket, key, vehicle location, guest request, and shift change each need a defined owner.</p>
         </article>
         <article class="bg-paper p-6 sm:p-8">
           <span class="text-xs font-extrabold text-brick">03</span>
-          <h3 class="card-title mt-10">Adjust in public.</h3>
+          <h3 class="card-title mt-5">Name the shift lead.</h3>
           <p class="mt-4 text-ink/64">Conditions change. The shift lead protects the entrance while adapting the line, route, and retrieval order.</p>
         </article>
       </div>
@@ -75,14 +75,14 @@ const seo = getKeywordTarget('/about/');
 
   <section class="site-frame section-gap" aria-labelledby="briefing-title">
     <div class="panel grid bg-paper lg:grid-cols-[1.08fr_0.92fr]">
-      <div class="relative min-h-[34rem] overflow-hidden">
+      <div class="relative min-h-[26rem] overflow-hidden lg:min-h-[38rem]">
         <img src="/images/valet-team-briefing.webp" alt="Uniformed valet team reviewing a curb plan during a pre-shift briefing" width="1800" height="1200" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
       </div>
       <div class="section-pad flex flex-col justify-center">
-        <p class="eyebrow">One photograph, one useful moment</p>
-        <h2 id="briefing-title" class="section-title mt-6">The shift starts at the briefing.</h2>
-        <p class="mt-6 text-lg text-ink/66">Before guests arrive, attendants should know the vehicle route, storage zones, key procedure, staff posts, accessibility notes, escalation path, and how the departure rush will be staged.</p>
-        <ul class="rule-list mt-8 border-t border-line p-0" role="list">
+        <p class="eyebrow">Pre-shift briefing</p>
+        <h2 id="briefing-title" class="section-title mt-4">Each attendant starts with an assigned role.</h2>
+        <p class="mt-4 text-lg text-ink/66">Before guests arrive, attendants should know the vehicle route, storage zones, key procedure, staff posts, accessibility notes, escalation path, and how the departure rush will be staged.</p>
+        <ul class="rule-list mt-6 border-t border-line p-0" role="list">
           {['Curb and pedestrian assignments', 'Key station and ticket checks', 'Radio roles and decision authority', 'Weather, overflow, and closing plan'].map((item) => (
             <li class="flex items-center gap-3 py-4 text-sm font-semibold"><span class="h-2 w-2 bg-signal"></span>{item}</li>
           ))}
@@ -93,10 +93,10 @@ const seo = getKeywordTarget('/about/');
 
   <section class="site-frame section-gap" aria-labelledby="standards-title">
     <div class="panel panel-river section-pad">
-      <div class="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
+      <div class="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:gap-14">
         <div>
           <p class="eyebrow">Working standards</p>
-          <h2 id="standards-title" class="section-title mt-6">Professional should be easy to recognize.</h2>
+          <h2 id="standards-title" class="section-title mt-4">Four standards visible during the shift.</h2>
         </div>
         <div class="rule-list border-t border-navy/15">
           {[
@@ -116,5 +116,5 @@ const seo = getKeywordTarget('/about/');
     </div>
   </section>
 
-  <QuoteCta eyebrow="See the approach on your site" title="Bring us the entrance that needs to work better." body="We will start with the curb, vehicle storage, guest timing, and the handoffs that need clear ownership." />
+  <QuoteCta eyebrow="Discuss your property" title="Send the entrance, parking route, and schedule." body="Include the expected vehicle volume and the site conditions that affect guest arrival. Those details frame the first operating review." />
 </BaseLayout>

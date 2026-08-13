@@ -39,7 +39,7 @@ export const services: Service[] = [
     shortTitle: 'Events',
     eyebrow: 'One-night and recurring events',
     summary:
-      'A curb plan, staffed arrival lane, controlled key system, and departure strategy built around the guest list and venue.',
+      'A curb plan, staffed arrival lane, controlled key system, and departure strategy matched to the guest list and venue.',
     description:
       'Event parking gets difficult at predictable moments: the first thirty minutes, a weather change, and the end-of-night rush. Good arrival planning connects the guest handoff, key control, and retrieval staging before the first car arrives, then the crew adjusts to the actual pace of the event.',
     seoDescription:
@@ -174,7 +174,7 @@ export const services: Service[] = [
     shortTitle: 'Hotels',
     eyebrow: 'Daily arrival operations',
     summary:
-      'A front-door parking operation built around check-in peaks, luggage, overnight keys, events, rideshare traffic, and early departures.',
+      'A front-door parking operation for check-in peaks, luggage, overnight keys, events, rideshare traffic, and early departures.',
     description:
       'Hotel valet is a continuous handoff between the curb, front desk, bell team, and parking area. Staffing follows check-in peaks, while overnight key custody and vehicle requests follow one defined path across every shift.',
     seoDescription:
@@ -246,7 +246,7 @@ export const services: Service[] = [
       { title: 'Vehicle request flow', description: 'Patients may finish early, wait for discharge, or need a caregiver to request the vehicle. Ticket matching and communication should accommodate those changes without exposing private information.' },
     ],
     process: [
-      { number: '01', title: 'Start with access', description: 'We identify the safest curb position, ramp route, waiting space, and emergency access requirements.' },
+      { number: '01', title: 'Confirm accessible access', description: 'We identify the safest curb position, ramp route, waiting space, and emergency access requirements.' },
       { number: '02', title: 'Plan for variable pace', description: 'The handoff allows extra time for passengers, mobility equipment, caregivers, and questions.' },
       { number: '03', title: 'Connect the entrance team', description: 'Reception, security, and valet share a defined process for arrivals and vehicle requests.' },
     ],
