@@ -1,0 +1,166 @@
+---
+import Arrow from '../components/Arrow.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { services } from '../data/services';
+import { siteConfig } from '../data/site';
+---
+
+<BaseLayout
+  title="Request a Valet Parking Plan"
+  description="Request a valet parking plan for an event, restaurant, hotel, healthcare property, wedding, or parking operation in the Philadelphia region."
+  canonicalPath="/contact/"
+  image="/images/valet-team-briefing.webp"
+>
+  <section class="site-frame section-gap" aria-labelledby="contact-title">
+    <div class="panel grid bg-paper lg:grid-cols-[0.78fr_1.22fr]">
+      <div class="section-pad bg-navy-deep text-white">
+        <p class="eyebrow">Contact Valet Philadelphia</p>
+        <h1 id="contact-title" class="display-title mt-7 max-w-[10ch]">Start with what happens at the <em class="text-signal">entrance.</em></h1>
+        <p class="body-large mt-7 text-white/66">Share the site, timing, vehicle estimate, and parking arrangement. You do not need to know the final staffing number before reaching out.</p>
+
+        <div class="mt-12 border-t border-white/14 pt-6">
+          <p class="text-xs font-bold tracking-[0.14em] text-white/42 uppercase">Direct email</p>
+          <a href={`mailto:${siteConfig.email}`} class="mt-3 inline-block text-lg font-bold text-white no-underline hover:text-signal">{siteConfig.email}</a>
+        </div>
+
+        <div class="mt-10">
+          <p class="text-xs font-bold tracking-[0.14em] text-white/42 uppercase">Helpful first details</p>
+          <ul class="rule-list mt-4 border-t border-white/14 p-0 text-sm text-white/72" role="list">
+            {['Service address', 'Date or recurring schedule', 'Expected vehicles or guest count', 'Arrival and departure window', 'Known parking or storage area'].map((item) => <li class="flex gap-3 py-3"><span class="mt-2 h-2 w-2 flex-none rounded-full bg-signal"></span>{item}</li>)}
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-pad">
+        <p class="eyebrow">Request form</p>
+        <h2 class="section-title mt-6 max-w-[13ch]">Build the first site picture.</h2>
+        <p class="mt-5 max-w-2xl text-ink/62">Submitting this form opens your email app with the details prepared. You can review the message before sending. This website does not store the form data.</p>
+
+        <form id="quote-form" data-contact-email={siteConfig.email} class="mt-10 grid gap-5" novalidate>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <label class="grid gap-2 text-sm font-bold">
+              Your name <span class="text-brick">*</span>
+              <input class="form-control font-normal" type="text" name="name" autocomplete="name" required />
+            </label>
+            <label class="grid gap-2 text-sm font-bold">
+              Email <span class="text-brick">*</span>
+              <input class="form-control font-normal" type="email" name="email" autocomplete="email" required />
+            </label>
+          </div>
+
+          <div class="grid gap-5 sm:grid-cols-2">
+            <label class="grid gap-2 text-sm font-bold">
+              Phone
+              <input class="form-control font-normal" type="tel" name="phone" autocomplete="tel" />
+            </label>
+            <label class="grid gap-2 text-sm font-bold">
+              Organization or venue
+              <input class="form-control font-normal" type="text" name="organization" autocomplete="organization" />
+            </label>
+          </div>
+
+          <div class="grid gap-5 sm:grid-cols-2">
+            <label class="grid gap-2 text-sm font-bold">
+              Service type <span class="text-brick">*</span>
+              <select class="form-control font-normal" name="service" required>
+                <option value="">Choose one</option>
+                {services.map((service) => <option value={service.title}>{service.title}</option>)}
+                <option value="Not sure yet">Not sure yet</option>
+              </select>
+            </label>
+            <label class="grid gap-2 text-sm font-bold">
+              Date or start date
+              <input class="form-control font-normal" type="date" name="date" />
+            </label>
+          </div>
+
+          <div class="grid gap-5 sm:grid-cols-2">
+            <label class="grid gap-2 text-sm font-bold">
+              Service address or neighborhood <span class="text-brick">*</span>
+              <input class="form-control font-normal" type="text" name="location" autocomplete="street-address" required />
+            </label>
+            <label class="grid gap-2 text-sm font-bold">
+              Estimated vehicles
+              <input class="form-control font-normal" type="number" min="1" inputmode="numeric" name="vehicles" />
+            </label>
+          </div>
+
+          <label class="grid gap-2 text-sm font-bold">
+            Arrival, parking, and site details <span class="text-brick">*</span>
+            <textarea class="form-control font-normal" name="details" required placeholder="Include the arrival window, parking arrangement, property type, and anything that currently creates pressure at the entrance."></textarea>
+          </label>
+
+          <label class="flex items-start gap-3 text-sm text-ink/62">
+            <input type="checkbox" name="confirmation" required class="mt-1 h-4 w-4 accent-navy" />
+            <span>I understand this will open my email app so I can review and send the request. <span class="text-brick">*</span></span>
+          </label>
+
+          <div id="form-error" class="hidden rounded-xl border border-brick/25 bg-brick/8 p-4 text-sm font-semibold text-brick" role="alert"></div>
+
+          <button type="submit" class="button-primary justify-self-start">Prepare my request<Arrow /></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap" aria-labelledby="after-submit-title">
+    <div class="panel panel-river section-pad">
+      <div class="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+        <div>
+          <p class="eyebrow">What happens next</p>
+          <h2 id="after-submit-title" class="section-title mt-6">The first conversation stays practical.</h2>
+        </div>
+        <ol class="grid gap-4 md:grid-cols-3" role="list">
+          {[
+            ['01', 'Confirm the basics', 'Address, timing, property type, expected volume, and available parking.'],
+            ['02', 'Resolve the site questions', 'Handoff point, pedestrian path, storage route, permissions, and peak conditions.'],
+            ['03', 'Shape the operating plan', 'Staff posts, key controls, communication, overflow, weather, and closing checks.'],
+          ].map(([number, title, body]) => (
+            <li class="rounded-[1.3rem] border border-navy/12 bg-paper/60 p-6">
+              <span class="text-xs font-extrabold text-brick">{number}</span>
+              <h3 class="mt-8 text-lg font-bold">{title}</h3>
+              <p class="mt-3 text-sm text-ink/62">{body}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (() => {
+      const form = document.querySelector('#quote-form');
+      const error = document.querySelector('#form-error');
+      if (!(form instanceof HTMLFormElement) || !(error instanceof HTMLElement)) return;
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          error.textContent = 'Please complete the required fields before preparing the email.';
+          error.classList.remove('hidden');
+          return;
+        }
+
+        error.classList.add('hidden');
+        const data = new FormData(form);
+        const email = form.dataset.contactEmail;
+        const subject = `Parking plan request: ${data.get('service') || 'Valet service'} at ${data.get('location') || 'Philadelphia area'}`;
+        const lines = [
+          `Name: ${data.get('name') || ''}`,
+          `Email: ${data.get('email') || ''}`,
+          `Phone: ${data.get('phone') || ''}`,
+          `Organization or venue: ${data.get('organization') || ''}`,
+          `Service: ${data.get('service') || ''}`,
+          `Date or start date: ${data.get('date') || ''}`,
+          `Location: ${data.get('location') || ''}`,
+          `Estimated vehicles: ${data.get('vehicles') || ''}`,
+          '',
+          'Arrival, parking, and site details:',
+          `${data.get('details') || ''}`,
+        ];
+        window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+      });
+    })();
+  </script>
+</BaseLayout>

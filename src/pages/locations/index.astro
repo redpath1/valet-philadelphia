@@ -1,0 +1,73 @@
+---
+import Arrow from '../../components/Arrow.astro';
+import LocationCard from '../../components/LocationCard.astro';
+import QuoteCta from '../../components/QuoteCta.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { locations } from '../../data/locations';
+---
+
+<BaseLayout
+  title="Valet Parking Locations"
+  description="Explore valet parking service areas across Philadelphia, Center City, the Main Line, King of Prussia, Bucks County, and South Jersey."
+  canonicalPath="/locations/"
+  image="/images/valet-hero-philadelphia.webp"
+>
+  <section class="site-frame section-gap" aria-labelledby="locations-page-title">
+    <div class="panel grid bg-navy-deep text-white lg:grid-cols-[0.94fr_1.06fr]">
+      <div class="section-pad flex flex-col justify-center">
+        <p class="eyebrow">Locations hub</p>
+        <h1 id="locations-page-title" class="display-title mt-7 max-w-[11ch]">Local knowledge starts at the <em class="text-signal">curb.</em></h1>
+        <p class="body-large mt-7 text-white/66">Philadelphia is not one parking condition. Dense blocks, private drives, regional venues, garages, and remote lots each need a different operating plan.</p>
+        <a href="#location-list" class="button-light mt-8 self-start">Find your area<Arrow direction="down" /></a>
+      </div>
+      <div class="relative min-h-[34rem] overflow-hidden border-t border-white/12 lg:min-h-[46rem] lg:border-t-0 lg:border-l">
+        <img src="/images/valet-hero-philadelphia.webp" alt="Valet service at a Philadelphia curb in direct afternoon light" width="1800" height="1200" fetchpriority="high" class="absolute inset-0 h-full w-full object-cover" />
+        <div class="absolute right-4 bottom-4 left-4 rounded-[1.15rem] border border-white/20 bg-navy-deep/88 p-5 backdrop-blur-sm sm:left-auto sm:max-w-sm">
+          <p class="text-xs font-bold tracking-[0.14em] text-signal uppercase">Coverage check</p>
+          <p class="mt-2 text-sm text-white/72">Do not see your municipality listed? Share the address and service date. Coverage and travel details are confirmed with each request.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="location-list" class="site-frame section-gap" aria-labelledby="location-list-title">
+    <div class="panel section-pad">
+      <div class="grid gap-8 lg:grid-cols-[1fr_0.75fr] lg:items-end">
+        <div>
+          <p class="eyebrow">Six planning areas</p>
+          <h2 id="location-list-title" class="section-title mt-6">Choose the place that best matches the site.</h2>
+        </div>
+        <p class="text-lg text-ink/64">These pages describe common operating conditions and venue types. Final service availability depends on the address, schedule, and parking plan.</p>
+      </div>
+      <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {locations.map((location, index) => <LocationCard location={location} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap" aria-labelledby="location-method-title">
+    <div class="panel panel-river section-pad">
+      <div class="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+        <div>
+          <p class="eyebrow">What location changes</p>
+          <h2 id="location-method-title" class="section-title mt-6">Distance is only one part of the map.</h2>
+        </div>
+        <div class="grid gap-px overflow-hidden rounded-[1.4rem] border border-navy/15 bg-navy/15 sm:grid-cols-2">
+          {[
+            ['The handoff', 'Curb width, private drive geometry, loading activity, and pedestrian access define where guests should stop.'],
+            ['The storage route', 'A nearby garage, remote lot, field, or street arrangement changes cycle time and staffing.'],
+            ['The peak', 'Dinner reservations, ceremony timing, appointments, hotel check-in, and event close all produce different demand curves.'],
+            ['The neighborhood', 'Residents, deliveries, transit, bicycles, rideshare vehicles, and venue neighbors belong in the plan.'],
+          ].map(([title, body]) => (
+            <article class="bg-river p-6 sm:p-8">
+              <h3 class="card-title">{title}</h3>
+              <p class="mt-4 text-sm text-ink/66">{body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <QuoteCta eyebrow="Outside the listed areas?" title="Send the address. We will start there." body="Coverage, travel, curb conditions, and available parking are confirmed before a service plan is proposed." />
+</BaseLayout>

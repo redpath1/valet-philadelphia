@@ -1,0 +1,54 @@
+---
+import Arrow from './Arrow.astro';
+import BrandMark from './BrandMark.astro';
+import { locations } from '../data/locations';
+import { services } from '../data/services';
+import { primaryNavigation, siteConfig } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-frame section-gap pb-3 sm:pb-4">
+  <div class="panel panel-dark section-pad">
+    <div class="grid gap-14 lg:grid-cols-[1.3fr_0.7fr]">
+      <div>
+        <p class="eyebrow">Plan the curb before the first car</p>
+        <h2 class="section-title mt-6 max-w-[13ch]">A better arrival starts with the site.</h2>
+        <p class="body-large mt-6 max-w-2xl text-white/68">Tell us where guests arrive, when the rush begins, and what parking is available. We will help shape the questions that belong in the operating plan.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="/contact/" class="button-primary">{siteConfig.primaryCta}<Arrow /></a>
+          <a href={`mailto:${siteConfig.email}`} class="button-secondary">{siteConfig.email}</a>
+        </div>
+      </div>
+      <div class="grid gap-8 sm:grid-cols-3 lg:grid-cols-2">
+        <div>
+          <p class="text-xs font-bold tracking-[0.14em] text-white/45 uppercase">Navigate</p>
+          <ul class="mt-4 space-y-2.5 p-0 text-sm text-white/72" role="list">
+            {primaryNavigation.map((item) => <li><a class="no-underline hover:text-signal" href={item.href}>{item.label}</a></li>)}
+            <li><a class="no-underline hover:text-signal" href="/sitemap/">Sitemap</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-bold tracking-[0.14em] text-white/45 uppercase">Services</p>
+          <ul class="mt-4 space-y-2.5 p-0 text-sm text-white/72" role="list">
+            {services.slice(0, 6).map((service) => <li><a class="no-underline hover:text-signal" href={`/services/${service.slug}/`}>{service.shortTitle}</a></li>)}
+          </ul>
+        </div>
+        <div class="sm:col-span-3 lg:col-span-2">
+          <p class="text-xs font-bold tracking-[0.14em] text-white/45 uppercase">Service area</p>
+          <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm text-white/72">
+            {locations.map((location) => <a class="no-underline hover:text-signal" href={`/locations/${location.slug}/`}>{location.name}</a>)}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 flex flex-col gap-5 border-t border-white/12 pt-6 text-xs text-white/48 sm:flex-row sm:items-end sm:justify-between">
+      <a href="/" class="flex items-center gap-3 text-white no-underline">
+        <BrandMark />
+        <span><strong class="block text-sm">{siteConfig.name}</strong>Valet parking and parking operations</span>
+      </a>
+      <p class="m-0">© {year} {siteConfig.name}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

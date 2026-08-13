@@ -1,0 +1,151 @@
+---
+import Arrow from '../../components/Arrow.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FAQList from '../../components/FAQList.astro';
+import QuoteCta from '../../components/QuoteCta.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { services, type Service } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+export function getStaticPaths() {
+  return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
+}
+
+const { service } = Astro.props as { service: Service };
+const relatedServices = service.related
+  .map((slug) => services.find((item) => item.slug === slug))
+  .filter((item): item is Service => Boolean(item));
+
+const pageUrl = `${siteConfig.url}/services/${service.slug}/`;
+const schema = [
+  {
+    '@type': 'Service',
+    '@id': `${pageUrl}#service`,
+    name: service.title,
+    description: service.seoDescription,
+    url: pageUrl,
+    image: new URL(service.image, siteConfig.url).toString(),
+    serviceType: service.title,
+    areaServed: { '@type': 'City', name: 'Philadelphia' },
+    provider: { '@id': `${siteConfig.url}/#business` },
+  },
+  {
+    '@type': 'FAQPage',
+    '@id': `${pageUrl}#faq`,
+    mainEntity: service.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteConfig.url}/services/` },
+      { '@type': 'ListItem', position: 3, name: service.title, item: pageUrl },
+    ],
+  },
+];
+---
+
+<BaseLayout title={`${service.title} in Philadelphia`} description={service.seoDescription} canonicalPath={`/services/${service.slug}/`} image={service.image} schema={schema}>
+  <section class="site-frame section-gap" aria-labelledby="service-title">
+    <div class="panel grid bg-paper lg:grid-cols-[0.94fr_1.06fr]">
+      <div class="section-pad flex flex-col justify-between gap-14">
+        <div>
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: service.title }]} />
+          <p class="eyebrow mt-10">{service.eyebrow}</p>
+          <h1 id="service-title" class="display-title mt-7 max-w-[12ch]">{service.title}</h1>
+          <p class="body-large mt-7 text-ink/68">{service.description}</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="/contact/" class="button-primary">Plan this service<Arrow /></a>
+            <a href="#service-details" class="button-secondary">See what is included<Arrow direction="down" /></a>
+          </div>
+        </div>
+        <p class="m-0 max-w-sm border-t border-line pt-5 text-sm text-ink/55">Philadelphia and nearby communities. Site conditions and availability are confirmed for each request.</p>
+      </div>
+      <div class="relative min-h-[34rem] overflow-hidden border-t border-line lg:min-h-[50rem] lg:border-t-0 lg:border-l">
+        <img src={service.image} alt={service.imageAlt} width="1600" height="1200" fetchpriority="high" class="absolute inset-0 h-full w-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <section id="service-details" class="site-frame section-gap" aria-labelledby="details-title">
+    <div class="panel section-pad">
+      <div class="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
+        <div>
+          <p class="eyebrow">What the plan covers</p>
+          <h2 id="details-title" class="section-title mt-6">Defined before the shift.</h2>
+          <p class="mt-6 text-ink/65">The exact operating plan follows the site. These are the core decisions this service typically requires.</p>
+        </div>
+        <div class="grid gap-10 md:grid-cols-2">
+          <div>
+            <h3 class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">Best suited to</h3>
+            <ul class="rule-list mt-5 border-t border-line p-0" role="list">
+              {service.bestFor.map((item) => <li class="flex gap-3 py-4 text-sm font-semibold"><span class="mt-2 h-2 w-2 flex-none rounded-full bg-signal"></span>{item}</li>)}
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">Operating details</h3>
+            <ul class="rule-list mt-5 border-t border-line p-0" role="list">
+              {service.deliverables.map((item) => <li class="flex gap-3 py-4 text-sm font-semibold"><span class="mt-2 h-2 w-2 flex-none rounded-full bg-signal"></span>{item}</li>)}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap" aria-labelledby="service-process-title">
+    <div class="panel panel-dark section-pad">
+      <div class="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">
+        <div>
+          <p class="eyebrow">Three working phases</p>
+          <h2 id="service-process-title" class="section-title mt-6">From site conditions to a live shift.</h2>
+        </div>
+        <p class="text-white/62">The crew should not discover the important details at guest arrival. The sequence turns site facts into positions, handoffs, and live decisions.</p>
+      </div>
+      <ol class="mt-12 grid gap-4 lg:grid-cols-3" role="list">
+        {service.process.map((step) => (
+          <li class="rounded-[1.35rem] border border-white/12 bg-white/[0.04] p-6 sm:p-8">
+            <span class="text-xs font-extrabold text-signal">{step.number}</span>
+            <h3 class="card-title mt-12">{step.title}</h3>
+            <p class="mt-4 text-sm text-white/62">{step.description}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap" aria-labelledby="service-faq-title">
+    <div class="panel section-pad">
+      <div class="grid gap-12 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
+        <div>
+          <p class="eyebrow">Questions about {service.shortTitle.toLowerCase()}</p>
+          <h2 id="service-faq-title" class="section-title mt-6">Plan the details that change the shift.</h2>
+          <a href="/faq/" class="button-secondary mt-8">All valet FAQs<Arrow /></a>
+        </div>
+        <FAQList items={service.faqs} />
+      </div>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap" aria-labelledby="related-title">
+    <div class="panel section-pad">
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="eyebrow">Related services</p>
+          <h2 id="related-title" class="section-title mt-6">The arrival may need more than one layer.</h2>
+        </div>
+        <a href="/services/" class="text-link">All services <span class="arrow-circle"><Arrow /></span></a>
+      </div>
+      <div class="mt-10 grid gap-4 md:grid-cols-2">
+        {relatedServices.map((item, index) => <ServiceCard service={item} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <QuoteCta eyebrow={`Planning ${service.shortTitle.toLowerCase()}`} title="Start with the arrival window and the parking route." body="Share the property, schedule, expected volume, and anything that already creates pressure at the curb." />
+</BaseLayout>

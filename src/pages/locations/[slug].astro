@@ -1,0 +1,144 @@
+---
+import Arrow from '../../components/Arrow.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import LocationCard from '../../components/LocationCard.astro';
+import QuoteCta from '../../components/QuoteCta.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getLocation, locations, type Location } from '../../data/locations';
+import { services } from '../../data/services';
+import { siteConfig } from '../../data/site';
+
+export function getStaticPaths() {
+  return locations.map((location) => ({ params: { slug: location.slug }, props: { location } }));
+}
+
+const { location } = Astro.props as { location: Location };
+const nearbyLocations = location.nearby
+  .map((slug) => getLocation(slug))
+  .filter((item): item is Location => Boolean(item));
+const pageUrl = `${siteConfig.url}/locations/${location.slug}/`;
+const schema = [
+  {
+    '@type': 'Service',
+    '@id': `${pageUrl}#service`,
+    name: `Valet parking in ${location.name}`,
+    description: location.seoDescription,
+    url: pageUrl,
+    image: new URL(location.image, siteConfig.url).toString(),
+    serviceType: 'Valet parking and parking management',
+    areaServed: { '@type': 'Place', name: location.name },
+    provider: { '@id': `${siteConfig.url}/#business` },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
+      { '@type': 'ListItem', position: 2, name: 'Locations', item: `${siteConfig.url}/locations/` },
+      { '@type': 'ListItem', position: 3, name: location.name, item: pageUrl },
+    ],
+  },
+];
+---
+
+<BaseLayout title={`Valet Parking in ${location.name}`} description={location.seoDescription} canonicalPath={`/locations/${location.slug}/`} image={location.image} schema={schema}>
+  <section class="site-frame section-gap" aria-labelledby="location-title">
+    <div class="panel grid bg-paper lg:grid-cols-[0.94fr_1.06fr]">
+      <div class="section-pad flex flex-col justify-between gap-14">
+        <div>
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Locations', href: '/locations/' }, { label: location.name }]} />
+          <p class="eyebrow mt-10">{location.region}</p>
+          <h1 id="location-title" class="display-title mt-7 max-w-[12ch]">Valet parking in <em class="text-brick">{location.name}.</em></h1>
+          <p class="body-large mt-7 text-ink/68">{location.intro}</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="/contact/" class="button-primary">Check this location<Arrow /></a>
+            <a href="#location-details" class="button-secondary">What changes here<Arrow direction="down" /></a>
+          </div>
+        </div>
+        <p class="m-0 max-w-md border-t border-line pt-5 text-sm text-ink/55">Availability is confirmed for the specific address, date or operating schedule, and parking arrangement.</p>
+      </div>
+      <div class="relative min-h-[34rem] overflow-hidden border-t border-line lg:min-h-[50rem] lg:border-t-0 lg:border-l">
+        <img src={location.image} alt={location.imageAlt} width="1600" height="1200" fetchpriority="high" class="absolute inset-0 h-full w-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <section id="location-details" class="site-frame section-gap" aria-labelledby="conditions-title">
+    <div class="panel panel-dark section-pad">
+      <div class="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+        <div>
+          <p class="eyebrow">Operating conditions</p>
+          <h2 id="conditions-title" class="section-title mt-6">What the local plan needs to answer.</h2>
+          <p class="mt-6 text-white/62">These are common considerations, not assumptions about every property. A site review resolves the actual curb and storage plan.</p>
+        </div>
+        <ol class="rule-list border-t border-white/15 p-0" role="list">
+          {location.streetNotes.map((note, index) => (
+            <li class="grid gap-3 py-5 sm:grid-cols-[3rem_1fr] sm:items-center">
+              <span class="text-xs font-extrabold text-signal">0{index + 1}</span>
+              <p class="m-0 text-xl font-semibold text-white/82">{note}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap" aria-labelledby="areas-title">
+    <div class="panel section-pad">
+      <div class="grid gap-12 lg:grid-cols-2 lg:gap-20">
+        <div>
+          <p class="eyebrow">Area examples</p>
+          <h2 id="areas-title" class="section-title mt-6">Places represented on this page.</h2>
+          <p class="mt-6 text-ink/64">The list helps visitors orient around {location.name}. It does not replace a coverage check for the exact service address.</p>
+          <div class="mt-8 flex flex-wrap gap-2">
+            {location.areas.map((area) => <span class="rounded-full border border-line bg-mist px-4 py-2 text-sm font-semibold">{area}</span>)}
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow">Common property types</p>
+          <h2 class="section-title mt-6">The entrance sets the assignment.</h2>
+          <ul class="rule-list mt-8 border-t border-line p-0" role="list">
+            {location.venueTypes.map((type) => <li class="flex items-center justify-between gap-4 py-4 font-semibold"><span>{type}</span><span class="arrow-circle bg-river text-navy"><Arrow direction="up-right" /></span></li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap" aria-labelledby="location-services-title">
+    <div class="panel panel-river section-pad">
+      <div class="grid gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
+        <div>
+          <p class="eyebrow">Services in {location.name}</p>
+          <h2 id="location-services-title" class="section-title mt-6">Match the operation to the property.</h2>
+        </div>
+        <div class="rule-list border-t border-navy/15">
+          {services.map((service, index) => (
+            <a href={`/services/${service.slug}/`} class="group grid gap-3 py-5 no-underline sm:grid-cols-[2.5rem_0.7fr_1.3fr_auto] sm:items-center">
+              <span class="text-xs font-extrabold text-brick">0{index + 1}</span>
+              <h3 class="m-0 font-display text-2xl leading-none tracking-[-0.03em]">{service.shortTitle}</h3>
+              <p class="m-0 text-sm text-ink/62">{service.summary}</p>
+              <span class="arrow-circle"><Arrow /></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap" aria-labelledby="nearby-title">
+    <div class="panel section-pad">
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="eyebrow">Nearby planning pages</p>
+          <h2 id="nearby-title" class="section-title mt-6">Compare another service area.</h2>
+        </div>
+        <a href="/locations/" class="text-link">All locations <span class="arrow-circle"><Arrow /></span></a>
+      </div>
+      <div class="mt-10 grid gap-4 md:grid-cols-3">
+        {nearbyLocations.map((item, index) => <LocationCard location={item} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <QuoteCta eyebrow={`Planning service in ${location.name}`} title="Send the address and the arrival pattern." body="We will begin with the curb, available parking, expected volume, and the time pressure around the entrance." />
+</BaseLayout>

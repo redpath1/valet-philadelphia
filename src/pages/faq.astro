@@ -1,0 +1,86 @@
+---
+import Arrow from '../components/Arrow.astro';
+import FAQList from '../components/FAQList.astro';
+import QuoteCta from '../components/QuoteCta.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
+
+const planningFaqs = [
+  { question: 'How far in advance should I request valet service?', answer: 'Request service as soon as the venue, date, expected volume, and parking arrangement are known. More lead time allows a proper site review and coordination with the venue, planner, property team, or local stakeholders.' },
+  { question: 'What details should I include in a quote request?', answer: 'Include the service address, date or recurring schedule, event or property type, estimated vehicle volume, arrival and departure windows, guest entrance, and any known parking location. Photos or a site plan can help establish the first conversation.' },
+  { question: 'Is a site visit required?', answer: 'A site review is important when the curb, storage route, lighting, pedestrian access, or traffic pattern cannot be understood reliably from available information. The level of review depends on the assignment.' },
+  { question: 'How is staffing determined?', answer: 'Staffing depends on how concentrated arrivals are, the distance to vehicle storage, the geometry of the handoff, expected departure patterns, traffic-control needs, accessibility considerations, and the service standard required by the property.' },
+];
+
+const operationsFaqs = [
+  { question: 'How are keys and vehicle locations controlled?', answer: 'The operating plan defines ticket matching, key storage, location tracking, who can access the key station, and how counts are handled during shift changes and closeout.' },
+  { question: 'What does the shift lead do?', answer: 'The shift lead owns the live operating decision: staff positions, line adjustment, venue communication, unusual requests, key controls, incident escalation, and closing checks.' },
+  { question: 'What happens during a sudden departure rush?', answer: 'The plan identifies likely release times and prepares retrieval staging before the rush. The shift lead then sequences requests based on curb capacity, walking distance, guest needs, and safe traffic flow.' },
+  { question: 'Can valet operate in rain or winter weather?', answer: 'Weather changes walking time, visibility, traction, guest handoff speed, and vehicle staging. Service feasibility and the weather response depend on the site, forecast, shelter, lighting, and safe operating conditions.' },
+  { question: 'Can you coordinate with security, planners, or front-door staff?', answer: 'Yes. Clear coordination is useful whenever multiple teams share the entrance, direct traffic, manage guests, request vehicles, or control access.' },
+];
+
+const serviceFaqs = [
+  { question: 'Do you provide one-time event valet?', answer: 'Yes. The event service pages are designed around one-night corporate events, private parties, cultural venues, fundraisers, weddings, and similar concentrated arrival windows.' },
+  { question: 'Do you provide recurring restaurant or hotel valet?', answer: 'The service structure supports recurring operations. A recurring program needs a repeatable shift plan, defined communication with the property, and staffing that can respond to different days and demand periods.' },
+  { question: 'Can you manage parking without taking every vehicle as valet?', answer: 'Parking management may include directed self-parking, lot flow, garage entry, loading coordination, overflow, and pedestrian separation. Valet can be one part of a broader plan.' },
+  { question: 'Can attendants support accessible arrivals?', answer: 'The site plan can reserve a safe handoff, allow more time, manage doors or mobility equipment within the service policy, and coordinate with caregivers or property staff. Medical or clinical assistance remains with qualified personnel.' },
+];
+
+const coverageFaqs = [
+  { question: 'Which areas do you serve?', answer: 'The site covers Philadelphia, Center City, the Main Line, King of Prussia, Bucks County, and South Jersey. Exact coverage, travel, and availability are confirmed for the service address.' },
+  { question: 'What if my city or neighborhood is not listed?', answer: 'Send the address and date or schedule. The location pages are a planning guide, not a closed boundary map.' },
+  { question: 'Do permits or property permissions affect the setup?', answer: 'They can. Curb use, loading areas, private lots, remote parking, traffic control, and signs may require permission from property owners or relevant authorities. Those responsibilities should be identified during planning.' },
+];
+
+const allFaqs = [...planningFaqs, ...operationsFaqs, ...serviceFaqs, ...coverageFaqs];
+const schema = {
+  '@type': 'FAQPage',
+  '@id': `${siteConfig.url}/faq/#faq`,
+  mainEntity: allFaqs.map((faq) => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })),
+};
+---
+
+<BaseLayout
+  title="Valet Parking FAQ"
+  description="Answers about valet parking costs and staffing inputs, site planning, key control, events, recurring service, weather, accessibility, and Philadelphia coverage."
+  canonicalPath="/faq/"
+  schema={schema}
+>
+  <section class="site-frame section-gap" aria-labelledby="faq-page-title">
+    <div class="panel panel-river section-pad">
+      <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+        <div>
+          <p class="eyebrow">Frequently asked questions</p>
+          <h1 id="faq-page-title" class="display-title mt-7 max-w-[12ch]">Useful answers before the <em class="text-brick">site walk.</em></h1>
+        </div>
+        <div>
+          <p class="body-large text-ink/70">Valet planning is specific to the property, but the same practical questions appear early. Start here, then bring the address and operating details.</p>
+          <a href="#planning" class="button-secondary mt-7">Read the answers<Arrow direction="down" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {[
+    ['planning', 'Planning and staffing', 'What we need to understand before proposing the operation.', planningFaqs],
+    ['operations', 'Live operations', 'How the shift handles keys, traffic, weather, communication, and demand peaks.', operationsFaqs],
+    ['service-types', 'Service types', 'How event, recurring, parking management, and accessible arrival work differ.', serviceFaqs],
+    ['coverage', 'Coverage and permissions', 'Where service may be available and which site permissions can matter.', coverageFaqs],
+  ].map(([id, title, intro, items]) => (
+    <section id={id as string} class="site-frame section-gap" aria-labelledby={`${id}-title`}>
+      <div class="panel section-pad">
+        <div class="grid gap-12 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
+          <div>
+            <p class="eyebrow">FAQ section</p>
+            <h2 id={`${id}-title`} class="section-title mt-6">{title}</h2>
+            <p class="mt-6 text-ink/64">{intro}</p>
+          </div>
+          <FAQList items={items as typeof planningFaqs} />
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <QuoteCta eyebrow="Still deciding what to ask?" title="Send the address and the pressure point." body="A useful first message can be simple: where the entrance is, when vehicles arrive, where they can park, and what is currently difficult." />
+</BaseLayout>

@@ -1,0 +1,34 @@
+---
+import type { Service } from '../data/services';
+import Arrow from './Arrow.astro';
+
+interface Props {
+  service: Service;
+  index?: number;
+}
+
+const { service, index = 0 } = Astro.props;
+---
+
+<article class="group grid min-h-full overflow-hidden rounded-[1.5rem] border border-line bg-paper">
+  <a href={`/services/${service.slug}/`} class="relative block aspect-[4/3] overflow-hidden no-underline" aria-label={`Explore ${service.title}`}>
+    <img
+      src={service.image}
+      alt={service.imageAlt}
+      width="1200"
+      height="900"
+      loading={index < 2 ? 'eager' : 'lazy'}
+      decoding="async"
+      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+    />
+    <span class="absolute top-4 left-4 rounded-full bg-paper/92 px-3 py-1.5 text-[0.68rem] font-extrabold tracking-[0.12em] text-navy uppercase">0{index + 1}</span>
+  </a>
+  <div class="flex flex-col p-5 sm:p-7">
+    <p class="eyebrow">{service.eyebrow}</p>
+    <h2 class="card-title mt-5"><a class="no-underline" href={`/services/${service.slug}/`}>{service.title}</a></h2>
+    <p class="mt-4 text-ink/66">{service.summary}</p>
+    <a href={`/services/${service.slug}/`} class="text-link mt-7">
+      Explore service <span class="arrow-circle"><Arrow /></span>
+    </a>
+  </div>
+</article>

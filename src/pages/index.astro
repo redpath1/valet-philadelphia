@@ -1,0 +1,173 @@
+---
+import Arrow from '../components/Arrow.astro';
+import FAQList from '../components/FAQList.astro';
+import LocationCard from '../components/LocationCard.astro';
+import QuoteCta from '../components/QuoteCta.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { locations } from '../data/locations';
+import { services } from '../data/services';
+import { siteConfig } from '../data/site';
+
+const homeFaqs = [
+  {
+    question: 'What information do you need to plan valet parking?',
+    answer: 'A useful starting point includes the address, date or operating schedule, expected vehicle volume, guest arrival pattern, entrance location, and available vehicle storage. Site conditions determine the final staffing and traffic plan.',
+  },
+  {
+    question: 'Do you handle both one-time events and recurring service?',
+    answer: 'The site is structured for both. Event valet centers on a defined arrival and departure window. Recurring restaurant, hotel, healthcare, or property operations need repeatable shift controls and staffing that can change with demand.',
+  },
+  {
+    question: 'What areas do you cover?',
+    answer: 'The planning pages cover Philadelphia, Center City, the Main Line, King of Prussia, Bucks County, and South Jersey. Final availability and travel details are confirmed for each request.',
+  },
+];
+---
+
+<BaseLayout
+  title="Philadelphia Valet Parking"
+  description={siteConfig.description}
+  canonicalPath="/"
+>
+  <section class="site-frame section-gap" aria-labelledby="home-title">
+    <div class="panel grid min-h-[calc(100svh-7rem)] bg-paper lg:grid-cols-[0.92fr_1.08fr]">
+      <div class="section-pad flex flex-col justify-between gap-14">
+        <div class="hero-enter">
+          <p class="eyebrow">Valet parking, planned for Philadelphia</p>
+          <h1 id="home-title" class="display-title mt-7">The curb is part of the <em class="text-brick">welcome.</em></h1>
+          <p class="body-large mt-7 text-ink/68">Valet Philadelphia, LLC plans and staffs valet parking for events, restaurants, hotels, healthcare properties, and private venues across the Philadelphia region.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="/contact/" class="button-primary">{siteConfig.primaryCta}<Arrow /></a>
+            <a href="/services/" class="button-secondary">Explore services<Arrow direction="down" /></a>
+          </div>
+        </div>
+
+        <div class="grid gap-4 border-t border-line pt-5 sm:grid-cols-2">
+          <p class="m-0 text-sm font-bold">Philadelphia, PA<br /><span class="font-medium text-ink/50">City and regional service planning</span></p>
+          <p class="m-0 text-sm font-bold">One-time and recurring<br /><span class="font-medium text-ink/50">Events, venues, and properties</span></p>
+        </div>
+      </div>
+
+      <div class="hero-enter-delay relative min-h-[34rem] overflow-hidden border-t border-line lg:min-h-full lg:border-t-0 lg:border-l">
+        <img
+          src="/images/valet-hero-philadelphia.webp"
+          alt="Valet attendant receiving a guest's keys outside a Philadelphia venue"
+          width="1800"
+          height="1200"
+          fetchpriority="high"
+          class="absolute inset-0 h-full w-full object-cover"
+        />
+        <div class="absolute inset-x-4 bottom-4 rounded-[1.15rem] border border-white/25 bg-navy-deep/88 p-4 text-white backdrop-blur-md sm:right-auto sm:max-w-sm sm:p-5">
+          <p class="text-[0.68rem] font-bold tracking-[0.14em] text-signal uppercase">The operating idea</p>
+          <p class="mt-2 text-sm leading-relaxed text-white/78">Clear handoff. Controlled keys. A vehicle route designed before guests arrive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap" aria-labelledby="services-title">
+    <div class="panel panel-dark section-pad">
+      <div class="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+        <div>
+          <p class="eyebrow">Service hub</p>
+          <h2 id="services-title" class="section-title mt-6">Parking operations for the moment that matters.</h2>
+          <p class="mt-6 max-w-xl text-white/64">Each service starts with the same question: how will people, vehicles, and keys move through this specific site?</p>
+          <a href="/services/" class="button-light mt-8">View all services<Arrow /></a>
+        </div>
+
+        <div class="rule-list border-t border-white/15">
+          {services.map((service, index) => (
+            <a href={`/services/${service.slug}/`} class="group grid gap-4 py-6 text-white no-underline sm:grid-cols-[3rem_0.8fr_1.2fr_auto] sm:items-center">
+              <span class="text-xs font-bold text-signal">0{index + 1}</span>
+              <h3 class="m-0 font-display text-2xl leading-none tracking-[-0.03em] sm:text-3xl">{service.shortTitle}</h3>
+              <p class="m-0 text-sm text-white/58">{service.summary}</p>
+              <span class="arrow-circle text-white group-hover:bg-signal group-hover:text-navy"><Arrow /></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap" aria-labelledby="process-title">
+    <div class="panel section-pad">
+      <div class="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">
+        <div>
+          <p class="eyebrow">Before the uniform comes the plan</p>
+          <h2 id="process-title" class="section-title mt-6">A better shift starts before the first key.</h2>
+        </div>
+        <p class="body-large text-ink/65">We plan from the street inward: curb conditions, pedestrian movement, vehicle storage, key custody, peak timing, and the person making decisions on site.</p>
+      </div>
+
+      <ol class="mt-12 grid gap-px overflow-hidden rounded-[1.5rem] border border-line bg-line lg:grid-cols-3" role="list">
+        <li class="bg-paper p-6 sm:p-8">
+          <span class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">01 · Site read</span>
+          <h3 class="card-title mt-8">Walk the movement.</h3>
+          <p class="mt-4 text-ink/64">Arrival lane, pedestrian path, vehicle storage, retrieval distance, lighting, and nearby conflicts.</p>
+        </li>
+        <li class="bg-paper p-6 sm:p-8">
+          <span class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">02 · Operating plan</span>
+          <h3 class="card-title mt-8">Assign the handoffs.</h3>
+          <p class="mt-4 text-ink/64">Staff posts, key control, ticketing, traffic direction, guest communication, and an overflow response.</p>
+        </li>
+        <li class="bg-paper p-6 sm:p-8">
+          <span class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">03 · Live adjustment</span>
+          <h3 class="card-title mt-8">Manage the peaks.</h3>
+          <p class="mt-4 text-ink/64">A shift lead watches the line, retrieval pace, curb capacity, weather, and the final departure wave.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap" aria-labelledby="working-title">
+    <div class="panel grid bg-navy text-white lg:grid-cols-[1.08fr_0.92fr]">
+      <div class="relative min-h-[34rem] overflow-hidden">
+        <img src="/images/event-valet-team.webp" alt="Valet attendants working an event arrival lane in direct sunlight" width="1600" height="1200" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
+      </div>
+      <div class="section-pad flex flex-col justify-center">
+        <p class="eyebrow">Professional, not precious</p>
+        <h2 id="working-title" class="section-title mt-6">Real pavement. Real traffic. A clear standard.</h2>
+        <p class="mt-6 text-lg text-white/68">Good valet work is visible in small details: an entrance that stays open, a key that is where it belongs, a guest who knows where to stop, and a line that never becomes a surprise.</p>
+        <ul class="rule-list mt-8 border-t border-white/15 p-0" role="list">
+          {['Uniformed, identifiable attendants', 'One accountable shift lead', 'Controlled keys and vehicle locations', 'A site-specific weather and overflow response'].map((item) => (
+            <li class="flex items-center gap-3 py-4 text-sm font-semibold"><span class="h-2 w-2 rounded-full bg-signal"></span>{item}</li>
+          ))}
+        </ul>
+        <a href="/about/" class="button-light mt-8 self-start">How we approach the work<Arrow /></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap" aria-labelledby="locations-title">
+    <div class="panel section-pad">
+      <div class="grid gap-8 lg:grid-cols-[1fr_0.7fr] lg:items-end">
+        <div>
+          <p class="eyebrow">Philadelphia and nearby</p>
+          <h2 id="locations-title" class="section-title mt-6">Local pages built around how the place moves.</h2>
+        </div>
+        <div>
+          <p class="text-ink/65">A dense Center City curb needs a different setup than a Main Line estate or a large King of Prussia property. Explore the planning considerations for each area.</p>
+          <a href="/locations/" class="text-link mt-5">See all locations <span class="arrow-circle"><Arrow /></span></a>
+        </div>
+      </div>
+      <div class="mt-10 grid gap-4 lg:grid-cols-3">
+        {locations.slice(0, 3).map((location, index) => <LocationCard location={location} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap" aria-labelledby="home-faq-title">
+    <div class="panel section-pad">
+      <div class="grid gap-12 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
+        <div>
+          <p class="eyebrow">Common questions</p>
+          <h2 id="home-faq-title" class="section-title mt-6">Start with the practical details.</h2>
+          <a href="/faq/" class="button-secondary mt-8">Read every answer<Arrow /></a>
+        </div>
+        <FAQList items={homeFaqs} />
+      </div>
+    </div>
+  </section>
+
+  <QuoteCta />
+</BaseLayout>

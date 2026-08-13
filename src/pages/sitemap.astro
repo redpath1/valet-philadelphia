@@ -1,0 +1,37 @@
+---
+import Arrow from '../components/Arrow.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { routesByGroup } from '../lib/routes';
+---
+
+<BaseLayout
+  title="Sitemap"
+  description="Browse every public page on the Valet Philadelphia website, including services, locations, planning answers, and contact information."
+  canonicalPath="/sitemap/"
+>
+  <section class="site-frame section-gap" aria-labelledby="sitemap-title">
+    <div class="panel panel-river section-pad">
+      <p class="eyebrow">Human-readable sitemap</p>
+      <h1 id="sitemap-title" class="display-title mt-7 max-w-[11ch]">Every useful page, in one <em class="text-brick">place.</em></h1>
+      <p class="body-large mt-7 text-ink/68">Browse the main site, compare valet services, or open a local planning page for Philadelphia and nearby areas.</p>
+    </div>
+  </section>
+
+  {Object.entries(routesByGroup).map(([group, routes]) => (
+    <section class="site-frame section-gap" aria-labelledby={`${group.toLowerCase()}-routes`}>
+      <div class="panel section-pad">
+        <p class="eyebrow">{group}</p>
+        <h2 id={`${group.toLowerCase()}-routes`} class="section-title mt-6">{group === 'Main' ? 'Start here.' : group}</h2>
+        <div class="rule-list mt-10 border-t border-line">
+          {routes.map((route) => (
+            <a href={route.href} class="group grid gap-3 py-5 no-underline sm:grid-cols-[0.65fr_1.35fr_auto] sm:items-center">
+              <h3 class="m-0 text-lg font-bold tracking-[-0.02em]">{route.label}</h3>
+              <p class="m-0 text-sm text-ink/62">{route.description}</p>
+              <span class="arrow-circle"><Arrow /></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+</BaseLayout>

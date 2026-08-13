@@ -1,0 +1,72 @@
+---
+import Arrow from '../../components/Arrow.astro';
+import QuoteCta from '../../components/QuoteCta.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { services } from '../../data/services';
+---
+
+<BaseLayout
+  title="Valet Parking Services"
+  description="Explore event, restaurant, wedding, hotel, healthcare, and parking management services from Valet Philadelphia, LLC."
+  canonicalPath="/services/"
+  image="/images/event-valet-team.webp"
+>
+  <section class="site-frame section-gap" aria-labelledby="services-page-title">
+    <div class="panel panel-river section-pad">
+      <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+        <div>
+          <p class="eyebrow">Service hub</p>
+          <h1 id="services-page-title" class="display-title mt-7 max-w-[12ch]">Valet service built around the <em class="text-brick">site.</em></h1>
+        </div>
+        <div>
+          <p class="body-large text-ink/70">The uniform is only one part of the service. The useful work begins with the curb, the parking route, the timing, and the handoffs guests never need to think about.</p>
+          <a href="#service-list" class="button-secondary mt-7">Choose a service<Arrow direction="down" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="service-list" class="site-frame section-gap" aria-labelledby="service-list-title">
+    <div class="panel section-pad">
+      <div class="mb-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <div>
+          <p class="eyebrow">Six operating contexts</p>
+          <h2 id="service-list-title" class="section-title mt-6">Start with the guest arrival.</h2>
+        </div>
+        <p class="text-lg text-ink/64">Each page explains what changes in that setting, what belongs in the plan, and which details determine staffing.</p>
+      </div>
+      <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {services.map((service, index) => <ServiceCard service={service} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap" aria-labelledby="included-title">
+    <div class="panel panel-dark section-pad">
+      <div class="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+        <div>
+          <p class="eyebrow">What every plan considers</p>
+          <h2 id="included-title" class="section-title mt-6">The same six questions, answered for your property.</h2>
+        </div>
+        <ol class="rule-list border-t border-white/15 p-0" role="list">
+          {[
+            ['01', 'Where is the safest, clearest vehicle handoff?'],
+            ['02', 'Where can cars be stored, and how long is the retrieval route?'],
+            ['03', 'When will arrivals and departures concentrate?'],
+            ['04', 'How are keys, tickets, and vehicle locations controlled?'],
+            ['05', 'What else uses the curb: pedestrians, deliveries, rideshare, transit, or shuttles?'],
+            ['06', 'Who makes the call when conditions change?'],
+          ].map(([number, text]) => (
+            <li class="grid gap-3 py-5 sm:grid-cols-[3rem_1fr] sm:items-start">
+              <span class="text-xs font-extrabold text-signal">{number}</span>
+              <p class="m-0 text-lg font-semibold text-white/82 sm:text-xl">{text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <QuoteCta eyebrow="Not sure which service fits?" title="Describe the property, not the package." body="We can start with what guests experience, how the curb currently works, and where the parking pressure shows up." />
+</BaseLayout>
