@@ -14,6 +14,7 @@ A static marketing and local-discovery website for a Philadelphia valet parking 
 - Responsive navigation and layouts
 - Square-corner design across navigation, cards, buttons, forms, labels, and brand assets
 - A documented primary/supporting keyword map for all 19 indexable pages
+- Substantial service and location content with page-specific planning factors, local conditions, FAQs, and request inputs
 - Provider-neutral contact flow that prepares an email in the visitor's email app
 - Cloudflare Static Assets security and cache headers
 
@@ -34,11 +35,13 @@ Astro will print the local preview address. Open that address in a browser.
 npm run verify
 ```
 
-The command checks the Astro and TypeScript files, generates the static site in `dist/`, and audits all built pages. The SEO audit verifies unique titles and descriptions, preferred-host canonicals, one H1 per page, keyword-map coverage and visible usage, Open Graph and X metadata, parseable JSON-LD, robots and sitemap alignment, HTML sitemap coverage, modification dates, image sitemap entries, and image weights. The design audit prevents rounded Tailwind treatments, nonzero CSS corner radii, and SVG corner radii from returning.
+The command checks the Astro and TypeScript files, generates the static site in `dist/`, and audits all built pages. The SEO audit verifies unique titles and descriptions, preferred-host canonicals, one H1 per page, keyword-map coverage and visible usage, Open Graph and X metadata, parseable JSON-LD, robots and sitemap alignment, HTML sitemap coverage, modification dates, image sitemap entries, and image weights. The design audit prevents rounded Tailwind treatments, nonzero CSS corner radii, and SVG corner radii from returning. The content audit prevents the service and location hubs or detail pages from becoming thin and checks for page-specific planning and FAQ structures.
 
 Run only the SEO regression against an existing `dist/` build with `npm run audit:seo`.
 
 Run only the square-corner source regression with `npm run audit:design`.
+
+Run only the service and location content-depth regression with `npm run audit:content`.
 
 ## Important Launch Edits
 

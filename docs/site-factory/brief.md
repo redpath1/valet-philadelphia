@@ -50,6 +50,9 @@
 - No CMS selected
 - No analytics, newsletter, CRM, or form provider selected
 - Contact form is accessible and ready to connect to a provider. It does not claim to send until one is selected
+- Service detail pages must provide substantial decision support: four explained planning factors, at least four service-specific questions, process details, operating deliverables, and clear request inputs
+- Location detail pages must explain four area-specific operating conditions, property fit, example subareas, at least three local planning questions, and the facts needed to confirm coverage
+- Detail-page depth must come from useful, distinct guidance rather than repeated boilerplate or keyword padding; 600 visible words is the automated floor, not a ranking claim
 
 ## SEO And Discoverability
 

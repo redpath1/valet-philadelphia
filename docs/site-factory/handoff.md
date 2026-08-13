@@ -11,6 +11,10 @@
 - Added an automated SEO regression for metadata uniqueness, canonicals, H1s, social tags, JSON-LD, sitemap parity, robots discovery, human sitemap coverage, and image weights
 - Added a documented, machine-readable keyword map covering all 19 indexable routes and extended the SEO regression to check primary and supporting phrase usage without a meta-keywords tag
 - Removed rounded corners from every component and brand asset, then added an automated source audit plus computed-style desktop and mobile verification
+- Expanded both service and location hubs with concrete guidance for choosing a service and confirming coverage
+- Expanded every service detail with four page-specific planning factors and a fourth practical request question
+- Expanded every location detail with four explained local operating conditions and three area-specific planning questions
+- Added a content-depth audit covering hub word counts, detail-page word counts, planning items, and FAQ counts
 - Added Cloudflare Workers Static Assets headers, Wrangler configuration, Node version, deployment settings, and launch-edit documentation
 - Initialized a local Git repository on the `main` branch
 - Created the GitHub repository `redpath1/valet-philadelphia`
@@ -34,6 +38,7 @@
 - `src/layouts/BaseLayout.astro`: metadata and structured data
 - `scripts/seo-audit.mjs`: built-output SEO regression
 - `scripts/design-audit.mjs`: square-corner source regression
+- `scripts/content-audit.mjs`: service and location content-depth regression
 - `public/images/`: final original imagery
 - `public/logo.svg`: structured-data organization logo
 - `docs/site-factory/image-prompts.md`: image prompt record
@@ -53,6 +58,9 @@
 - JSON-LD parse and page-entity relationship checks
 - Keyword-map completeness, unique primary targets, and visible primary/supporting phrase checks
 - Square-corner source audit and zero-radius computed-style checks
+- Services hub: 505 visible main-content words; locations hub: 554
+- Service detail range: 609–689 visible main-content words; location detail range: 728–756
+- Required planning-item and page-specific FAQ counts on all 12 detail pages
 - XML sitemap modification-date and image-entry checks
 - Human sitemap and robots discovery checks
 - Missing-image and horizontal-overflow checks

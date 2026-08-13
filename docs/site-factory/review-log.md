@@ -22,6 +22,11 @@
 | Keyword mapping | 19 indexable pages | Built HTML | Every page has a unique primary target plus two supporting phrases; mapped phrases appear naturally in prominent and visible copy, including all six location pages | Complete |
 | Square geometry | 32 source assets | Source audit | No rounded Tailwind utilities, nonzero CSS corner radii, or SVG corner radii remain | Complete |
 | Responsive geometry | Home, hubs, details, About, Contact, FAQ | 1440 x 1000 and 390 x 844 | Computed styles report zero rounded elements and representative pages have no horizontal overflow | Complete |
+| Content depth | Services hub and locations hub | Built HTML | 505 and 554 visible main-content words respectively, with useful selection and coverage-review guidance | Complete |
+| Content depth | Six service details | Built HTML | 609–689 visible words per page, four explained planning factors, four page-specific questions, process, deliverables, and request inputs | Complete |
+| Content depth | Six location details | Built HTML | 728–756 visible words per page, four explained local operating conditions, three area-specific questions, service fit, subareas, and coverage inputs | Complete |
+| Content regression | Services and locations | `npm run audit:content` | All hubs and 12 detail pages pass minimum depth and structural-value checks | Complete |
+| Expanded content layout | Hotel service and Center City location | 1440 x 1000 and 390 x 844 | New planning sections stack clearly with no overflow or rounded treatments | Complete |
 | Visual regression | Locations hub and dark home panel | Desktop | Corrected shared panel-background specificity so white text renders on the intended navy surfaces; inverse breadcrumbs verified | Complete |
 | Images | Five original photographs | WebP output | All images load; optimized set is under 1 MB and the full static build is about 1.5 MB | Complete |
 | Accessibility | Shared components | Desktop and mobile | Skip link, visible focus, semantic regions, labeled form controls, reduced-motion support, and native FAQ disclosures verified | Complete |

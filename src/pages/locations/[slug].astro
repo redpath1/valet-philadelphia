@@ -1,6 +1,7 @@
 ---
 import Arrow from '../../components/Arrow.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FAQList from '../../components/FAQList.astro';
 import LocationCard from '../../components/LocationCard.astro';
 import QuoteCta from '../../components/QuoteCta.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -75,10 +76,11 @@ const schema = [
           <p class="mt-6 text-white/62">These are common considerations, not assumptions about every property. A site review resolves the actual curb and storage plan.</p>
         </div>
         <ol class="rule-list border-t border-white/15 p-0" role="list">
-          {location.streetNotes.map((note, index) => (
-            <li class="grid gap-3 py-5 sm:grid-cols-[3rem_1fr] sm:items-center">
+          {location.operatingConditions.map((condition, index) => (
+            <li data-operating-condition class="grid gap-3 py-6 sm:grid-cols-[3rem_0.72fr_1.28fr] sm:items-start">
               <span class="text-xs font-extrabold text-signal">0{index + 1}</span>
-              <p class="m-0 text-xl font-semibold text-white/82">{note}</p>
+              <h3 class="m-0 text-xl font-semibold text-white/86">{condition.title}</h3>
+              <p class="m-0 text-sm text-white/62">{condition.description}</p>
             </li>
           ))}
         </ol>
@@ -104,6 +106,20 @@ const schema = [
             {location.venueTypes.map((type) => <li class="flex items-center justify-between gap-4 py-4 font-semibold"><span>{type}</span><span class="arrow-circle bg-river text-navy"><Arrow direction="up-right" /></span></li>)}
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap" aria-labelledby="location-faq-title">
+    <div class="panel section-pad">
+      <div class="grid gap-12 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
+        <div>
+          <p class="eyebrow">Local planning questions</p>
+          <h2 id="location-faq-title" class="section-title mt-6">What to confirm for {location.name}.</h2>
+          <p class="mt-6 text-ink/64">These answers explain the first feasibility review. Availability and the final operating approach still depend on the specific property.</p>
+          <a href="/contact/" class="button-secondary mt-8">Check an address<Arrow /></a>
+        </div>
+        <FAQList items={location.localFaqs} />
       </div>
     </div>
   </section>

@@ -22,6 +22,8 @@ All 19 indexable URLs pass the built-output SEO regression. The two remaining ge
 - Added `scripts/seo-audit.mjs` and `npm run verify` so these requirements are checked after future edits.
 - Assigned a unique primary phrase and two supporting phrases to every indexable route in `src/data/seo-keywords.json`, then integrated those phrases into visible titles, headings, and explanatory copy.
 - Kept keyword placement natural and omitted the obsolete `meta keywords` tag.
+- Expanded service and location pages around distinct operational decisions rather than adding generic location or keyword paragraphs.
+- Added a content-depth regression for both hubs and all twelve detail pages; its word-count floor is a thin-content safeguard, not a ranking promise.
 
 ## Deliberate Accuracy Choices
 
@@ -36,6 +38,8 @@ All 19 indexable URLs pass the built-output SEO regression. The two remaining ge
 - Every indexable page has one H1, one canonical, one title, and one description.
 - Every indexable page appears in the keyword map, owns a unique primary phrase, and uses its primary and supporting phrases in visible copy.
 - No page emits a `meta keywords` tag.
+- Service and location hubs have at least 450 visible main-content words.
+- Every service and location detail has at least 600 visible main-content words plus required page-specific planning and FAQ structures.
 - Titles, descriptions, canonical URLs, Open Graph tags, and X tags are present and unique where required.
 - All JSON-LD blocks parse.
 - Robots.txt advertises the preferred sitemap.

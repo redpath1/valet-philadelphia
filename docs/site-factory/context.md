@@ -12,11 +12,13 @@
 - 19 indexable pages and two non-index pages are generated; the noindex pages are excluded from both sitemaps
 - Page titles, descriptions, H1s, and hub copy are aligned to Philadelphia valet search intent without repeating boilerplate
 - A machine-readable keyword map assigns a distinct primary phrase and two supporting phrases to each of the 19 indexable pages; the SEO regression verifies natural visible usage and complete map coverage
+- Service and location hubs now provide substantial selection and coverage guidance; service detail pages contain 609–689 visible words and location detail pages contain 728–756 visible words
+- Each service detail explains four plan-shaping factors and answers at least four service-specific questions; each location detail explains four local operating conditions and answers at least three area-specific questions
 - XML sitemap contains all 19 canonical URLs, accurate release modification dates, and image entries where a page has a primary photograph
 - Human sitemap uses descriptive anchor text and covers every canonical public route
 - Structured data uses factual `Organization`, `WebSite`, page-type, breadcrumb, service, and FAQ entities without inventing an address, phone number, ratings, or hours
 - Open Graph and X cards include page-specific alternative text and image dimensions
-- `npm run verify` performs the build plus SEO and square-corner regressions; all current checks pass
+- `npm run verify` performs the build plus SEO, square-corner, and content-depth regressions; all current checks pass
 - Local Git repository is initialized on `main`
 - GitHub repository: `redpath1/valet-philadelphia`
 - Cloudflare Worker configuration: `wrangler.jsonc`, using the `dist` static asset build

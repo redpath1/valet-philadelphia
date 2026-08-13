@@ -93,6 +93,27 @@ const schema = [
     </div>
   </section>
 
+  <section class="site-frame section-gap" aria-labelledby="planning-factors-title">
+    <div class="panel section-pad">
+      <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+        <div>
+          <p class="eyebrow">Plan-shaping factors</p>
+          <h2 id="planning-factors-title" class="section-title mt-6">What changes the crew, route, and handoff.</h2>
+          <p class="mt-6 text-ink/65">These details turn a service category into an operating plan for the property. They are resolved before staffing is finalized.</p>
+        </div>
+        <div class="grid gap-px border border-line bg-line sm:grid-cols-2">
+          {service.planningFactors.map((factor, index) => (
+            <article data-planning-factor class="bg-paper p-6 sm:p-8">
+              <span class="text-xs font-extrabold text-brick">0{index + 1}</span>
+              <h3 class="card-title mt-8">{factor.title}</h3>
+              <p class="mt-4 text-sm text-ink/66">{factor.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="site-frame section-gap" aria-labelledby="service-process-title">
     <div class="panel panel-dark section-pad">
       <div class="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">
@@ -119,7 +140,8 @@ const schema = [
       <div class="grid gap-12 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
         <div>
           <p class="eyebrow">Questions about {service.shortTitle.toLowerCase()}</p>
-          <h2 id="service-faq-title" class="section-title mt-6">Plan the details that change the shift.</h2>
+          <h2 id="service-faq-title" class="section-title mt-6">Questions to resolve before service.</h2>
+          <p class="mt-6 text-ink/64">The answers establish what is known, what still requires a site review, and which property contacts should join the planning conversation.</p>
           <a href="/faq/" class="button-secondary mt-8">All valet FAQs<Arrow /></a>
         </div>
         <FAQList items={service.faqs} />

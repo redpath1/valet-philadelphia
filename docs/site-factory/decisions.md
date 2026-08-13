@@ -22,3 +22,5 @@
 - Use square corners across every interface surface and brand asset. Reason: this follows the requested visual direction and gives the contained editorial system a sharper architectural character.
 - Maintain page-level search intent in `src/data/seo-keywords.json`, with one unique primary phrase and two supporting phrases for every indexable route. Reason: explicit ownership prevents page cannibalization while keeping copy reviewable and natural.
 - Do not add a `meta keywords` tag or repeat exact-match phrases mechanically. Reason: modern search discovery is better served by useful visible content, clear titles and headings, internal links, and factual structured data.
+- Set the service and location detail-page content floor at 600 visible main-content words, with required explained planning items and page-specific questions. Reason: the guardrail prevents thin pages, while the structural requirements discourage padding words without visitor value.
+- Keep the hub-page content floor lower at 450 words. Reason: hubs should help visitors compare and choose without duplicating the full detail content.
