@@ -2,12 +2,11 @@
 
 ## Current Phase
 
-Deployment verification in progress
+Complete and deployed
 
 ## Next
 
 - Confirm the production email mailbox and coverage claims
-- Verify that a push to `main` triggers a production deploy
 
 ## Done
 
@@ -24,6 +23,7 @@ Deployment verification in progress
 - Created and pushed `redpath1/valet-philadelphia` over SSH
 - Connected `main` to Cloudflare Workers Builds
 - Completed the first production Worker build at `https://valet-philadelphia.evans-keith.workers.dev`
+- Verified that SSH push commit `e06876d` triggered and completed an automatic production build
 
 ## Launch Confirmations
 
@@ -42,4 +42,4 @@ Deployment verification in progress
 - [x] Keyboard navigation and reduced-motion behavior pass
 - [x] Metadata, schema, sitemap.xml, robots.txt, HTML sitemap, and llms.txt pass
 - [x] Cloudflare Workers Static Assets project configuration is complete
-- [ ] Git-triggered Cloudflare production deploy is verified
+- [x] Git-triggered Cloudflare production deploy is verified

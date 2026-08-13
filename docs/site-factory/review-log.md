@@ -18,3 +18,4 @@
 | Accessibility | Shared components | Desktop and mobile | Skip link, visible focus, semantic regions, labeled form controls, reduced-motion support, and native FAQ disclosures verified | Complete |
 | Deployment config | Full site | Cloudflare Workers Static Assets | Wrangler project targets `dist`, uses 404-page handling, and pins the Worker name to `valet-philadelphia` | Complete |
 | Production deploy | Full site | Cloudflare Workers Builds | GitHub repository cloned, dependencies installed with 0 vulnerabilities, 21 pages built, 31 changed assets uploaded, and the Worker returned HTTP 200 | Complete |
+| Git rebuild | Commit `e06876d` | GitHub SSH → Cloudflare Workers Builds | Push to `main` triggered build `d71c1443`, which completed successfully and updated the production Worker | Complete |
