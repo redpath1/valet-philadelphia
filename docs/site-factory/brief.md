@@ -67,6 +67,6 @@
 
 ## Assumptions
 
-- Final domain is `https://valetphiladelphia.com` and can be changed in one config file
+- Production domain is `https://valetparkingphiladelphia.com`, verified as an active Cloudflare zone in the owner's account
 - Coverage pages reflect the requested local SEO approach and should be confirmed against the company's actual operating area before launch
 - Business phone, email, street address, operating history, credentials, and form endpoint were not supplied, so the site does not invent them

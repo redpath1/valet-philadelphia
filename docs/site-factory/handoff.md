@@ -14,6 +14,8 @@
 - Configured the local `origin` as `git@github.com:redpath1/valet-philadelphia.git` and verified an SSH push
 - Connected the repository to Cloudflare Workers Builds and completed the first production deploy
 - Verified an automatic production rebuild from SSH push commit `e06876d`
+- Connected `valetparkingphiladelphia.com` and `www.valetparkingphiladelphia.com` to the Worker
+- Updated the Astro and shared site canonical URL to `https://valetparkingphiladelphia.com`
 
 ## Main Files
 
@@ -45,7 +47,6 @@
 
 - Confirm or replace `hello@valetphiladelphia.com`
 - Confirm all service-area municipalities and coverage language
-- Confirm the final production domain in `astro.config.mjs` and `src/data/site.ts`
 - Decide whether to retain the email-preparation form or connect a server-side form provider
 - Confirm the production email and coverage language before advertising the site
 
@@ -55,6 +56,8 @@
 - Repository: `redpath1/valet-philadelphia`
 - Production branch: `main`
 - Live endpoint: `https://valet-philadelphia.evans-keith.workers.dev`
+- Production domain: `https://valetparkingphiladelphia.com`
+- Additional hostname: `https://www.valetparkingphiladelphia.com`
 - Build command: `npm run build`
 - Deploy command: `npx wrangler deploy`
 - Static assets directory: `dist`

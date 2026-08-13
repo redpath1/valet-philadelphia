@@ -13,5 +13,6 @@
 - Cloudflare Worker configuration: `wrangler.jsonc`, using the `dist` static asset build
 - Production deployment target: Cloudflare Workers Builds connected to GitHub `main`
 - Live Worker endpoint: `https://valet-philadelphia.evans-keith.workers.dev`
+- Production domain: `https://valetparkingphiladelphia.com`; root and `www` are connected to the Worker
 - Local `origin` uses SSH and `main` tracks `origin/main`
 - Next best action after deployment: confirm the business email and coverage claims before directing paid or organic traffic to the site

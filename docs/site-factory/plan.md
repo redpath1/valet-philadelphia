@@ -24,6 +24,8 @@ Complete and deployed
 - Connected `main` to Cloudflare Workers Builds
 - Completed the first production Worker build at `https://valet-philadelphia.evans-keith.workers.dev`
 - Verified that SSH push commit `e06876d` triggered and completed an automatic production build
+- Verified `valetparkingphiladelphia.com` as the matching active Cloudflare zone and connected both the root and `www` hostnames to the Worker
+- Updated the site canonical URL to `https://valetparkingphiladelphia.com`
 
 ## Launch Confirmations
 
@@ -43,3 +45,4 @@ Complete and deployed
 - [x] Metadata, schema, sitemap.xml, robots.txt, HTML sitemap, and llms.txt pass
 - [x] Cloudflare Workers Static Assets project configuration is complete
 - [x] Git-triggered Cloudflare production deploy is verified
+- [x] Production custom domain is connected to the Worker

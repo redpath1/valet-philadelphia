@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: 'Valet Philadelphia, LLC',
   shortName: 'Valet Philadelphia',
-  domain: 'valetphiladelphia.com',
-  url: 'https://valetphiladelphia.com',
+  domain: 'valetparkingphiladelphia.com',
+  url: 'https://valetparkingphiladelphia.com',
   email: 'hello@valetphiladelphia.com',
   primaryCta: 'Request a parking plan',
   description:

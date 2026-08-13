@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://valetphiladelphia.com',
+  site: 'https://valetparkingphiladelphia.com',
   output: 'static',
   trailingSlash: 'always',
   vite: {

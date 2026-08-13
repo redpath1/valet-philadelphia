@@ -41,7 +41,7 @@ Business facts that were not supplied were not invented. Confirm these items bef
 1. Replace `hello@valetphiladelphia.com` in `src/data/site.ts` if that mailbox is not active.
 2. Confirm the service areas and municipality examples in `src/data/locations.ts`.
 3. Confirm service descriptions and operating policies in `src/data/services.ts`.
-4. Confirm the production domain in both `astro.config.mjs` and `src/data/site.ts`.
+4. The production domain is `https://valetparkingphiladelphia.com`; update both `astro.config.mjs` and `src/data/site.ts` if it ever changes.
 5. Add a phone number or business address only if the company wants them public.
 6. Replace the email-preparation contact flow with a form provider later if server-side lead capture is preferred.
 
@@ -61,6 +61,7 @@ Dynamic service and location pages are generated from their data files, so a con
 Production is configured around the `main` branch of `redpath1/valet-philadelphia`.
 
 - GitHub: `https://github.com/redpath1/valet-philadelphia`
+- Production domain: `https://valetparkingphiladelphia.com`
 - Cloudflare Worker: `https://valet-philadelphia.evans-keith.workers.dev`
 
 Cloudflare Workers Builds settings:
