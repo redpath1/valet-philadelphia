@@ -16,7 +16,7 @@ const { items } = Astro.props;
     <details class="faq-item py-5 sm:py-6">
       <summary class="grid grid-cols-[1fr_auto] items-start gap-6 text-left">
         <span class="max-w-3xl text-lg font-bold tracking-[-0.02em] sm:text-xl">{item.question}</span>
-        <span class="faq-plus grid h-8 w-8 place-items-center rounded-full bg-signal text-xl leading-none text-navy-deep" aria-hidden="true">+</span>
+        <span class="faq-plus grid h-8 w-8 place-items-center bg-signal text-xl leading-none text-navy-deep" aria-hidden="true">+</span>
       </summary>
       <p class="mt-4 max-w-3xl pr-12 text-ink/68">{item.answer}</p>
     </details>

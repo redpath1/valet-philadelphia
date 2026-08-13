@@ -6,10 +6,13 @@ import ServiceCard from '../../components/ServiceCard.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { services } from '../../data/services';
 import { siteConfig } from '../../data/site';
+import { getKeywordTarget, keywordLabel } from '../../lib/seo-keywords';
+
+const seo = getKeywordTarget('/services/');
 ---
 
 <BaseLayout
-  title="Valet Parking Services in Philadelphia"
+  title={keywordLabel(seo.primaryKeyword)}
   description="Compare event, restaurant, wedding, hotel, and healthcare valet parking plus parking management services in Philadelphia and nearby communities."
   canonicalPath="/services/"
   image="/images/event-valet-team.webp"
@@ -29,10 +32,10 @@ import { siteConfig } from '../../data/site';
         <div>
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />
           <p class="eyebrow mt-8">Service hub</p>
-          <h1 id="services-page-title" class="display-title mt-7 max-w-[12ch]">Valet parking services built around the <em class="text-brick">site.</em></h1>
+          <h1 id="services-page-title" class="display-title mt-7 max-w-[12ch]">{keywordLabel(seo.primaryKeyword)}, built around the <em class="text-brick">site.</em></h1>
         </div>
         <div>
-          <p class="body-large text-ink/70">The uniform is only one part of the service. The useful work begins with the curb, the parking route, the timing, and the handoffs guests never need to think about.</p>
+          <p class="body-large text-ink/70">The work includes one-time event operations, {seo.supportingKeywords[0]}, and {seo.supportingKeywords[1]}. Each service begins with the curb, parking route, timing, and guest handoffs.</p>
           <a href="#service-list" class="button-secondary mt-7">Choose a service<Arrow direction="down" /></a>
         </div>
       </div>

@@ -4,17 +4,19 @@
 - 21 generated pages, including all requested hubs and individual service and location routes
 - Shared service and location data drives the page content, internal links, sitemap, and llms.txt
 - Every major section is contained inside the 1480-pixel site frame
+- All interface and brand geometry uses square corners; a source audit and computed-style browser checks guard against rounded treatments
 - Five original photorealistic valet images are optimized as WebP files in `public/images/`
 - No testimonials and no unsupported operating history, ratings, certifications, price, response time, phone number, or street address
 - Contact form prepares a reviewable email to the centralized address in `src/data/site.ts`
 - Published contact address: `hello@valetparkingphiladelphia.com`, aligned with the production domain
 - 19 indexable pages and two non-index pages are generated; the noindex pages are excluded from both sitemaps
 - Page titles, descriptions, H1s, and hub copy are aligned to Philadelphia valet search intent without repeating boilerplate
+- A machine-readable keyword map assigns a distinct primary phrase and two supporting phrases to each of the 19 indexable pages; the SEO regression verifies natural visible usage and complete map coverage
 - XML sitemap contains all 19 canonical URLs, accurate release modification dates, and image entries where a page has a primary photograph
 - Human sitemap uses descriptive anchor text and covers every canonical public route
 - Structured data uses factual `Organization`, `WebSite`, page-type, breadcrumb, service, and FAQ entities without inventing an address, phone number, ratings, or hours
 - Open Graph and X cards include page-specific alternative text and image dimensions
-- `npm run verify` performs the build and the SEO regression; all current checks pass
+- `npm run verify` performs the build plus SEO and square-corner regressions; all current checks pass
 - Local Git repository is initialized on `main`
 - GitHub repository: `redpath1/valet-philadelphia`
 - Cloudflare Worker configuration: `wrangler.jsonc`, using the `dist` static asset build

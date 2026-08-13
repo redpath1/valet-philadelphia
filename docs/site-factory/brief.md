@@ -14,6 +14,7 @@
 - Content hierarchy reference: All About Parking
 - Original implementation, copy, tokens, and imagery only
 - Editorial layout with a high-contrast serif display face and restrained sans-serif body type
+- Square geometry throughout: no rounded cards, buttons, navigation, form controls, labels, or brand containers
 - Every major section sits inside a visible max-width frame. No edge-to-edge content bands
 - Documentary-style valet photography in mixed light, mostly direct daylight, with uniformed attendants and real street or venue texture
 - About page uses a light background and limited photography
@@ -53,6 +54,7 @@
 ## SEO And Discoverability
 
 - Unique titles, descriptions, canonicals, social metadata, and visible local content
+- One documented primary search phrase plus supporting phrases for every indexable page, used in visible copy without keyword stuffing
 - LocalBusiness and service schema only where visible content supports it
 - Service and location detail pages use distinct copy and internal links
 - XML sitemap, HTML sitemap, robots.txt, and llms.txt share one route inventory

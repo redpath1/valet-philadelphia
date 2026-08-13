@@ -19,3 +19,6 @@
 - Keep the Cloudflare Worker name aligned with the Wrangler project name: `valet-philadelphia`. Reason: Workers Builds uses the Wrangler configuration as the deployment source of truth.
 - Use `https://valetparkingphiladelphia.com` as the canonical production URL and connect both the root and `www` hostnames to the Worker. Reason: this is the matching active Philadelphia valet zone in the owner's Cloudflare account.
 - Publish `hello@valetparkingphiladelphia.com` as the contact address. Reason: it preserves the existing `hello` convention while matching the verified production domain.
+- Use square corners across every interface surface and brand asset. Reason: this follows the requested visual direction and gives the contained editorial system a sharper architectural character.
+- Maintain page-level search intent in `src/data/seo-keywords.json`, with one unique primary phrase and two supporting phrases for every indexable route. Reason: explicit ownership prevents page cannibalization while keeping copy reviewable and natural.
+- Do not add a `meta keywords` tag or repeat exact-match phrases mechanically. Reason: modern search discovery is better served by useful visible content, clear titles and headings, internal links, and factual structured data.

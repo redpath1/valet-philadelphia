@@ -12,6 +12,8 @@ A static marketing and local-discovery website for a Philadelphia valet parking 
 - Descriptive human-readable sitemap plus an XML sitemap with accurate modification dates and image entries
 - Unique page metadata, canonical links, complete social previews, and supported page-level JSON-LD
 - Responsive navigation and layouts
+- Square-corner design across navigation, cards, buttons, forms, labels, and brand assets
+- A documented primary/supporting keyword map for all 19 indexable pages
 - Provider-neutral contact flow that prepares an email in the visitor's email app
 - Cloudflare Static Assets security and cache headers
 
@@ -32,9 +34,11 @@ Astro will print the local preview address. Open that address in a browser.
 npm run verify
 ```
 
-The command checks the Astro and TypeScript files, generates the static site in `dist/`, and audits all built pages. The SEO audit verifies unique titles and descriptions, preferred-host canonicals, one H1 per page, Open Graph and X metadata, parseable JSON-LD, robots and sitemap alignment, HTML sitemap coverage, modification dates, image sitemap entries, and image weights.
+The command checks the Astro and TypeScript files, generates the static site in `dist/`, and audits all built pages. The SEO audit verifies unique titles and descriptions, preferred-host canonicals, one H1 per page, keyword-map coverage and visible usage, Open Graph and X metadata, parseable JSON-LD, robots and sitemap alignment, HTML sitemap coverage, modification dates, image sitemap entries, and image weights. The design audit prevents rounded Tailwind treatments, nonzero CSS corner radii, and SVG corner radii from returning.
 
 Run only the SEO regression against an existing `dist/` build with `npm run audit:seo`.
+
+Run only the square-corner source regression with `npm run audit:design`.
 
 ## Important Launch Edits
 
@@ -53,6 +57,7 @@ Business facts that were not supplied were not invented. Confirm these items bef
 - Company settings and navigation: `src/data/site.ts`
 - Service pages: `src/data/services.ts`
 - Location pages: `src/data/locations.ts`
+- Page keyword ownership: `src/data/seo-keywords.json` and `docs/site-factory/keyword-map.md`
 - Global colors, type, spacing, and components: `src/styles/global.css`
 - Original website photos: `public/images/`
 - Shared header and footer: `src/components/`

@@ -7,7 +7,8 @@
     "dev": "astro dev",
     "build": "astro check && astro build",
     "audit:seo": "node scripts/seo-audit.mjs",
-    "verify": "npm run build && npm run audit:seo",
+    "audit:design": "node scripts/design-audit.mjs",
+    "verify": "npm run build && npm run audit:seo && npm run audit:design",
     "preview": "astro preview",
     "check": "astro check",
     "deploy": "npm run build && wrangler deploy"

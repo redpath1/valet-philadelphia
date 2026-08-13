@@ -5,6 +5,9 @@ import FAQList from '../components/FAQList.astro';
 import QuoteCta from '../components/QuoteCta.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteConfig } from '../data/site';
+import { getKeywordTarget } from '../lib/seo-keywords';
+
+const seo = getKeywordTarget('/faq/');
 
 const planningFaqs = [
   { question: 'How far in advance should I request valet service?', answer: 'Request service as soon as the venue, date, expected volume, and parking arrangement are known. More lead time allows a proper site review and coordination with the venue, planner, property team, or local stakeholders.' },
@@ -46,7 +49,7 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout
-  title="Philadelphia Valet Parking FAQ"
+  title={seo.primaryKeyword}
   description="Answers about valet staffing, site reviews, key control, event and recurring service, weather, accessible arrivals, and Philadelphia-area coverage."
   canonicalPath="/faq/"
   pageType="FAQPage"
@@ -59,10 +62,10 @@ const breadcrumbSchema = {
         <div>
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'FAQ' }]} />
           <p class="eyebrow mt-8">Frequently asked questions</p>
-          <h1 id="faq-page-title" class="display-title mt-7 max-w-[12ch]">Philadelphia valet parking questions, <em class="text-brick">answered.</em></h1>
+          <h1 id="faq-page-title" class="display-title mt-7 max-w-[12ch]">{seo.primaryKeyword}: practical questions <em class="text-brick">answered.</em></h1>
         </div>
         <div>
-          <p class="body-large text-ink/70">Valet planning is specific to the property, but the same practical questions appear early. Start here, then bring the address and operating details.</p>
+          <p class="body-large text-ink/70">Valet planning is specific to the property, but the same questions about {seo.supportingKeywords[0]}, {seo.supportingKeywords[1]}, traffic, and weather appear early. Start here, then bring the address and operating details.</p>
           <a href="#planning" class="button-secondary mt-7">Read the answers<Arrow direction="down" /></a>
         </div>
       </div>

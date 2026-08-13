@@ -7,6 +7,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getLocation, locations, type Location } from '../../data/locations';
 import { services } from '../../data/services';
 import { siteConfig } from '../../data/site';
+import { getKeywordTarget, keywordLabel } from '../../lib/seo-keywords';
 
 export function getStaticPaths() {
   return locations.map((location) => ({ params: { slug: location.slug }, props: { location } }));
@@ -17,6 +18,8 @@ const nearbyLocations = location.nearby
   .map((slug) => getLocation(slug))
   .filter((item): item is Location => Boolean(item));
 const pageUrl = `${siteConfig.url}/locations/${location.slug}/`;
+const pagePath = `/locations/${location.slug}/`;
+const seo = getKeywordTarget(pagePath);
 const schema = [
   {
     '@type': 'Service',
@@ -41,14 +44,14 @@ const schema = [
 ];
 ---
 
-<BaseLayout title={`Valet Parking in ${location.name}`} description={location.seoDescription} canonicalPath={`/locations/${location.slug}/`} image={location.image} imageAlt={location.imageAlt} pageType="ItemPage" pageSchema={{ mainEntity: { '@id': `${pageUrl}#service` } }} schema={schema}>
+<BaseLayout title={keywordLabel(seo.primaryKeyword)} description={location.seoDescription} canonicalPath={pagePath} image={location.image} imageAlt={location.imageAlt} pageType="ItemPage" pageSchema={{ mainEntity: { '@id': `${pageUrl}#service` } }} schema={schema}>
   <section class="site-frame section-gap" aria-labelledby="location-title">
     <div class="panel grid bg-paper lg:grid-cols-[0.94fr_1.06fr]">
       <div class="section-pad flex flex-col justify-between gap-14">
         <div>
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Locations', href: '/locations/' }, { label: location.name }]} />
           <p class="eyebrow mt-10">{location.region}</p>
-          <h1 id="location-title" class="display-title mt-7 max-w-[12ch]">Valet parking in <em class="text-brick">{location.name}.</em></h1>
+          <h1 id="location-title" class="display-title mt-7 max-w-[12ch]">{keywordLabel(seo.primaryKeyword)}.</h1>
           <p class="body-large mt-7 text-ink/68">{location.intro}</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="/contact/" class="button-primary">Check this location<Arrow /></a>
@@ -91,7 +94,7 @@ const schema = [
           <h2 id="areas-title" class="section-title mt-6">Places represented on this page.</h2>
           <p class="mt-6 text-ink/64">The list helps visitors orient around {location.name}. It does not replace a coverage check for the exact service address.</p>
           <div class="mt-8 flex flex-wrap gap-2">
-            {location.areas.map((area) => <span class="rounded-full border border-line bg-mist px-4 py-2 text-sm font-semibold">{area}</span>)}
+            {location.areas.map((area) => <span class="border border-line bg-mist px-4 py-2 text-sm font-semibold">{area}</span>)}
           </div>
         </div>
         <div>

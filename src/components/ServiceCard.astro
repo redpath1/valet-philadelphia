@@ -10,7 +10,7 @@ interface Props {
 const { service, index = 0 } = Astro.props;
 ---
 
-<article class="group grid min-h-full overflow-hidden rounded-[1.5rem] border border-line bg-paper">
+<article class="group grid min-h-full overflow-hidden border border-line bg-paper">
   <a href={`/services/${service.slug}/`} class="relative block aspect-[4/3] overflow-hidden no-underline" aria-label={`Explore ${service.title}`}>
     <img
       src={service.image}
@@ -21,7 +21,7 @@ const { service, index = 0 } = Astro.props;
       decoding="async"
       class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
     />
-    <span class="absolute top-4 left-4 rounded-full bg-paper/92 px-3 py-1.5 text-[0.68rem] font-extrabold tracking-[0.12em] text-navy uppercase">0{index + 1}</span>
+    <span class="absolute top-4 left-4 bg-paper/92 px-3 py-1.5 text-[0.68rem] font-extrabold tracking-[0.12em] text-navy uppercase">0{index + 1}</span>
   </a>
   <div class="flex flex-col p-5 sm:p-7">
     <p class="eyebrow">{service.eyebrow}</p>

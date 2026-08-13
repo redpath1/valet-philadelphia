@@ -5,7 +5,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const sampleFaqs = [
   { question: 'What does a standard disclosure look like?', answer: 'It uses plain language, visible hierarchy, and enough contrast to work without relying on motion or color alone.' },
-  { question: 'How are contained sections handled?', answer: 'Every section sits within the shared site frame and uses the panel radius, border, and internal spacing tokens.' },
+  { question: 'How are contained sections handled?', answer: 'Every section sits within the shared site frame and uses square panel edges, borders, and internal spacing tokens.' },
 ];
 ---
 
@@ -33,7 +33,7 @@ const sampleFaqs = [
           ['Ink', 'bg-ink text-white', '#101B24'],
           ['Mist', 'bg-mist', '#E2E8E8'],
         ].map(([name, classes, value]) => (
-          <div class={`rounded-[1.25rem] border border-line p-5 ${classes}`}>
+          <div class={`border border-line p-5 ${classes}`}>
             <strong>{name}</strong>
             <span class="mt-8 block text-xs opacity-60">{value}</span>
           </div>

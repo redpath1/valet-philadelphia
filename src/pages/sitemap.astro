@@ -4,10 +4,13 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { routesByGroup } from '../lib/routes';
 import { siteConfig } from '../data/site';
+import { getKeywordTarget } from '../lib/seo-keywords';
+
+const seo = getKeywordTarget('/sitemap/');
 ---
 
 <BaseLayout
-  title="Valet Philadelphia HTML Sitemap"
+  title={seo.primaryKeyword}
   description="Browse every public page on the Valet Philadelphia website, including services, locations, planning answers, and contact information."
   canonicalPath="/sitemap/"
   pageType="CollectionPage"
@@ -24,7 +27,7 @@ import { siteConfig } from '../data/site';
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Sitemap' }]} />
       <p class="eyebrow mt-8">Human-readable sitemap</p>
       <h1 id="sitemap-title" class="display-title mt-7 max-w-[11ch]">Every useful page, in one <em class="text-brick">place.</em></h1>
-      <p class="body-large mt-7 text-ink/68">Browse the main site, compare valet services, or open a local planning page for Philadelphia and nearby areas.</p>
+      <p class="body-large mt-7 text-ink/68">Browse the main site, compare {seo.supportingKeywords[0]}, or open one of the local {seo.supportingKeywords[1]} for Philadelphia and nearby areas.</p>
     </div>
   </section>
 

@@ -19,6 +19,9 @@
 | Structured data | Full site | Built HTML | Factual Organization and WebSite entities plus page-type, breadcrumb, Service, and FAQ relationships parse successfully; no unsupported local-business facts added | Complete |
 | Canonical host | `www` and root domain | Live HTTP | `www` returns 301 to the root domain and retains the full path and query string; root returns 200 | Complete |
 | SEO regression | Full static output | `npm run audit:seo` | 19 indexable pages, 21 HTML files, 19 sitemap URLs, and five WebP images pass automated checks | Complete |
+| Keyword mapping | 19 indexable pages | Built HTML | Every page has a unique primary target plus two supporting phrases; mapped phrases appear naturally in prominent and visible copy, including all six location pages | Complete |
+| Square geometry | 32 source assets | Source audit | No rounded Tailwind utilities, nonzero CSS corner radii, or SVG corner radii remain | Complete |
+| Responsive geometry | Home, hubs, details, About, Contact, FAQ | 1440 x 1000 and 390 x 844 | Computed styles report zero rounded elements and representative pages have no horizontal overflow | Complete |
 | Visual regression | Locations hub and dark home panel | Desktop | Corrected shared panel-background specificity so white text renders on the intended navy surfaces; inverse breadcrumbs verified | Complete |
 | Images | Five original photographs | WebP output | All images load; optimized set is under 1 MB and the full static build is about 1.5 MB | Complete |
 | Accessibility | Shared components | Desktop and mobile | Skip link, visible focus, semantic regions, labeled form controls, reduced-motion support, and native FAQ disclosures verified | Complete |

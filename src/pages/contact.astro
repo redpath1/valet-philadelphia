@@ -4,10 +4,13 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { services } from '../data/services';
 import { siteConfig } from '../data/site';
+import { getKeywordTarget, keywordLabel } from '../lib/seo-keywords';
+
+const seo = getKeywordTarget('/contact/');
 ---
 
 <BaseLayout
-  title="Request Philadelphia Valet Parking"
+  title={keywordLabel(seo.primaryKeyword)}
   description="Request valet parking in Philadelphia for an event, wedding, restaurant, hotel, healthcare property, or recurring parking operation."
   canonicalPath="/contact/"
   image="/images/valet-team-briefing.webp"
@@ -26,8 +29,8 @@ import { siteConfig } from '../data/site';
       <div class="section-pad bg-navy-deep text-white">
         <Breadcrumbs inverse items={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
         <p class="eyebrow mt-8">Contact Valet Philadelphia</p>
-        <h1 id="contact-title" class="display-title mt-7 max-w-[10ch]">Request Philadelphia valet parking for your <em class="text-signal">entrance.</em></h1>
-        <p class="body-large mt-7 text-white/66">Share the site, timing, vehicle estimate, and parking arrangement. You do not need to know the final staffing number before reaching out.</p>
+        <h1 id="contact-title" class="display-title mt-7 max-w-[10ch]">{keywordLabel(seo.primaryKeyword)} for your <em class="text-signal">entrance.</em></h1>
+        <p class="body-large mt-7 text-white/66">To make a {seo.supportingKeywords[0]}, share the site, timing, vehicle estimate, and parking arrangement. You do not need a final staffing number before asking for a {seo.supportingKeywords[1]}.</p>
 
         <div class="mt-12 border-t border-white/14 pt-6">
           <p class="text-xs font-bold tracking-[0.14em] text-white/42 uppercase">Direct email</p>
@@ -37,7 +40,7 @@ import { siteConfig } from '../data/site';
         <div class="mt-10">
           <p class="text-xs font-bold tracking-[0.14em] text-white/42 uppercase">Helpful first details</p>
           <ul class="rule-list mt-4 border-t border-white/14 p-0 text-sm text-white/72" role="list">
-            {['Service address', 'Date or recurring schedule', 'Expected vehicles or guest count', 'Arrival and departure window', 'Known parking or storage area'].map((item) => <li class="flex gap-3 py-3"><span class="mt-2 h-2 w-2 flex-none rounded-full bg-signal"></span>{item}</li>)}
+            {['Service address', 'Date or recurring schedule', 'Expected vehicles or guest count', 'Arrival and departure window', 'Known parking or storage area'].map((item) => <li class="flex gap-3 py-3"><span class="mt-2 h-2 w-2 flex-none bg-signal"></span>{item}</li>)}
           </ul>
         </div>
       </div>
@@ -106,7 +109,7 @@ import { siteConfig } from '../data/site';
             <span>I understand this will open my email app so I can review and send the request. <span class="text-brick">*</span></span>
           </label>
 
-          <div id="form-error" class="hidden rounded-xl border border-brick/25 bg-brick/8 p-4 text-sm font-semibold text-brick" role="alert"></div>
+          <div id="form-error" class="hidden border border-brick/25 bg-brick/8 p-4 text-sm font-semibold text-brick" role="alert"></div>
 
           <button type="submit" class="button-primary justify-self-start">Prepare my request<Arrow /></button>
         </form>
@@ -127,7 +130,7 @@ import { siteConfig } from '../data/site';
             ['02', 'Resolve the site questions', 'Handoff point, pedestrian path, storage route, permissions, and peak conditions.'],
             ['03', 'Shape the operating plan', 'Staff posts, key controls, communication, overflow, weather, and closing checks.'],
           ].map(([number, title, body]) => (
-            <li class="rounded-[1.3rem] border border-navy/12 bg-paper/60 p-6">
+            <li class="border border-navy/12 bg-paper/60 p-6">
               <span class="text-xs font-extrabold text-brick">{number}</span>
               <h3 class="mt-8 text-lg font-bold">{title}</h3>
               <p class="mt-3 text-sm text-ink/62">{body}</p>

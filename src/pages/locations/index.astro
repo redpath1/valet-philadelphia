@@ -6,10 +6,13 @@ import QuoteCta from '../../components/QuoteCta.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { locations } from '../../data/locations';
 import { siteConfig } from '../../data/site';
+import { getKeywordTarget } from '../../lib/seo-keywords';
+
+const seo = getKeywordTarget('/locations/');
 ---
 
 <BaseLayout
-  title="Philadelphia Valet Parking Service Areas"
+  title={seo.primaryKeyword}
   description="Explore valet parking service areas in Philadelphia, Center City, the Main Line, King of Prussia, Bucks County, and South Jersey."
   canonicalPath="/locations/"
   image="/images/valet-hero-philadelphia.webp"
@@ -28,13 +31,13 @@ import { siteConfig } from '../../data/site';
       <div class="section-pad flex flex-col justify-center">
         <Breadcrumbs inverse items={[{ label: 'Home', href: '/' }, { label: 'Locations' }]} />
         <p class="eyebrow mt-8">Locations hub</p>
-        <h1 id="locations-page-title" class="display-title mt-7 max-w-[11ch]">Philadelphia valet parking service <em class="text-signal">areas.</em></h1>
-        <p class="body-large mt-7 text-white/66">Philadelphia is not one parking condition. Dense blocks, private drives, regional venues, garages, and remote lots each need a different operating plan.</p>
+        <h1 id="locations-page-title" class="display-title mt-7 max-w-[11ch]">{seo.primaryKeyword}.</h1>
+        <p class="body-large mt-7 text-white/66">Compare {seo.supportingKeywords[0]} across dense blocks, private drives, regional venues, garages, and remote lots. {seo.supportingKeywords[1][0].toUpperCase() + seo.supportingKeywords[1].slice(1)} is confirmed from the exact address and operating plan.</p>
         <a href="#location-list" class="button-light mt-8 self-start">Find your area<Arrow direction="down" /></a>
       </div>
       <div class="relative min-h-[34rem] overflow-hidden border-t border-white/12 lg:min-h-[46rem] lg:border-t-0 lg:border-l">
         <img src="/images/valet-hero-philadelphia.webp" alt="Valet service at a Philadelphia curb in direct afternoon light" width="1800" height="1200" fetchpriority="high" class="absolute inset-0 h-full w-full object-cover" />
-        <div class="absolute right-4 bottom-4 left-4 rounded-[1.15rem] border border-white/20 bg-navy-deep/88 p-5 backdrop-blur-sm sm:left-auto sm:max-w-sm">
+        <div class="absolute right-4 bottom-4 left-4 border border-white/20 bg-navy-deep/88 p-5 backdrop-blur-sm sm:left-auto sm:max-w-sm">
           <p class="text-xs font-bold tracking-[0.14em] text-signal uppercase">Coverage check</p>
           <p class="mt-2 text-sm text-white/72">Do not see your municipality listed? Share the address and service date. Coverage and travel details are confirmed with each request.</p>
         </div>
@@ -64,7 +67,7 @@ import { siteConfig } from '../../data/site';
           <p class="eyebrow">What location changes</p>
           <h2 id="location-method-title" class="section-title mt-6">Distance is only one part of the map.</h2>
         </div>
-        <div class="grid gap-px overflow-hidden rounded-[1.4rem] border border-navy/15 bg-navy/15 sm:grid-cols-2">
+        <div class="grid gap-px overflow-hidden border border-navy/15 bg-navy/15 sm:grid-cols-2">
           {[
             ['The handoff', 'Curb width, private drive geometry, loading activity, and pedestrian access define where guests should stop.'],
             ['The storage route', 'A nearby garage, remote lot, field, or street arrangement changes cycle time and staffing.'],

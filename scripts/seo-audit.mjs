@@ -5,6 +5,7 @@ const root = resolve(process.cwd());
 const dist = join(root, 'dist');
 const canonicalOrigin = 'https://valetparkingphiladelphia.com';
 const issues = [];
+const keywordTargets = JSON.parse(await readFile(join(root, 'src', 'data', 'seo-keywords.json'), 'utf8'));
 
 const walk = async (directory) => {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -18,6 +19,15 @@ const walk = async (directory) => {
 const matchOne = (html, pattern) => html.match(pattern)?.[1]?.trim() ?? '';
 const count = (html, pattern) => [...html.matchAll(pattern)].length;
 const add = (path, message) => issues.push(`${path}: ${message}`);
+const normalize = (value) => value
+  .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+  .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+  .replace(/<[^>]+>/g, ' ')
+  .replace(/&amp;/g, '&')
+  .replace(/&#39;/g, "'")
+  .replace(/\s+/g, ' ')
+  .trim()
+  .toLowerCase();
 
 const htmlFiles = (await walk(dist)).filter((path) => path.endsWith('.html'));
 const indexablePages = [];
@@ -45,6 +55,7 @@ for (const file of htmlFiles) {
   if (!/property="og:title"/i.test(html) || !/property="og:description"/i.test(html) || !/property="og:image"/i.test(html)) add(path, 'incomplete Open Graph metadata');
   if (!/name="twitter:card"/i.test(html) || !/name="twitter:image:alt"/i.test(html)) add(path, 'incomplete X/Twitter metadata');
   if (!noindex && jsonLdBlocks.length === 0) add(path, 'missing JSON-LD');
+  if (/<meta\s+name="keywords"/i.test(html)) add(path, 'contains an unsupported meta keywords tag');
 
   for (const [, json] of jsonLdBlocks) {
     try { JSON.parse(json); } catch { add(path, 'invalid JSON-LD'); }
@@ -64,6 +75,36 @@ const sitemapUrls = [...sitemap.matchAll(/<loc>(https:\/\/valetparkingphiladelph
   .map((match) => match[1])
   .filter((url) => !url.includes('/images/'));
 const canonicalUrls = indexablePages.map(({ canonical }) => canonical).filter(Boolean);
+
+const keywordPaths = keywordTargets.map(({ path }) => path);
+const primaryKeywords = new Set();
+for (const target of keywordTargets) {
+  if (!target.primaryKeyword || target.supportingKeywords.length < 2) add('seo-keywords.json', `incomplete keyword target for ${target.path}`);
+  const normalizedPrimary = target.primaryKeyword.toLowerCase();
+  if (primaryKeywords.has(normalizedPrimary)) add('seo-keywords.json', `duplicate primary keyword: ${target.primaryKeyword}`);
+  primaryKeywords.add(normalizedPrimary);
+
+  const page = indexablePages.find(({ canonical }) => new URL(canonical).pathname === target.path);
+  if (!page) {
+    add('seo-keywords.json', `mapped path is not an indexable page: ${target.path}`);
+    continue;
+  }
+
+  const html = await readFile(join(dist, page.path), 'utf8');
+  const title = normalize(matchOne(html, /<title>([^<]+)<\/title>/i));
+  const h1 = normalize(matchOne(html, /<h1\b[^>]*>([\s\S]*?)<\/h1>/i));
+  const visibleText = normalize(html);
+  if (!title.includes(normalizedPrimary) && !h1.includes(normalizedPrimary)) add(page.path, `primary keyword is not in the title or H1: ${target.primaryKeyword}`);
+  if (!visibleText.includes(normalizedPrimary)) add(page.path, `primary keyword is not present in visible copy: ${target.primaryKeyword}`);
+  for (const supportingKeyword of target.supportingKeywords) {
+    if (!visibleText.includes(supportingKeyword.toLowerCase())) add(page.path, `supporting keyword is missing from visible copy: ${supportingKeyword}`);
+  }
+}
+
+for (const page of indexablePages) {
+  const path = new URL(page.canonical).pathname;
+  if (!keywordPaths.includes(path)) add('seo-keywords.json', `indexable page has no keyword mapping: ${path}`);
+}
 
 for (const url of canonicalUrls) if (!sitemapUrls.includes(url)) add('sitemap.xml', `missing indexable canonical ${url}`);
 for (const url of sitemapUrls) if (!canonicalUrls.includes(url)) add('sitemap.xml', `contains non-indexable or unknown URL ${url}`);

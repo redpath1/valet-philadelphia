@@ -20,6 +20,8 @@ All 19 indexable URLs pass the built-output SEO regression. The two remaining ge
 - Reworked the human sitemap to use descriptive anchors and summaries across all services and locations.
 - Added a permanent Cloudflare `www` to root redirect that retains the requested path and query string.
 - Added `scripts/seo-audit.mjs` and `npm run verify` so these requirements are checked after future edits.
+- Assigned a unique primary phrase and two supporting phrases to every indexable route in `src/data/seo-keywords.json`, then integrated those phrases into visible titles, headings, and explanatory copy.
+- Kept keyword placement natural and omitted the obsolete `meta keywords` tag.
 
 ## Deliberate Accuracy Choices
 
@@ -32,6 +34,8 @@ All 19 indexable URLs pass the built-output SEO regression. The two remaining ge
 
 - 19 canonical indexable URLs exactly match 19 XML sitemap URLs.
 - Every indexable page has one H1, one canonical, one title, and one description.
+- Every indexable page appears in the keyword map, owns a unique primary phrase, and uses its primary and supporting phrases in visible copy.
+- No page emits a `meta keywords` tag.
 - Titles, descriptions, canonical URLs, Open Graph tags, and X tags are present and unique where required.
 - All JSON-LD blocks parse.
 - Robots.txt advertises the preferred sitemap.

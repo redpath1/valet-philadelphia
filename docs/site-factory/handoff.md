@@ -9,6 +9,8 @@
 - Added search-intent-aligned metadata, canonicals, complete Open Graph and X cards, factual Organization and WebSite entities, page-specific schema, Service, FAQ, and breadcrumb relationships
 - Added an XML sitemap with accurate modification dates and primary-image entries, a descriptive human sitemap, robots.txt, llms.txt, and a shared public route inventory
 - Added an automated SEO regression for metadata uniqueness, canonicals, H1s, social tags, JSON-LD, sitemap parity, robots discovery, human sitemap coverage, and image weights
+- Added a documented, machine-readable keyword map covering all 19 indexable routes and extended the SEO regression to check primary and supporting phrase usage without a meta-keywords tag
+- Removed rounded corners from every component and brand asset, then added an automated source audit plus computed-style desktop and mobile verification
 - Added Cloudflare Workers Static Assets headers, Wrangler configuration, Node version, deployment settings, and launch-edit documentation
 - Initialized a local Git repository on the `main` branch
 - Created the GitHub repository `redpath1/valet-philadelphia`
@@ -27,9 +29,11 @@
 - `src/data/site.ts`: company settings, domain, email, and navigation
 - `src/data/services.ts`: six service detail records
 - `src/data/locations.ts`: six local detail records
+- `src/data/seo-keywords.json`: primary and supporting search phrases for every indexable page
 - `src/styles/global.css`: design tokens and shared styling
 - `src/layouts/BaseLayout.astro`: metadata and structured data
 - `scripts/seo-audit.mjs`: built-output SEO regression
+- `scripts/design-audit.mjs`: square-corner source regression
 - `public/images/`: final original imagery
 - `public/logo.svg`: structured-data organization logo
 - `docs/site-factory/image-prompts.md`: image prompt record
@@ -47,6 +51,8 @@
 - 19 unique page titles and 19 unique descriptions across indexable pages
 - 19 canonicals exactly aligned with the 19 XML sitemap URLs
 - JSON-LD parse and page-entity relationship checks
+- Keyword-map completeness, unique primary targets, and visible primary/supporting phrase checks
+- Square-corner source audit and zero-radius computed-style checks
 - XML sitemap modification-date and image-entry checks
 - Human sitemap and robots discovery checks
 - Missing-image and horizontal-overflow checks

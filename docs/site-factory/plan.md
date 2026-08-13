@@ -30,6 +30,8 @@ Complete and deployed
 - Updated the published contact address to `hello@valetparkingphiladelphia.com`
 - Completed a best-in-class on-page SEO pass across all 19 indexable URLs
 - Added a build-time SEO regression that validates page metadata, canonicals, schema, sitemaps, robots directives, internal discovery, and search image weights
+- Assigned and documented primary and supporting search phrases for all 19 indexable pages, including every location page
+- Added an automated square-corner regression and verified zero computed corner radii on representative desktop and mobile pages
 - Added accurate sitemap modification dates and image sitemap entries
 - Added visible and structured breadcrumbs to all public hub and company pages
 - Deployed a permanent Cloudflare redirect from `www` to the canonical root domain with path and query preservation
@@ -51,6 +53,8 @@ Complete and deployed
 - [x] Keyboard navigation and reduced-motion behavior pass
 - [x] Metadata, schema, sitemap.xml, robots.txt, HTML sitemap, and llms.txt pass
 - [x] All 19 indexable pages pass the automated SEO regression
+- [x] Every indexable page has a mapped, unique primary search phrase and naturally used supporting phrases
+- [x] No source or rendered component uses rounded corners
 - [x] `www` permanently redirects to the preferred root hostname
 - [x] Cloudflare Workers Static Assets project configuration is complete
 - [x] Git-triggered Cloudflare production deploy is verified

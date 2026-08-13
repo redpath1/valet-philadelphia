@@ -35,7 +35,7 @@ export const services: Service[] = [
     summary:
       'A curb plan, staffed arrival lane, controlled key system, and departure strategy built around the guest list and venue.',
     description:
-      'Event parking gets difficult at predictable moments: the first thirty minutes, a weather change, and the end-of-night rush. We map those moments before the first car arrives, then staff the curb around the actual pace of the event.',
+      'Event parking gets difficult at predictable moments: the first thirty minutes, a weather change, and the end-of-night rush. Good arrival planning connects the guest handoff, key control, and retrieval staging before the first car arrives, then the crew adjusts to the actual pace of the event.',
     seoDescription:
       'Event valet parking in Philadelphia with arrival planning, key control, traffic flow, and a coordinated departure plan for private and corporate events.',
     image: '/images/event-valet-team.webp',
@@ -73,7 +73,7 @@ export const services: Service[] = [
     summary:
       'A repeatable valet operation for busy dinner periods, limited curb space, reservations, and neighborhood traffic.',
     description:
-      'A restaurant valet stand has to feel like part of the front-of-house team. We plan the handoff around reservations, delivery windows, pedestrian movement, nearby residents, and the short bursts that happen before and after peak seating times.',
+      'A restaurant valet stand has to feel like part of the front-of-house team. We plan the handoff around reservations, delivery windows, pedestrian movement, and nearby residents so curb space remains orderly through the dinner rush.',
     seoDescription:
       'Restaurant valet parking in Philadelphia planned around reservations, curb space, neighborhood traffic, key control, and the dinner rush.',
     image: '/images/restaurant-valet-arrival.webp',
@@ -111,7 +111,7 @@ export const services: Service[] = [
     summary:
       'Valet staffing and traffic planning aligned with ceremony timing, venue access, shuttles, accessibility needs, and the final departure wave.',
     description:
-      'Wedding arrivals are emotional, time-sensitive, and often concentrated into a short window. We work from the venue timeline so the curb supports the ceremony instead of competing with it.',
+      'Wedding arrivals are emotional, time-sensitive, and often concentrated into a short window. The operating plan links ceremony timing to guest arrival flow so the curb supports the wedding instead of competing with it.',
     seoDescription:
       'Wedding valet parking in Philadelphia with venue access planning, guest arrival flow, key control, and coordinated end-of-night vehicle retrieval.',
     image: '/images/event-valet-team.webp',
@@ -149,7 +149,7 @@ export const services: Service[] = [
     summary:
       'A front-door parking operation built around check-in peaks, luggage, overnight keys, events, rideshare traffic, and early departures.',
     description:
-      'Hotel valet is a continuous handoff between the curb, front desk, bell team, and parking area. We define those handoffs so guests know where to stop and staff know where every request goes.',
+      'Hotel valet is a continuous handoff between the curb, front desk, bell team, and parking area. Staffing follows check-in peaks, while overnight key custody and vehicle requests follow one defined path across every shift.',
     seoDescription:
       'Hotel valet parking operations in Philadelphia for check-in, luggage, overnight key custody, events, rideshare traffic, and departures.',
     image: '/images/valet-hero-philadelphia.webp',
@@ -187,7 +187,7 @@ export const services: Service[] = [
     summary:
       'A clear, accessible parking handoff for medical offices, outpatient centers, senior communities, and high-traffic care entrances.',
     description:
-      'Healthcare arrivals require more time, clearer pedestrian space, and careful coordination with the entrance team. We plan the curb around accessibility, escorts, mobility equipment, appointment peaks, and vehicles that cannot be rushed.',
+      'Healthcare arrivals require more time, clearer pedestrian space, and careful coordination with the entrance team. For medical office valet parking, accessible arrivals, mobility equipment, appointment peaks, and vehicles that cannot be rushed all shape the curb plan.',
     seoDescription:
       'Healthcare valet parking in Philadelphia planned for accessible arrivals, appointment peaks, patient assistance, key control, and clear entrance flow.',
     image: '/images/healthcare-valet-arrival.webp',
@@ -225,7 +225,7 @@ export const services: Service[] = [
     summary:
       'On-site traffic, lot, garage, and guest-parking coordination for properties that need a working operating plan, with or without valet.',
     description:
-      'Some properties need more than a valet stand. We can plan how vehicles enter, wait, park, load, and leave so the curb, lot, garage, and front door work as one system.',
+      'Some properties need more than a valet stand. Parking lot management and garage traffic flow are planned with the curb and front door so vehicles can enter, wait, park, load, and leave as one working system.',
     seoDescription:
       'Parking management in Philadelphia for traffic flow, lots, garages, guest arrivals, loading zones, event peaks, and front-door coordination.',
     image: '/images/valet-team-briefing.webp',

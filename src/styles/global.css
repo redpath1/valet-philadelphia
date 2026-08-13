@@ -20,11 +20,11 @@
   color-scheme: light;
   --frame: 1480px;
   --gutter: clamp(0.75rem, 2.2vw, 2rem);
-  --radius-panel: clamp(1.25rem, 2vw, 2rem);
 }
 
 * {
   box-sizing: border-box;
+  border-radius: 0 !important;
 }
 
 html {
@@ -91,7 +91,6 @@ select {
 .panel {
   overflow: clip;
   border: 1px solid color-mix(in srgb, var(--color-line) 82%, transparent);
-  border-radius: var(--radius-panel);
   background: var(--color-paper);
 }
 
@@ -159,7 +158,6 @@ select {
 .eyebrow::before {
   width: 0.55rem;
   height: 0.55rem;
-  border-radius: 999px;
   background: var(--color-signal);
   content: '';
 }
@@ -179,7 +177,6 @@ select {
   justify-content: center;
   gap: 0.75rem;
   border: 1px solid transparent;
-  border-radius: 999px;
   padding: 0.75rem 1.2rem;
   font-size: 0.9rem;
   font-weight: 700;
@@ -224,7 +221,6 @@ select {
   height: 1.9rem;
   flex: none;
   place-items: center;
-  border-radius: 999px;
   background: color-mix(in srgb, currentColor 10%, transparent);
 }
 
@@ -260,7 +256,6 @@ select {
   top: 0.75rem;
   left: 0.75rem;
   transform: translateY(-180%);
-  border-radius: 999px;
   background: var(--color-signal);
   padding: 0.75rem 1rem;
   color: var(--color-navy-deep);
@@ -291,7 +286,6 @@ details > summary::-webkit-details-marker {
   width: 100%;
   min-height: 3.4rem;
   border: 1px solid var(--color-line);
-  border-radius: 0.9rem;
   background: rgba(255, 255, 255, 0.8);
   padding: 0.85rem 1rem;
   color: var(--color-ink);

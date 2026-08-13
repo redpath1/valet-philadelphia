@@ -4,10 +4,13 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import QuoteCta from '../components/QuoteCta.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteConfig } from '../data/site';
+import { getKeywordTarget } from '../lib/seo-keywords';
+
+const seo = getKeywordTarget('/about/');
 ---
 
 <BaseLayout
-  title="About Our Philadelphia Valet Service"
+  title="Philadelphia Valet Parking Company"
   description="Learn how Valet Philadelphia, LLC approaches valet parking through site planning, clear handoffs, controlled keys, and accountable shift leadership."
   canonicalPath="/about/"
   image="/images/valet-team-briefing.webp"
@@ -27,10 +30,10 @@ import { siteConfig } from '../data/site';
         <div>
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
           <p class="eyebrow mt-8">About Valet Philadelphia, LLC</p>
-          <h1 id="about-title" class="display-title mt-7 max-w-[12ch]">Philadelphia valet service is a chain of <em class="text-brick">handoffs.</em></h1>
+          <h1 id="about-title" class="display-title mt-7 max-w-[12ch]">A {seo.primaryKeyword} built around clear <em class="text-brick">handoffs.</em></h1>
         </div>
         <div>
-          <p class="body-large text-ink/70">The guest sees a greeting and a returned vehicle. The operation behind that moment includes a curb plan, a parking route, controlled keys, clear staff positions, and one person accountable for the live shift.</p>
+          <p class="body-large text-ink/70">The guest sees a greeting and a returned vehicle. The operation behind that moment includes {seo.supportingKeywords[0]}, {seo.supportingKeywords[1]}, a parking route, clear staff positions, and one person accountable for the live shift.</p>
           <a href="#approach" class="button-secondary mt-7">Our approach<Arrow direction="down" /></a>
         </div>
       </div>
@@ -50,7 +53,7 @@ import { siteConfig } from '../data/site';
         </div>
       </div>
 
-      <div class="mt-14 grid gap-px overflow-hidden rounded-[1.5rem] border border-line bg-line md:grid-cols-3">
+      <div class="mt-14 grid gap-px overflow-hidden border border-line bg-line md:grid-cols-3">
         <article class="bg-paper p-6 sm:p-8">
           <span class="text-xs font-extrabold text-brick">01</span>
           <h3 class="card-title mt-10">Site before script.</h3>
@@ -81,7 +84,7 @@ import { siteConfig } from '../data/site';
         <p class="mt-6 text-lg text-ink/66">Before guests arrive, attendants should know the vehicle route, storage zones, key procedure, staff posts, accessibility notes, escalation path, and how the departure rush will be staged.</p>
         <ul class="rule-list mt-8 border-t border-line p-0" role="list">
           {['Curb and pedestrian assignments', 'Key station and ticket checks', 'Radio roles and decision authority', 'Weather, overflow, and closing plan'].map((item) => (
-            <li class="flex items-center gap-3 py-4 text-sm font-semibold"><span class="h-2 w-2 rounded-full bg-signal"></span>{item}</li>
+            <li class="flex items-center gap-3 py-4 text-sm font-semibold"><span class="h-2 w-2 bg-signal"></span>{item}</li>
           ))}
         </ul>
       </div>

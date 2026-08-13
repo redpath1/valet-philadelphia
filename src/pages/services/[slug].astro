@@ -7,6 +7,7 @@ import ServiceCard from '../../components/ServiceCard.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { services, type Service } from '../../data/services';
 import { siteConfig } from '../../data/site';
+import { getKeywordTarget, keywordLabel } from '../../lib/seo-keywords';
 
 export function getStaticPaths() {
   return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
@@ -18,6 +19,8 @@ const relatedServices = service.related
   .filter((item): item is Service => Boolean(item));
 
 const pageUrl = `${siteConfig.url}/services/${service.slug}/`;
+const pagePath = `/services/${service.slug}/`;
+const seo = getKeywordTarget(pagePath);
 const schema = [
   {
     '@type': 'Service',
@@ -42,14 +45,14 @@ const schema = [
 ];
 ---
 
-<BaseLayout title={`${service.title} in Philadelphia`} description={service.seoDescription} canonicalPath={`/services/${service.slug}/`} image={service.image} imageAlt={service.imageAlt} pageType="ItemPage" pageSchema={{ mainEntity: { '@id': `${pageUrl}#service` } }} schema={schema}>
+<BaseLayout title={keywordLabel(seo.primaryKeyword)} description={service.seoDescription} canonicalPath={pagePath} image={service.image} imageAlt={service.imageAlt} pageType="ItemPage" pageSchema={{ mainEntity: { '@id': `${pageUrl}#service` } }} schema={schema}>
   <section class="site-frame section-gap" aria-labelledby="service-title">
     <div class="panel grid bg-paper lg:grid-cols-[0.94fr_1.06fr]">
       <div class="section-pad flex flex-col justify-between gap-14">
         <div>
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: service.title }]} />
           <p class="eyebrow mt-10">{service.eyebrow}</p>
-          <h1 id="service-title" class="display-title mt-7 max-w-[12ch]">{service.title} in Philadelphia</h1>
+          <h1 id="service-title" class="display-title mt-7 max-w-[12ch]">{keywordLabel(seo.primaryKeyword)}</h1>
           <p class="body-large mt-7 text-ink/68">{service.description}</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="/contact/" class="button-primary">Plan this service<Arrow /></a>
@@ -76,13 +79,13 @@ const schema = [
           <div>
             <h3 class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">Best suited to</h3>
             <ul class="rule-list mt-5 border-t border-line p-0" role="list">
-              {service.bestFor.map((item) => <li class="flex gap-3 py-4 text-sm font-semibold"><span class="mt-2 h-2 w-2 flex-none rounded-full bg-signal"></span>{item}</li>)}
+              {service.bestFor.map((item) => <li class="flex gap-3 py-4 text-sm font-semibold"><span class="mt-2 h-2 w-2 flex-none bg-signal"></span>{item}</li>)}
             </ul>
           </div>
           <div>
             <h3 class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">Operating details</h3>
             <ul class="rule-list mt-5 border-t border-line p-0" role="list">
-              {service.deliverables.map((item) => <li class="flex gap-3 py-4 text-sm font-semibold"><span class="mt-2 h-2 w-2 flex-none rounded-full bg-signal"></span>{item}</li>)}
+              {service.deliverables.map((item) => <li class="flex gap-3 py-4 text-sm font-semibold"><span class="mt-2 h-2 w-2 flex-none bg-signal"></span>{item}</li>)}
             </ul>
           </div>
         </div>
@@ -101,7 +104,7 @@ const schema = [
       </div>
       <ol class="mt-12 grid gap-4 lg:grid-cols-3" role="list">
         {service.process.map((step) => (
-          <li class="rounded-[1.35rem] border border-white/12 bg-white/[0.04] p-6 sm:p-8">
+          <li class="border border-white/12 bg-white/[0.04] p-6 sm:p-8">
             <span class="text-xs font-extrabold text-signal">{step.number}</span>
             <h3 class="card-title mt-12">{step.title}</h3>
             <p class="mt-4 text-sm text-white/62">{step.description}</p>

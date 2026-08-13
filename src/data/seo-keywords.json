@@ -1,0 +1,135 @@
+[
+  {
+    "path": "/",
+    "page": "Home",
+    "intent": "Broad local valet service",
+    "primaryKeyword": "Philadelphia valet parking",
+    "supportingKeywords": ["event valet parking", "restaurant valet parking"]
+  },
+  {
+    "path": "/services/",
+    "page": "Services hub",
+    "intent": "Compare available valet and parking services",
+    "primaryKeyword": "valet parking services in Philadelphia",
+    "supportingKeywords": ["recurring valet parking", "parking management services"]
+  },
+  {
+    "path": "/services/event-valet-parking/",
+    "page": "Event valet parking",
+    "intent": "Plan valet service for an event",
+    "primaryKeyword": "event valet parking in Philadelphia",
+    "supportingKeywords": ["arrival planning", "key control"]
+  },
+  {
+    "path": "/services/restaurant-valet-parking/",
+    "page": "Restaurant valet parking",
+    "intent": "Plan recurring or event restaurant valet",
+    "primaryKeyword": "restaurant valet parking in Philadelphia",
+    "supportingKeywords": ["dinner rush", "curb space"]
+  },
+  {
+    "path": "/services/wedding-valet-parking/",
+    "page": "Wedding valet parking",
+    "intent": "Plan valet service for a wedding venue",
+    "primaryKeyword": "wedding valet parking in Philadelphia",
+    "supportingKeywords": ["ceremony timing", "guest arrival flow"]
+  },
+  {
+    "path": "/services/hotel-valet-parking/",
+    "page": "Hotel valet parking",
+    "intent": "Plan recurring hotel valet operations",
+    "primaryKeyword": "hotel valet parking in Philadelphia",
+    "supportingKeywords": ["check-in peaks", "overnight key custody"]
+  },
+  {
+    "path": "/services/healthcare-valet-parking/",
+    "page": "Healthcare valet parking",
+    "intent": "Plan accessible valet service for a care entrance",
+    "primaryKeyword": "healthcare valet parking in Philadelphia",
+    "supportingKeywords": ["accessible arrivals", "medical office valet parking"]
+  },
+  {
+    "path": "/services/parking-management/",
+    "page": "Parking management",
+    "intent": "Plan traffic, lot, and garage operations",
+    "primaryKeyword": "parking management in Philadelphia",
+    "supportingKeywords": ["parking lot management", "garage traffic flow"]
+  },
+  {
+    "path": "/about/",
+    "page": "About",
+    "intent": "Evaluate the company and operating approach",
+    "primaryKeyword": "valet parking company in Philadelphia",
+    "supportingKeywords": ["site planning", "key control"]
+  },
+  {
+    "path": "/contact/",
+    "page": "Contact",
+    "intent": "Request service or a parking plan",
+    "primaryKeyword": "request valet parking in Philadelphia",
+    "supportingKeywords": ["valet service request", "parking plan"]
+  },
+  {
+    "path": "/faq/",
+    "page": "FAQ",
+    "intent": "Answer pre-contact planning questions",
+    "primaryKeyword": "Philadelphia valet parking FAQ",
+    "supportingKeywords": ["valet staffing", "key control"]
+  },
+  {
+    "path": "/locations/",
+    "page": "Locations hub",
+    "intent": "Compare service areas and local operating conditions",
+    "primaryKeyword": "Philadelphia valet parking service areas",
+    "supportingKeywords": ["Philadelphia valet service areas", "service coverage"]
+  },
+  {
+    "path": "/locations/philadelphia/",
+    "page": "Philadelphia",
+    "intent": "Evaluate citywide Philadelphia service",
+    "primaryKeyword": "valet parking in Philadelphia",
+    "supportingKeywords": ["Philadelphia parking operations", "event valet parking"]
+  },
+  {
+    "path": "/locations/center-city/",
+    "page": "Center City",
+    "intent": "Evaluate valet service in central Philadelphia",
+    "primaryKeyword": "Center City Philadelphia valet parking",
+    "supportingKeywords": ["Center City valet service", "restaurant valet parking"]
+  },
+  {
+    "path": "/locations/main-line/",
+    "page": "The Main Line",
+    "intent": "Evaluate valet service for Main Line properties",
+    "primaryKeyword": "Main Line valet parking",
+    "supportingKeywords": ["wedding valet parking", "event valet parking"]
+  },
+  {
+    "path": "/locations/king-of-prussia/",
+    "page": "King of Prussia",
+    "intent": "Evaluate valet and parking operations in King of Prussia",
+    "primaryKeyword": "King of Prussia valet parking",
+    "supportingKeywords": ["hotel valet parking", "parking management"]
+  },
+  {
+    "path": "/locations/bucks-county/",
+    "page": "Bucks County",
+    "intent": "Evaluate valet service for Bucks County properties",
+    "primaryKeyword": "Bucks County valet parking",
+    "supportingKeywords": ["wedding valet parking", "event valet parking"]
+  },
+  {
+    "path": "/locations/south-jersey/",
+    "page": "South Jersey",
+    "intent": "Evaluate regional valet service in South Jersey",
+    "primaryKeyword": "South Jersey valet parking",
+    "supportingKeywords": ["restaurant valet parking", "wedding valet parking"]
+  },
+  {
+    "path": "/sitemap/",
+    "page": "HTML sitemap",
+    "intent": "Navigate every indexable site section",
+    "primaryKeyword": "Valet Philadelphia HTML sitemap",
+    "supportingKeywords": ["valet parking services", "service area pages"]
+  }
+]
