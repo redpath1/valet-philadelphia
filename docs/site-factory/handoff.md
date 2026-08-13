@@ -11,6 +11,8 @@
 - Added Cloudflare Workers Static Assets headers, Wrangler configuration, Node version, deployment settings, and launch-edit documentation
 - Initialized a local Git repository on the `main` branch
 - Created the GitHub repository `redpath1/valet-philadelphia`
+- Configured the local `origin` as `git@github.com:redpath1/valet-philadelphia.git` and verified an SSH push
+- Connected the repository to Cloudflare Workers Builds and completed the first production deploy
 
 ## Main Files
 
@@ -51,6 +53,7 @@
 - Worker name: `valet-philadelphia`
 - Repository: `redpath1/valet-philadelphia`
 - Production branch: `main`
+- Live endpoint: `https://valet-philadelphia.evans-keith.workers.dev`
 - Build command: `npm run build`
 - Deploy command: `npx wrangler deploy`
 - Static assets directory: `dist`

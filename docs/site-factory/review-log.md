@@ -17,3 +17,4 @@
 | Images | Five original photographs | WebP output | All images load; optimized set is under 1 MB and the full static build is about 1.5 MB | Complete |
 | Accessibility | Shared components | Desktop and mobile | Skip link, visible focus, semantic regions, labeled form controls, reduced-motion support, and native FAQ disclosures verified | Complete |
 | Deployment config | Full site | Cloudflare Workers Static Assets | Wrangler project targets `dist`, uses 404-page handling, and pins the Worker name to `valet-philadelphia` | Complete |
+| Production deploy | Full site | Cloudflare Workers Builds | GitHub repository cloned, dependencies installed with 0 vulnerabilities, 21 pages built, 31 changed assets uploaded, and the Worker returned HTTP 200 | Complete |

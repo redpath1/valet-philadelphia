@@ -60,6 +60,9 @@ Dynamic service and location pages are generated from their data files, so a con
 
 Production is configured around the `main` branch of `redpath1/valet-philadelphia`.
 
+- GitHub: `https://github.com/redpath1/valet-philadelphia`
+- Cloudflare Worker: `https://valet-philadelphia.evans-keith.workers.dev`
+
 Cloudflare Workers Builds settings:
 
 - Worker name: `valet-philadelphia`

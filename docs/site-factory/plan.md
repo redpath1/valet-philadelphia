@@ -2,13 +2,11 @@
 
 ## Current Phase
 
-Deployment setup in progress
+Deployment verification in progress
 
 ## Next
 
 - Confirm the production email mailbox and coverage claims
-- Push the `main` branch to `redpath1/valet-philadelphia` over SSH
-- Connect the repository to Cloudflare Workers Builds
 - Verify that a push to `main` triggers a production deploy
 
 ## Done
@@ -23,6 +21,9 @@ Deployment setup in progress
 - Added Cloudflare Static Assets headers and Workers deployment documentation
 - Completed desktop, mobile, link, metadata, image, accessibility, and build reviews
 - Initialized the local Git repository on `main`
+- Created and pushed `redpath1/valet-philadelphia` over SSH
+- Connected `main` to Cloudflare Workers Builds
+- Completed the first production Worker build at `https://valet-philadelphia.evans-keith.workers.dev`
 
 ## Launch Confirmations
 
