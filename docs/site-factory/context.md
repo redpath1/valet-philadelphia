@@ -22,6 +22,7 @@
 - `npm run verify` performs the build plus SEO, square-corner, proportional-grid, copy, and content-depth regressions; all current checks pass
 - The interface now uses a quiet 13-unit editorial grid with reusable 5/8, 8/5, 6/7, and 7/6 splits, plus a Fibonacci-derived 8/13/21/34/55 spacing scale
 - Decorative background gradients, interface shadows, backdrop blur, image zoom, and block-style active navigation were removed in favor of flatter structural hierarchy
+- Heading typography is uniformly upright across all levels; nested emphasis cannot introduce italics or synthesized slanting
 - Local Git repository is initialized on `main`
 - GitHub repository: `redpath1/valet-philadelphia`
 - Cloudflare Worker configuration: `wrangler.jsonc`, using the `dist` static asset build

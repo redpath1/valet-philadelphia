@@ -30,11 +30,24 @@ for (const file of files) {
     issues.push(`${path}: contains a nonzero border radius`);
   }
   if (/<[^>]+\s(?:rx|ry)=/.test(source)) issues.push(`${path}: contains an SVG corner radius`);
+
+  if (path.endsWith('.astro')) {
+    const headings = [...source.matchAll(/(<h[1-6]\b[^>]*>[\s\S]*?<\/h[1-6]>)/gi)];
+    for (const [, headingMarkup] of headings) {
+      if (/<(?:em|i)\b/i.test(headingMarkup) || /\bitalic\b/i.test(headingMarkup) || /font-style\s*:\s*italic/i.test(headingMarkup)) {
+        issues.push(`${path}: contains italic emphasis inside a heading`);
+      }
+    }
+  }
 }
 
 const globalCss = await readFile(join(root, 'src', 'styles', 'global.css'), 'utf8');
 if (!/\*\s*\{[\s\S]*?border-radius:\s*0\s*!important;[\s\S]*?\}/.test(globalCss)) {
   issues.push('src/styles/global.css: missing the sitewide square-corner safeguard');
+}
+
+if (!/h1,[\s\S]*?h6 \*\s*\{[\s\S]*?font-style:\s*normal\s*!important;[\s\S]*?font-synthesis:\s*weight;[\s\S]*?\}/.test(globalCss)) {
+  issues.push('src/styles/global.css: missing the sitewide upright-heading safeguard');
 }
 
 for (const [token, value] of [
@@ -87,4 +100,4 @@ if (issues.length) {
   process.exit(1);
 }
 
-console.log(`Design audit passed: ${files.length} source assets use square corners, restrained spacing, and capped heading scales.`);
+console.log(`Design audit passed: ${files.length} source assets use square corners, upright headings, restrained spacing, and capped heading scales.`);

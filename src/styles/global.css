@@ -124,6 +124,22 @@ select {
   gap: clamp(var(--space-4), 4vw, var(--space-5));
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1 *,
+h2 *,
+h3 *,
+h4 *,
+h5 *,
+h6 * {
+  font-style: normal !important;
+  font-synthesis: weight;
+}
+
 .display-title {
   max-width: 15ch;
   margin: 0;

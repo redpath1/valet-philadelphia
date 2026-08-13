@@ -33,6 +33,7 @@
 - Removed nonessential gradients, shadows, blur, image zoom, and filled active-navigation states while preserving the site identity and content structure
 - Extended the design audit to require the proportional tokens and grid definitions and reject decorative gradients, blur, or shadows
 - Made `/locations/philadelphia/` the sole primary target for `valet parking near me`, added useful proximity-intent copy, and extended the SEO audit to prevent duplicate ownership
+- Removed italic heading endings as a design possibility by forcing all heading content upright and extending the design audit to reject italic emphasis inside headings
 
 ## Main Files
 
@@ -67,6 +68,7 @@
 - JSON-LD parse and page-entity relationship checks
 - Keyword-map completeness, unique primary targets, and visible primary/supporting phrase checks
 - Single-page ownership and description placement for the primary `near me` search target
+- Upright computed heading styles and source-level rejection of italic heading treatments
 - Square-corner source audit and zero-radius computed-style checks
 - Services hub: 505 visible main-content words; locations hub: 554
 - Service detail range: 609–689 visible main-content words; location detail range: 728–756

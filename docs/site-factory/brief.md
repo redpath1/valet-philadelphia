@@ -14,6 +14,7 @@
 - Content hierarchy reference: All About Parking
 - Original implementation, copy, tokens, and imagery only
 - Editorial layout with a high-contrast serif display face and restrained sans-serif body type
+- All headings remain upright, including emphasized words or nested elements; no heading may end with an italic flourish
 - Square geometry throughout: no rounded cards, buttons, navigation, form controls, labels, or brand containers
 - Every major section sits inside a visible max-width frame. No edge-to-edge content bands
 - Documentary-style valet photography in mixed light, mostly direct daylight, with uniformed attendants and real street or venue texture

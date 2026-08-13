@@ -50,6 +50,7 @@ Vignelli and proportional-system refinement complete
 - Refined type spacing, measures, borders, buttons, disclosure controls, and form surfaces without changing the page structure or content hierarchy
 - Extended the design regression to preserve the proportional spacing tokens, grid rules, and flat interface treatment
 - Assigned `valet parking near me` as the unique primary target for the Philadelphia location page and added a regression that prevents duplicate `near me` ownership
+- Eliminated italic heading treatments at the system level and added a regression that rejects emphasized or utility-driven italics inside headings
 
 ## Launch Confirmations
 
