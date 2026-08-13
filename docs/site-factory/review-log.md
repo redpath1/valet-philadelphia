@@ -43,3 +43,4 @@
 | Golden-ratio rhythm | Shared design tokens | Source audit | Fibonacci-derived 8, 13, 21, 34, and 55 pixel spacing tokens govern section padding, gaps, text rhythm, and control dimensions | Complete |
 | Optical review | Home, event service, contact | 1440 x 1000 and 390 x 844 | Hierarchy remains balanced after mathematical grid application; headings are 72px/42.9px and sections 43.2px/31.98px with no overflow | Complete |
 | Interface restraint | Header, cards, FAQ, hero captions, forms | Desktop and mobile | Removed shadows, blur, background gradient, image zoom, and filled navigation tabs; borders and typography now carry hierarchy | Complete |
+| Proximity search intent | Philadelphia location page | Built HTML | `valet parking near me` is the unique primary target and appears in the title, H1, description, opening copy, and a practical exact-address question without creating a thin duplicate page | Complete |

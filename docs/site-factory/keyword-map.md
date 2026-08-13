@@ -18,7 +18,7 @@ Google does not use a `meta keywords` tag, so the implementation relies on descr
 | Contact | request valet parking in Philadelphia | valet service request; parking plan | Request service |
 | FAQ | Philadelphia valet parking FAQ | valet staffing; key control | Answer planning questions |
 | Locations hub | Philadelphia valet parking service areas | Philadelphia valet service areas; service coverage | Compare service areas |
-| Philadelphia | valet parking in Philadelphia | Philadelphia parking operations; event valet parking | Evaluate citywide service |
+| Philadelphia | valet parking near me | local valet service; event valet parking | Find nearby valet service and evaluate citywide Philadelphia coverage |
 | Center City | Center City Philadelphia valet parking | Center City valet service; restaurant valet parking | Evaluate central Philadelphia service |
 | Main Line | Main Line valet parking | wedding valet parking; event valet parking | Evaluate Main Line service |
 | King of Prussia | King of Prussia valet parking | hotel valet parking; parking management | Evaluate King of Prussia service |
@@ -26,4 +26,6 @@ Google does not use a `meta keywords` tag, so the implementation relies on descr
 | South Jersey | South Jersey valet parking | restaurant valet parking; wedding valet parking | Evaluate South Jersey service |
 | HTML sitemap | Valet Philadelphia HTML sitemap | valet parking services; service area pages | Navigate the site |
 
-The machine-readable source of truth is `src/data/seo-keywords.json`. The post-build SEO audit checks map coverage, unique primary targets, prominent usage, visible-copy usage, supporting phrase usage, and the absence of a `meta keywords` tag.
+The Philadelphia location page owns the site's only primary `near me` target. Its copy answers that proximity-driven intent with an exact-address coverage review instead of creating a separate thin page or repeating the phrase across the site.
+
+The machine-readable source of truth is `src/data/seo-keywords.json`. The post-build SEO audit checks map coverage, unique primary targets, prominent usage, visible-copy usage, supporting phrase usage, exactly one primary `near me` assignment, and the absence of a `meta keywords` tag.

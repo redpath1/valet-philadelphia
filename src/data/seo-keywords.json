@@ -86,9 +86,9 @@
   {
     "path": "/locations/philadelphia/",
     "page": "Philadelphia",
-    "intent": "Evaluate citywide Philadelphia service",
-    "primaryKeyword": "valet parking in Philadelphia",
-    "supportingKeywords": ["Philadelphia parking operations", "event valet parking"]
+    "intent": "Find nearby valet service and evaluate citywide Philadelphia coverage",
+    "primaryKeyword": "valet parking near me",
+    "supportingKeywords": ["local valet service", "event valet parking"]
   },
   {
     "path": "/locations/center-city/",

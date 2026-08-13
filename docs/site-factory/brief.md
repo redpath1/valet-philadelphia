@@ -65,6 +65,7 @@
 
 - Unique titles, descriptions, canonicals, social metadata, and visible local content
 - One documented primary search phrase plus supporting phrases for every indexable page, used in visible copy without keyword stuffing
+- The Philadelphia location page owns the single primary `valet parking near me` target and resolves that intent through an exact-address coverage review
 - LocalBusiness and service schema only where visible content supports it
 - Service and location detail pages use distinct copy and internal links
 - XML sitemap, HTML sitemap, robots.txt, and llms.txt share one route inventory

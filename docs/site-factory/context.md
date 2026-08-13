@@ -12,6 +12,7 @@
 - 19 indexable pages and two non-index pages are generated; the noindex pages are excluded from both sitemaps
 - Page titles, descriptions, H1s, and hub copy are aligned to Philadelphia valet search intent without repeating boilerplate
 - A machine-readable keyword map assigns a distinct primary phrase and two supporting phrases to each of the 19 indexable pages; the SEO regression verifies natural visible usage and complete map coverage
+- `/locations/philadelphia/` owns the only primary `valet parking near me` target, with the phrase present in its title, H1, description, opening copy, and one practical local question
 - Service and location hubs now provide substantial selection and coverage guidance; service detail pages contain 609–689 visible words and location detail pages contain 728–756 visible words
 - Each service detail explains four plan-shaping factors and answers at least four service-specific questions; each location detail explains four local operating conditions and answers at least three area-specific questions
 - XML sitemap contains all 19 canonical URLs, accurate release modification dates, and image entries where a page has a primary photograph

@@ -78,6 +78,10 @@ const canonicalUrls = indexablePages.map(({ canonical }) => canonical).filter(Bo
 
 const keywordPaths = keywordTargets.map(({ path }) => path);
 const primaryKeywords = new Set();
+const nearMeTargets = keywordTargets.filter(({ primaryKeyword }) => /\bnear me\b/i.test(primaryKeyword));
+if (nearMeTargets.length !== 1) add('seo-keywords.json', `expected exactly one primary "near me" target, found ${nearMeTargets.length}`);
+if (nearMeTargets[0]?.path !== '/locations/philadelphia/') add('seo-keywords.json', 'the primary "near me" target must belong to /locations/philadelphia/');
+
 for (const target of keywordTargets) {
   if (!target.primaryKeyword || target.supportingKeywords.length < 2) add('seo-keywords.json', `incomplete keyword target for ${target.path}`);
   const normalizedPrimary = target.primaryKeyword.toLowerCase();
@@ -92,10 +96,12 @@ for (const target of keywordTargets) {
 
   const html = await readFile(join(dist, page.path), 'utf8');
   const title = normalize(matchOne(html, /<title>([^<]+)<\/title>/i));
+  const description = normalize(matchOne(html, /<meta name="description" content="([^"]+)"/i));
   const h1 = normalize(matchOne(html, /<h1\b[^>]*>([\s\S]*?)<\/h1>/i));
   const visibleText = normalize(html);
   if (!title.includes(normalizedPrimary) && !h1.includes(normalizedPrimary)) add(page.path, `primary keyword is not in the title or H1: ${target.primaryKeyword}`);
   if (!visibleText.includes(normalizedPrimary)) add(page.path, `primary keyword is not present in visible copy: ${target.primaryKeyword}`);
+  if (/\bnear me\b/.test(normalizedPrimary) && !description.includes(normalizedPrimary)) add(page.path, `primary "near me" keyword is not in the description: ${target.primaryKeyword}`);
   for (const supportingKeyword of target.supportingKeywords) {
     if (!visibleText.includes(supportingKeyword.toLowerCase())) add(page.path, `supporting keyword is missing from visible copy: ${supportingKeyword}`);
   }

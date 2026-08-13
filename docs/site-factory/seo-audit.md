@@ -24,6 +24,7 @@ All 19 indexable URLs pass the built-output SEO regression. The two remaining ge
 - Kept keyword placement natural and omitted the obsolete `meta keywords` tag.
 - Expanded service and location pages around distinct operational decisions rather than adding generic location or keyword paragraphs.
 - Added a content-depth regression for both hubs and all twelve detail pages; its word-count floor is a thin-content safeguard, not a ranking promise.
+- Assigned `valet parking near me` to `/locations/philadelphia/` as the site's only primary proximity-intent target, with natural placement in the title, H1, description, opening explanation, and a useful local question.
 
 ## Deliberate Accuracy Choices
 
@@ -37,6 +38,7 @@ All 19 indexable URLs pass the built-output SEO regression. The two remaining ge
 - 19 canonical indexable URLs exactly match 19 XML sitemap URLs.
 - Every indexable page has one H1, one canonical, one title, and one description.
 - Every indexable page appears in the keyword map, owns a unique primary phrase, and uses its primary and supporting phrases in visible copy.
+- Exactly one page may own a primary phrase containing `near me`, and the regression pins that ownership to `/locations/philadelphia/`.
 - No page emits a `meta keywords` tag.
 - Service and location hubs have at least 450 visible main-content words.
 - Every service and location detail has at least 600 visible main-content words plus required page-specific planning and FAQ structures.
