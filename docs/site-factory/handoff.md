@@ -28,6 +28,10 @@
 - Rewrote prominent headings and calls to action in direct operational language, removing formulaic slogans and repeated page framing
 - Reduced shared display and section-heading scales plus large vertical gaps for a more compact desktop and mobile rhythm
 - Added `scripts/copy-audit.mjs` and extended `scripts/design-audit.mjs` to protect the refined language, spacing, and typography limits
+- Applied a Vignelli-informed systems pass centered on semantics, grid consistency, typographic economy, appropriateness, and durability
+- Introduced reusable 13-unit content grids and a Fibonacci-derived 8/13/21/34/55 spacing scale
+- Removed nonessential gradients, shadows, blur, image zoom, and filled active-navigation states while preserving the site identity and content structure
+- Extended the design audit to require the proportional tokens and grid definitions and reject decorative gradients, blur, or shadows
 
 ## Main Files
 
@@ -70,6 +74,7 @@
 - Missing-image and horizontal-overflow checks
 - Responsive heading-size checks across nine representative public routes at 1440 and 390 pixels
 - Copy-pattern, repeated-heading, oversized-spacing, viewport-height, and heading-scale regressions
+- Exact 13-unit desktop grid calculations, single-column mobile collapse, zero rounded corners, and zero horizontal overflow across nine representative routes
 - `npm audit`: 0 vulnerabilities at installation
 
 ## Confirm Before Launch

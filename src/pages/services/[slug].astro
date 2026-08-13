@@ -47,7 +47,7 @@ const schema = [
 
 <BaseLayout title={keywordLabel(seo.primaryKeyword)} description={service.seoDescription} canonicalPath={pagePath} image={service.image} imageAlt={service.imageAlt} pageType="ItemPage" pageSchema={{ mainEntity: { '@id': `${pageUrl}#service` } }} schema={schema}>
   <section class="site-frame section-gap" aria-labelledby="service-title">
-    <div class="panel grid bg-paper lg:grid-cols-[0.94fr_1.06fr]">
+    <div class="panel grid bg-paper lg:grid-cols-[6fr_7fr]">
       <div class="section-pad flex flex-col justify-between gap-10 lg:gap-12">
         <div>
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: service.title }]} />
@@ -69,7 +69,7 @@ const schema = [
 
   <section id="service-details" class="site-frame section-gap" aria-labelledby="details-title">
     <div class="panel section-pad">
-      <div class="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-14">
+      <div class="grid-5-8">
         <div>
           <p class="eyebrow">What the plan covers</p>
           <h2 id="details-title" class="section-title mt-4">Typical scope for {service.title.toLowerCase()}.</h2>
@@ -95,7 +95,7 @@ const schema = [
 
   <section class="site-frame section-gap" aria-labelledby="planning-factors-title">
     <div class="panel section-pad">
-      <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14">
+      <div class="grid-5-8">
         <div>
           <p class="eyebrow">Plan-shaping factors</p>
           <h2 id="planning-factors-title" class="section-title mt-4">What changes {service.shortTitle.toLowerCase()} staffing and vehicle flow.</h2>
@@ -116,7 +116,7 @@ const schema = [
 
   <section class="site-frame section-gap" aria-labelledby="service-process-title">
     <div class="panel panel-dark section-pad">
-      <div class="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">
+      <div class="grid-7-6 lg:items-end">
         <div>
           <p class="eyebrow">Three working phases</p>
           <h2 id="service-process-title" class="section-title mt-4">How {service.title.toLowerCase()} is planned and supervised.</h2>
@@ -137,7 +137,7 @@ const schema = [
 
   <section class="site-frame section-gap" aria-labelledby="service-faq-title">
     <div class="panel section-pad">
-      <div class="grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-14">
+      <div class="grid-5-8">
         <div>
           <p class="eyebrow">Questions about {service.shortTitle.toLowerCase()}</p>
           <h2 id="service-faq-title" class="section-title mt-4">{service.shortTitle} planning questions.</h2>

@@ -37,6 +37,30 @@ if (!/\*\s*\{[\s\S]*?border-radius:\s*0\s*!important;[\s\S]*?\}/.test(globalCss)
   issues.push('src/styles/global.css: missing the sitewide square-corner safeguard');
 }
 
+for (const [token, value] of [
+  ['--space-1', '0.5rem'],
+  ['--space-2', '0.8125rem'],
+  ['--space-3', '1.3125rem'],
+  ['--space-4', '2.125rem'],
+  ['--space-5', '3.4375rem'],
+]) {
+  if (!globalCss.includes(`${token}: ${value};`)) issues.push(`src/styles/global.css: missing proportional spacing token ${token}: ${value}`);
+}
+
+for (const [selector, columns] of [
+  ['grid-5-8', 'minmax(0, 5fr) minmax(0, 8fr)'],
+  ['grid-8-5', 'minmax(0, 8fr) minmax(0, 5fr)'],
+  ['grid-6-7', 'minmax(0, 6fr) minmax(0, 7fr)'],
+  ['grid-7-6', 'minmax(0, 7fr) minmax(0, 6fr)'],
+]) {
+  const pattern = new RegExp(`\\.${selector}\\s*\\{[\\s\\S]*?grid-template-columns:\\s*${columns.replace(/[()]/g, '\\$&')};`);
+  if (!pattern.test(globalCss)) issues.push(`src/styles/global.css: missing 13-unit grid rule .${selector}`);
+}
+
+if (/radial-gradient|backdrop-blur|box-shadow\s*:/.test(globalCss)) {
+  issues.push('src/styles/global.css: contains a decorative gradient, blur, or shadow treatment');
+}
+
 const readClampMax = (scope, selector) => {
   const match = scope.match(new RegExp(`\\.${selector}\\s*\\{[\\s\\S]*?font-size:\\s*clamp\\([^,]+,[^,]+,\\s*([0-9.]+)rem\\s*\\)`));
   return match ? Number(match[1]) : null;

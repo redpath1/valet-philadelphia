@@ -58,7 +58,7 @@ const breadcrumbSchema = {
 >
   <section class="site-frame section-gap" aria-labelledby="faq-page-title">
     <div class="panel panel-river section-pad">
-      <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+      <div class="grid-7-6 lg:items-end">
         <div>
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'FAQ' }]} />
           <p class="eyebrow mt-6">Frequently asked questions</p>
@@ -80,7 +80,7 @@ const breadcrumbSchema = {
   ].map(([id, title, intro, items]) => (
     <section id={id as string} class="site-frame section-gap" aria-labelledby={`${id}-title`}>
       <div class="panel section-pad">
-        <div class="grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-14">
+        <div class="grid-5-8">
           <div>
             <h2 id={`${id}-title`} class="section-title">{title}</h2>
             <p class="mt-4 text-ink/64">{intro}</p>

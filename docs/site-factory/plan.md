@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Editorial and interface refinement complete
+Vignelli and proportional-system refinement complete
 
 ## Next
 
@@ -44,6 +44,11 @@ Editorial and interface refinement complete
 - Tightened section padding, hero height, component margins, card spacing, and page-grid gaps across every public page family
 - Added a copy regression that blocks common hype language, synthetic heading phrases, em dashes, repeated headings, and overly long headings
 - Extended the design regression to block oversized vertical spacing, full-viewport treatments, and oversized heading utilities
+- Consolidated the layout into a 13-unit editorial grid with reusable 5/8, 8/5, 6/7, and 7/6 page splits
+- Added a Fibonacci-derived 8/13/21/34/55 spacing scale and applied it to shared padding, gaps, controls, and text rhythm
+- Removed decorative background gradients, shadows, backdrop blur, image zoom, and filled navigation states
+- Refined type spacing, measures, borders, buttons, disclosure controls, and form surfaces without changing the page structure or content hierarchy
+- Extended the design regression to preserve the proportional spacing tokens, grid rules, and flat interface treatment
 
 ## Launch Confirmations
 

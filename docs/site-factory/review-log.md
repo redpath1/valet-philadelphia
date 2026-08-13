@@ -38,3 +38,8 @@
 | Spacing refinement | All shared templates and cards | Desktop and mobile | Section padding, large grid gaps, hero heights, title margins, card title offsets, and repeated CTA spacing reduced without removing content | Complete |
 | Responsive refinement | Nine representative public routes | 1440 x 900 and 390 x 900 | No horizontal overflow, no empty headings, and no typography-cap violations | Complete |
 | Copy regression | 21 built HTML files | `npm run audit:copy` | 333 rendered headings and visible page copy avoid blocked hype, synthetic framing, repeated headings, and em dashes | Complete |
+| Vignelli principles | Full interface system | Source and rendered pages | Semantic hierarchy, one grid vocabulary, restrained effects, consistent syntax, and durable interaction states applied without changing information architecture | Complete |
+| Proportional grid | Nine representative public routes | 1440 x 900 and 390 x 900 | Desktop grids resolve to exact 5/8, 8/5, 6/7, and 7/6 relationships; mobile grids collapse cleanly to one column | Complete |
+| Golden-ratio rhythm | Shared design tokens | Source audit | Fibonacci-derived 8, 13, 21, 34, and 55 pixel spacing tokens govern section padding, gaps, text rhythm, and control dimensions | Complete |
+| Optical review | Home, event service, contact | 1440 x 1000 and 390 x 844 | Hierarchy remains balanced after mathematical grid application; headings are 72px/42.9px and sections 43.2px/31.98px with no overflow | Complete |
+| Interface restraint | Header, cards, FAQ, hero captions, forms | Desktop and mobile | Removed shadows, blur, background gradient, image zoom, and filled navigation tabs; borders and typography now carry hierarchy | Complete |

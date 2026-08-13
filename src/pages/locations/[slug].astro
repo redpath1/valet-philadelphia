@@ -47,7 +47,7 @@ const schema = [
 
 <BaseLayout title={keywordLabel(seo.primaryKeyword)} description={location.seoDescription} canonicalPath={pagePath} image={location.image} imageAlt={location.imageAlt} pageType="ItemPage" pageSchema={{ mainEntity: { '@id': `${pageUrl}#service` } }} schema={schema}>
   <section class="site-frame section-gap" aria-labelledby="location-title">
-    <div class="panel grid bg-paper lg:grid-cols-[0.94fr_1.06fr]">
+    <div class="panel grid bg-paper lg:grid-cols-[6fr_7fr]">
       <div class="section-pad flex flex-col justify-between gap-10 lg:gap-12">
         <div>
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Locations', href: '/locations/' }, { label: location.name }]} />
@@ -69,7 +69,7 @@ const schema = [
 
   <section id="location-details" class="site-frame section-gap" aria-labelledby="conditions-title">
     <div class="panel panel-dark section-pad">
-      <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14">
+      <div class="grid-5-8">
         <div>
           <p class="eyebrow">Operating conditions</p>
           <h2 id="conditions-title" class="section-title mt-4">Local operating conditions in {location.name}.</h2>
@@ -112,7 +112,7 @@ const schema = [
 
   <section class="site-frame section-gap" aria-labelledby="location-faq-title">
     <div class="panel section-pad">
-      <div class="grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-14">
+      <div class="grid-5-8">
         <div>
           <p class="eyebrow">Local planning questions</p>
           <h2 id="location-faq-title" class="section-title mt-4">Questions about service in {location.name}.</h2>
@@ -126,7 +126,7 @@ const schema = [
 
   <section class="site-frame section-gap" aria-labelledby="location-services-title">
     <div class="panel panel-river section-pad">
-      <div class="grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-14">
+      <div class="grid-5-8">
         <div>
           <p class="eyebrow">Services in {location.name}</p>
           <h2 id="location-services-title" class="section-title mt-4">Services to consider for {location.name}.</h2>

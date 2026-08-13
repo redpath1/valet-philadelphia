@@ -22,6 +22,10 @@
 - Editorial restraint is required: headlines should state a service, condition, or decision rather than rely on slogans, fragments, metaphors, or generic improvement language
 - Display headings should stay at or below 80px on wide desktop screens and roughly 50px on phones; section headings should stay at or below 56px on desktop and 40px on phones
 - Section padding and internal gaps should create clear grouping without turning every panel into an oversized presentation slide
+- Vignelli-informed refinement: semantics, structural consistency, typographic economy, and durable grid logic take priority over decorative novelty
+- Use a quiet 13-unit editorial grid with recurring 5/8 and 8/5 proportions where content hierarchy supports it
+- Use a Fibonacci-derived spacing sequence of 8, 13, 21, 34, and 55 pixels as the shared rhythm; close values may be fluid between breakpoints
+- Keep the existing palette, serif/sans pairing, photography, page inventory, and square geometry; this direction is a refinement, not a rebrand
 
 ## Page Inventory
 
