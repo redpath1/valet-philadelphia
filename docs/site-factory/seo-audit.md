@@ -15,6 +15,7 @@ All 19 indexable URLs pass the built-output SEO regression. The two remaining ge
 - Added specific AboutPage, ContactPage, CollectionPage, FAQPage, and ItemPage types where appropriate.
 - Connected each service entity to its page and to the same Organization entity.
 - Added visible breadcrumbs and matching BreadcrumbList data to all hubs and company pages; detail pages already had both.
+- Kept the homepage free of visible breadcrumbs and BreadcrumbList data, where the primary navigation and page hierarchy already provide sufficient orientation.
 - Completed Open Graph and X image metadata with secure URLs, dimensions, and descriptive alternative text.
 - Expanded the XML sitemap with an accurate release modification date and primary-image entries.
 - Reworked the human sitemap to use descriptive anchors and summaries across all services and locations.
@@ -25,6 +26,7 @@ All 19 indexable URLs pass the built-output SEO regression. The two remaining ge
 - Expanded service and location pages around distinct operational decisions rather than adding generic location or keyword paragraphs.
 - Added a content-depth regression for both hubs and all twelve detail pages; its word-count floor is a thin-content safeguard, not a ranking promise.
 - Assigned `valet parking near me` to `/locations/philadelphia/` as the site's only primary proximity-intent target, with natural placement in the title, H1, description, opening explanation, and a useful local question.
+- Preserved service and location discovery links in the global footer, added a concise Philadelphia service description, and added a followed site-credit link to Redpath Labs.
 
 ## Deliberate Accuracy Choices
 
@@ -46,6 +48,8 @@ All 19 indexable URLs pass the built-output SEO regression. The two remaining ge
 - All JSON-LD blocks parse.
 - Robots.txt advertises the preferred sitemap.
 - The human sitemap links to every indexable URL.
+- The homepage emits neither visible breadcrumb markup nor BreadcrumbList schema.
+- Every generated page carries the descriptive footer service statement and the Redpath Labs credit link.
 - Sitemap entries include modification dates; pages with primary images include image entries.
 - All five WebP search images remain below the configured 300 KB ceiling.
 

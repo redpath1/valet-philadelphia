@@ -1,6 +1,6 @@
 ---
 import Arrow from './Arrow.astro';
-import BrandMark from './BrandMark.astro';
+import Wordmark from './Wordmark.astro';
 import { locations } from '../data/locations';
 import { services } from '../data/services';
 import { primaryNavigation, siteConfig } from '../data/site';
@@ -44,11 +44,13 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="mt-12 flex flex-col gap-5 border-t border-white/12 pt-6 text-xs text-white/48 sm:flex-row sm:items-end sm:justify-between">
-      <a href="/" class="flex items-center gap-3 text-white no-underline">
-        <BrandMark />
-        <span><strong class="block text-sm">{siteConfig.name}</strong>Valet parking and parking operations</span>
+      <a href="/" class="text-white no-underline" aria-label="Valet Philadelphia home">
+        <Wordmark class="text-[1.0625rem]" />
       </a>
-      <p class="m-0">© {year} {siteConfig.name}. All rights reserved.</p>
+      <div class="flex flex-col gap-1.5 sm:items-end">
+        <p class="m-0">Philadelphia valet parking for events, venues, and recurring property operations.</p>
+        <p class="m-0">© {year} {siteConfig.name}. All rights reserved. <a href="https://www.redpathlabs.com/" class="text-white/68 underline decoration-white/25 underline-offset-4 hover:text-signal">Website by Redpath Labs</a>.</p>
+      </div>
     </div>
   </div>
 </footer>

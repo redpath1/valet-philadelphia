@@ -2,6 +2,7 @@
 import Arrow from '../components/Arrow.astro';
 import FAQList from '../components/FAQList.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Wordmark from '../components/Wordmark.astro';
 
 const sampleFaqs = [
   { question: 'What does a standard disclosure look like?', answer: 'It uses plain language, visible hierarchy, and enough contrast to work without relying on motion or color alone.' },
@@ -15,6 +16,16 @@ const sampleFaqs = [
       <p class="eyebrow">Internal design reference</p>
       <h1 class="display-title mt-4">Valet Philadelphia style guide.</h1>
       <p class="body-large mt-5 text-ink/65">A practical inventory of the tokens and components used across the site.</p>
+    </div>
+  </section>
+
+  <section class="site-frame section-gap">
+    <div class="panel section-pad">
+      <p class="eyebrow">Wordmark</p>
+      <p class="mt-5 text-ink/60">One name, one typeface, one weight, and no symbol.</p>
+      <div class="mt-6 border-y border-line py-8 text-navy">
+        <Wordmark class="text-[clamp(1.5rem,3vw,2.5rem)]" />
+      </div>
     </div>
   </section>
 

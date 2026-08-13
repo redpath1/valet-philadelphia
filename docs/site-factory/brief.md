@@ -14,6 +14,9 @@
 - Content hierarchy reference: All About Parking
 - Original implementation, copy, tokens, and imagery only
 - Editorial layout with a high-contrast serif display face and restrained sans-serif body type
+- The logo is a text-only `Valet Philadelphia` wordmark in self-hosted Archivo Medium: one line, one upright face, one weight, one color, and no symbol, monogram, favicon, subtitle, or `LLC` suffix
+- The footer preserves useful service and location navigation, includes one concise Philadelphia valet description, and credits `https://www.redpathlabs.com/` as `Website by Redpath Labs`
+- The homepage has no visible breadcrumb and emits no BreadcrumbList schema
 - All headings remain upright, including emphasized words or nested elements; no heading may end with an italic flourish
 - Square geometry throughout: no rounded cards, buttons, navigation, form controls, labels, or brand containers
 - Every major section sits inside a visible max-width frame. No edge-to-edge content bands

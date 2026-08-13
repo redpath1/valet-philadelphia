@@ -1,4 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" fill="#102a3d"/>
-  <path d="M136 136h72l48 224h-64l-56-224Zm128 224 48-224h72l-64 224h-56Z" fill="#f1c84b"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 144" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">Valet Philadelphia</title>
+  <defs>
+    <style>
+      @font-face {
+        font-family: "Archivo Wordmark";
+        src: url("data:font/woff2;base64,d09GMgABAAAAAAWEABAAAAAACmQAAAUoAAIAQgAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbgXwcWgZgP1NUQVRaAHQRCAqHHIVpATYCJAM0CxwABCAFhCAHIAwHG38Io6KU8cmS/GWCbcC0H62dUOvqdFqdrQhDM2B/W0NFtVUStNHGl7eOr+x4TOE1RPAIhUfBR4393u4dppI+CU/iSa1aKXQ66Scy06leYTrTSe7Hz+lrWZGr/K5Mckw64VuA7g/ctKw0m5xrY+JaJW3XZO4eQZiTrxyicq3t2keEBZ7//kbnviosCzCisCzwoGbCdVnSFVz+A+N0IA/YmUogo6ucqFRs/O9/AHbYU5emt+nNSxMNcCgWwVIqaKvjpQNG6EBTWvk+3sXe/sECRg8Mb26tieDLmMhaMi6VGOKvx6v/4whkAwATySICmZoN8nZ6/YzKo7CPigj4TwvQbcQ+ykBAIktnmbpJrgisVDUxySbZbbcMAVuVB3t+BNKwslNVZN4H3P8/mV6SQixF5iqWLG8wAMKWAJoyk8XUKwKIgtT15YaNwTYQYM7HK4HMfcg/geZqJUgHqUDbpImVyIsB/hbElYTXz8QXVgRkr7nj9gI7CGddQjoAcc80Yy/sybeIeoFIugCKBdDNH53tDBAuL5szAPQj6NUyLJaqUC0Bp8weIIJGfUJgThUAATCmWySZ0dZD8gVRvXmvFAbiCnFLY3B09u90ozbMmTFl0pjhGL+OqP03A8gBUAkKoRV6AQAiADAxB4tSWySzUlCXV1ZcK1UmKOnRKxBkwzgmG0UipBH+s9t7E8n2oH1wdLQUw+Pj5Z3oavb0tscupTFgt3Um/mSFyJC7N2PIscouAjRwIP5sq0pWPqKW8P16n9lHH2RXD6M3SfBWj5eV0DDSIhvYFt8ps0uuzsR/REQ2/uw/tYODlJltKtU1x+vbDBv9RB1Zt7d1JP5lBwEU1q/f3w+JdlNrVt+PG1K9DOoKYKQJFWqON2M7xbK5/ukqJ9TqwP4V/7yXp83+a4+1MFpBIFF2FaCBhYX6rRZv1oHqSgHGxqohIeqW54eAo/mOtkQtW+IIAP/ZzO49tu1o1YHqtLTZd5+k/w4CtsFsUfxQ0FA295bMw9uoseCbOZlLBRI+DIIqDdWMAoWGZj4S8paqaLIiVsxiQpvBNglRh9FEjElod76JixNX1DwS3yxBNygEvMPIX1slOzhQNdNXW090+ewTDrUPXpCW8CY3aaq3QhXbQRunRDRlPfMUaln2BiQDtl0pgAPnOB3N7IBAzax4HRfbMC3VVC+pZDrXZm3IPf5hsCIU+ZYrT8x5M5Ak5PGKIzP4B9MDGwJvPoyKqdiKyNibREZ58m6mveliXfqyagCTqJhCi4zC5V1Vz7Y8gMnAvDvCEt7rKq1m7KetnB0coJLldikk7Nd+DWtZ9nokQ7Z9qbxCI8sxIRS/MGAT8iIWfFsTDzNStWtNoEegIV2TrmZRs3VYBwAEbGxZ7C57q3r/sg4fAG97ziiC95VhPa0fwkCyNwSpDED4GJwpO4Dbb5sQTs2pa/XVUlvXkGrVWKZolsyhoG/cH65Mf1iU5XkAEMhxqmRadq7NQO8bmvoMIIm0UKolhZbrXhgMeq2NmDBFZSCCVNXh5QiykyChyMyUKdVCz5vKCL0GKtFHl1XJzBmOBELfYsRiY8Kg/qpUpuUmMC4bFdPYyIeAMC8WeGfQMEKXmBuIJZb2aZNYKLHRp88hyrdKUg3sCniG5nh8RCUl+pZ9CxmGrzZuu7h1Mww6InkeGSySSxGb6NWv34ARc27curCdId2HXjXe4UjAJ3LpndCbfm8qzSU6zoMstzuR9ChcFxqZSTSPAuObfDkA/Lt6OP0ul88EAAA=") format("woff2");
+        font-style: normal;
+        font-weight: 500;
+      }
+      text {
+        fill: #102a3d;
+        font-family: "Archivo Wordmark", Arial, sans-serif;
+        font-size: 120px;
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: -4.2px;
+      }
+    </style>
+  </defs>
+  <text x="0" y="112">Valet Philadelphia</text>
 </svg>

@@ -50,6 +50,39 @@ if (!/h1,[\s\S]*?h6 \*\s*\{[\s\S]*?font-style:\s*normal\s*!important;[\s\S]*?fon
   issues.push('src/styles/global.css: missing the sitewide upright-heading safeguard');
 }
 
+const header = await readFile(join(root, 'src', 'components', 'Header.astro'), 'utf8');
+const footer = await readFile(join(root, 'src', 'components', 'Footer.astro'), 'utf8');
+const wordmark = await readFile(join(root, 'src', 'components', 'Wordmark.astro'), 'utf8');
+const baseLayout = await readFile(join(root, 'src', 'layouts', 'BaseLayout.astro'), 'utf8');
+const logo = await readFile(join(root, 'public', 'logo.svg'), 'utf8');
+const wordmarkFont = await readFile(join(root, 'public', 'fonts', 'archivo-wordmark.woff2'));
+const wordmarkLicense = await readFile(join(root, 'public', 'fonts', 'OFL.txt'), 'utf8');
+
+if (!header.includes("import Wordmark from './Wordmark.astro'") || !footer.includes("import Wordmark from './Wordmark.astro'")) {
+  issues.push('header and footer must share the Wordmark component');
+}
+if (/BrandMark|<svg|<img/.test(wordmark) || !wordmark.includes('>Valet Philadelphia</span>')) {
+  issues.push('src/components/Wordmark.astro: wordmark must be one text-only company name with no logomark');
+}
+if (!/@font-face\s*\{[\s\S]*?font-family:\s*"Archivo Wordmark";[\s\S]*?font-weight:\s*500;[\s\S]*?font-display:\s*swap;[\s\S]*?\}/.test(globalCss)) {
+  issues.push('src/styles/global.css: missing the dedicated Archivo Medium wordmark face');
+}
+if (!/\.wordmark\s*\{[\s\S]*?font-family:\s*"Archivo Wordmark"[\s\S]*?font-style:\s*normal;[\s\S]*?font-weight:\s*500;[\s\S]*?font-synthesis:\s*none;[\s\S]*?\}/.test(globalCss)) {
+  issues.push('src/styles/global.css: wordmark must use one upright typeface and one weight');
+}
+if ((logo.match(/<text\b/g) ?? []).length !== 1 || !logo.includes('>Valet Philadelphia</text>') || /<(?:path|polygon|circle|ellipse)\b/.test(logo)) {
+  issues.push('public/logo.svg: structured-data logo must be the text-only Valet Philadelphia wordmark');
+}
+if (files.some((path) => relative(root, path) === 'public/favicon.svg') || /<link\b[^>]*rel="icon"/i.test(baseLayout)) {
+  issues.push('favicon must not reintroduce a symbol or monogram');
+}
+if (wordmarkFont.subarray(0, 4).toString('ascii') !== 'wOF2') {
+  issues.push('public/fonts/archivo-wordmark.woff2: invalid self-hosted WOFF2 font');
+}
+if (!/Archivo Project Authors/.test(wordmarkLicense) || !/SIL OPEN FONT LICENSE Version 1\.1/.test(wordmarkLicense)) {
+  issues.push('public/fonts/OFL.txt: missing the Archivo SIL Open Font License');
+}
+
 for (const [token, value] of [
   ['--space-1', '0.5rem'],
   ['--space-2', '0.8125rem'],

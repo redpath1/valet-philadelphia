@@ -15,6 +15,14 @@
   --font-display: Georgia, "Times New Roman", serif;
 }
 
+@font-face {
+  font-family: "Archivo Wordmark";
+  src: url("/fonts/archivo-wordmark.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
   --frame: 1480px;
@@ -122,6 +130,18 @@ select {
 .grid-7-6 {
   display: grid;
   gap: clamp(var(--space-4), 4vw, var(--space-5));
+}
+
+.wordmark {
+  display: inline-block;
+  font-family: "Archivo Wordmark", "Arial Narrow", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-synthesis: none;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
 }
 
 h1,

@@ -33,6 +33,11 @@ const htmlFiles = (await walk(dist)).filter((path) => path.endsWith('.html'));
 const indexablePages = [];
 const titles = new Map();
 const descriptions = new Map();
+const homeHtml = await readFile(join(dist, 'index.html'), 'utf8');
+
+if (/aria-label="Breadcrumb"/i.test(homeHtml) || /"@type":"BreadcrumbList"/i.test(homeHtml)) {
+  add('index.html', 'homepage must not contain a visible or structured breadcrumb');
+}
 
 for (const file of htmlFiles) {
   const path = relative(dist, file);
@@ -44,6 +49,13 @@ for (const file of htmlFiles) {
   const h1Count = count(html, /<h1\b/gi);
   const jsonLdBlocks = [...html.matchAll(/<script[^>]+type="application\/ld\+json"[^>]*>(.*?)<\/script>/gis)];
   const noindex = robots.toLowerCase().includes('noindex');
+
+  if (!/<footer\b[\s\S]*?href="https:\/\/www\.redpathlabs\.com\/"[^>]*>Website by Redpath Labs<\/a>[\s\S]*?<\/footer>/i.test(html)) {
+    add(path, 'footer is missing the Redpath Labs site credit link');
+  }
+  if (!/<footer\b[\s\S]*?Philadelphia valet parking for events, venues, and recurring property operations\.[\s\S]*?<\/footer>/i.test(html)) {
+    add(path, 'footer is missing the concise Philadelphia service description');
+  }
 
   if (!title) add(path, 'missing title');
   if (!description) add(path, 'missing meta description');

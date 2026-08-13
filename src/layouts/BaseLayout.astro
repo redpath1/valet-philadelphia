@@ -62,8 +62,8 @@ const schemaGraph = {
         '@type': 'ImageObject',
         url: new URL('/logo.svg', siteConfig.url).toString(),
         contentUrl: new URL('/logo.svg', siteConfig.url).toString(),
-        width: 512,
-        height: 512,
+        width: 1000,
+        height: 144,
       },
       areaServed: siteConfig.areaServed.map((name) => ({ '@type': 'Place', name })),
       contactPoint: {
@@ -104,7 +104,7 @@ const schemaGraph = {
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/archivo-wordmark.woff2" as="font" type="font/woff2" crossorigin />
     <meta name="theme-color" content="#102a3d" />
     {noindex && <meta name="robots" content="noindex" />}
 

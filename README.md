@@ -1,5 +1,7 @@
 # Valet Philadelphia, LLC
 
+The site wordmark uses a self-hosted subset of Archivo Medium. Its SIL Open Font License is included at `public/fonts/OFL.txt`.
+
 A static marketing and local-discovery website for a Philadelphia valet parking company. The site is built with Astro 7 and Tailwind CSS 4, generates 21 pages, and deploys from Git through Cloudflare Workers Static Assets.
 
 ## What Is Included

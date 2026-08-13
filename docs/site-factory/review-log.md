@@ -20,11 +20,11 @@
 | Canonical host | `www` and root domain | Live HTTP | `www` returns 301 to the root domain and retains the full path and query string; root returns 200 | Complete |
 | SEO regression | Full static output | `npm run audit:seo` | 19 indexable pages, 21 HTML files, 19 sitemap URLs, and five WebP images pass automated checks | Complete |
 | Keyword mapping | 19 indexable pages | Built HTML | Every page has a unique primary target plus two supporting phrases; mapped phrases appear naturally in prominent and visible copy, including all six location pages | Complete |
-| Square geometry | 32 source assets | Source audit | No rounded Tailwind utilities, nonzero CSS corner radii, or SVG corner radii remain | Complete |
+| Square geometry | 31 source assets | Source audit | No rounded Tailwind utilities, nonzero CSS corner radii, or SVG corner radii remain | Complete |
 | Responsive geometry | Home, hubs, details, About, Contact, FAQ | 1440 x 1000 and 390 x 844 | Computed styles report zero rounded elements and representative pages have no horizontal overflow | Complete |
 | Content depth | Services hub and locations hub | Built HTML | 505 and 554 visible main-content words respectively, with useful selection and coverage-review guidance | Complete |
-| Content depth | Six service details | Built HTML | 609–689 visible words per page, four explained planning factors, four page-specific questions, process, deliverables, and request inputs | Complete |
-| Content depth | Six location details | Built HTML | 728–756 visible words per page, four explained local operating conditions, three area-specific questions, service fit, subareas, and coverage inputs | Complete |
+| Content depth | Six service details | Built HTML | 606–686 visible words per page, four explained planning factors, four page-specific questions, process, deliverables, and request inputs | Complete |
+| Content depth | Six location details | Built HTML | 726–798 visible words per page, four explained local operating conditions, three area-specific questions, service fit, subareas, and coverage inputs | Complete |
 | Content regression | Services and locations | `npm run audit:content` | All hubs and 12 detail pages pass minimum depth and structural-value checks | Complete |
 | Expanded content layout | Hotel service and Center City location | 1440 x 1000 and 390 x 844 | New planning sections stack clearly with no overflow or rounded treatments | Complete |
 | Visual regression | Locations hub and dark home panel | Desktop | Corrected shared panel-background specificity so white text renders on the intended navy surfaces; inverse breadcrumbs verified | Complete |
@@ -45,3 +45,6 @@
 | Interface restraint | Header, cards, FAQ, hero captions, forms | Desktop and mobile | Removed shadows, blur, background gradient, image zoom, and filled navigation tabs; borders and typography now carry hierarchy | Complete |
 | Proximity search intent | Philadelphia location page | Built HTML | `valet parking near me` is the unique primary target and appears in the title, H1, description, opening copy, and a practical exact-address question without creating a thin duplicate page | Complete |
 | Heading posture | All headings and nested heading content | Source and computed styles | Headings remain upright with synthesized slanting disabled; source regression rejects italic elements, utilities, and inline styles inside headings | Complete |
+| Wordmark system | Header, footer, style guide, structured-data logo | Desktop and mobile | One-line `Valet Philadelphia` wordmark uses self-hosted Archivo Medium at one weight and one posture; no logomark, monogram, subtitle, mixed face, or legacy `V` artwork remains | Complete |
+| Footer discoverability | Shared footer | Built HTML | Descriptive service/location navigation remains, concise Philadelphia service context is present, and `Website by Redpath Labs` links to the verified Redpath Labs homepage | Complete |
+| Homepage breadcrumbs | Home | Built HTML and JSON-LD | No visible breadcrumb navigation and no BreadcrumbList entity; deeper-page breadcrumb behavior remains unchanged | Complete |

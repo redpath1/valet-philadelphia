@@ -51,6 +51,8 @@ Vignelli and proportional-system refinement complete
 - Extended the design regression to preserve the proportional spacing tokens, grid rules, and flat interface treatment
 - Assigned `valet parking near me` as the unique primary target for the Philadelphia location page and added a regression that prevents duplicate `near me` ownership
 - Eliminated italic heading treatments at the system level and added a regression that rejects emphasized or utility-driven italics inside headings
+- Replaced the `V` logomark, stacked header label, and footer lockup with one reusable Archivo Medium wordmark and aligned the structured-data logo to the same type-only identity
+- Added a restrained Redpath Labs site credit and a concise local-service statement to the footer; added a regression that keeps the homepage free of visible and structured breadcrumbs
 
 ## Launch Confirmations
 
