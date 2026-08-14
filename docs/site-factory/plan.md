@@ -53,6 +53,7 @@ Vignelli and proportional-system refinement complete
 - Eliminated italic heading treatments at the system level and added a regression that rejects emphasized or utility-driven italics inside headings
 - Replaced the `V` logomark, stacked header label, and footer lockup with one reusable Archivo Medium wordmark and aligned the structured-data logo to the same type-only identity
 - Added a restrained Redpath Labs site credit and a concise local-service statement to the footer; added a regression that keeps the homepage free of visible and structured breadcrumbs
+- Removed the `The operating idea` caption overlay from the homepage hero so the photograph stands without redundant copy
 
 ## Launch Confirmations
 

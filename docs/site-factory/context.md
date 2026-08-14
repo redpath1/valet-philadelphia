@@ -26,6 +26,7 @@
 - Visible identity now uses a single text-only `Valet Philadelphia` wordmark in self-hosted Archivo Medium across the header, footer, internal style guide, and structured-data logo; the old square `V` mark, favicon, and stacked subtitle are removed
 - The footer includes descriptive service and location links, a concise Philadelphia valet statement, and a followed `Website by Redpath Labs` credit to `https://www.redpathlabs.com/`
 - The homepage remains breadcrumb-free in both visible markup and JSON-LD, enforced by the SEO regression
+- The homepage hero photograph now stands without the former `The operating idea` caption overlay
 - Local Git repository is initialized on `main`
 - GitHub repository: `redpath1/valet-philadelphia`
 - Cloudflare Worker configuration: `wrangler.jsonc`, using the `dist` static asset build

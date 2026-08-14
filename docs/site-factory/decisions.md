@@ -35,3 +35,7 @@
 - Use `Valet Philadelphia` as a text-only wordmark in self-hosted Archivo Medium, with one upright medium weight and no icon, monogram, geographic subtitle, or legal suffix. Reason: Archivo provides a neutral grotesk voice distinct from the Georgia display and Avenir body faces, while the single typographic gesture is more consistent with the requested Vignelli-like restraint.
 - Keep the homepage free of breadcrumbs while retaining breadcrumbs on deeper pages. Reason: the root page has no higher navigational level, so a breadcrumb adds redundant interface and structured-data noise.
 - Add `Website by Redpath Labs` as a normal footer credit link and retain descriptive service/location navigation around it. Reason: the credit is a requested attribution, while the surrounding footer remains useful to visitors and reinforces the site's actual Philadelphia service architecture without keyword padding.
+
+## 2026-08-14
+
+- Remove the homepage hero caption overlay labeled `The operating idea` without replacement copy. Reason: the operational message is already established by the headline and body copy, while the photograph reads more clearly without a competing panel.

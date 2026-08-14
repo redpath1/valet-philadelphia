@@ -48,3 +48,4 @@
 | Wordmark system | Header, footer, style guide, structured-data logo | Desktop and mobile | One-line `Valet Philadelphia` wordmark uses self-hosted Archivo Medium at one weight and one posture; no logomark, monogram, subtitle, mixed face, or legacy `V` artwork remains | Complete |
 | Footer discoverability | Shared footer | Built HTML | Descriptive service/location navigation remains, concise Philadelphia service context is present, and `Website by Redpath Labs` links to the verified Redpath Labs homepage | Complete |
 | Homepage breadcrumbs | Home | Built HTML and JSON-LD | No visible breadcrumb navigation and no BreadcrumbList entity; deeper-page breadcrumb behavior remains unchanged | Complete |
+| Hero caption removal | Home | Source and built HTML | `The operating idea` label, explanatory sentence, and navy image overlay are absent; hero image and descriptive alt text remain | Complete |

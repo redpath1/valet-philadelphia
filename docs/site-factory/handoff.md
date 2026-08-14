@@ -38,6 +38,7 @@
 - Rebuilt `public/logo.svg` as the same type-only wordmark, removed the favicon entirely, added the Archivo OFL license, and extended the design audit to preserve the identity rules
 - Added a concise Philadelphia valet footer statement and a `Website by Redpath Labs` credit link to `https://www.redpathlabs.com/`
 - Added an SEO regression that keeps the homepage free of both visible breadcrumbs and BreadcrumbList schema
+- Removed the complete `The operating idea` caption overlay from the homepage hero while retaining the image and its descriptive alt text
 
 ## Main Files
 
