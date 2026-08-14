@@ -55,7 +55,7 @@ const seo = getKeywordTarget('/locations/');
         <p class="text-lg text-ink/64">These pages describe common operating conditions and venue types. Final service availability depends on the address, schedule, and parking plan.</p>
       </div>
       <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {locations.map((location, index) => <LocationCard location={location} index={index} />)}
+        {locations.map((location) => <LocationCard location={location} />)}
       </div>
     </div>
   </section>

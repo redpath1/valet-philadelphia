@@ -20,11 +20,11 @@
 | Canonical host | `www` and root domain | Live HTTP | `www` returns 301 to the root domain and retains the full path and query string; root returns 200 | Complete |
 | SEO regression | Full static output | `npm run audit:seo` | 19 indexable pages, 21 HTML files, 19 sitemap URLs, and five WebP images pass automated checks | Complete |
 | Keyword mapping | 19 indexable pages | Built HTML | Every page has a unique primary target plus two supporting phrases; mapped phrases appear naturally in prominent and visible copy, including all six location pages | Complete |
-| Square geometry | 31 source assets | Source audit | No rounded Tailwind utilities, nonzero CSS corner radii, or SVG corner radii remain | Complete |
+| Square geometry | 32 source assets | Source audit | No rounded Tailwind utilities, nonzero CSS corner radii, or SVG corner radii remain | Complete |
 | Responsive geometry | Home, hubs, details, About, Contact, FAQ | 1440 x 1000 and 390 x 844 | Computed styles report zero rounded elements and representative pages have no horizontal overflow | Complete |
-| Content depth | Services hub and locations hub | Built HTML | 505 and 554 visible main-content words respectively, with useful selection and coverage-review guidance | Complete |
+| Content depth | Services hub and locations hub | Built HTML | 483 and 532 visible main-content words respectively, with useful selection and coverage-review guidance | Complete |
 | Content depth | Six service details | Built HTML | 606–686 visible words per page, four explained planning factors, four page-specific questions, process, deliverables, and request inputs | Complete |
-| Content depth | Six location details | Built HTML | 726–798 visible words per page, four explained local operating conditions, three area-specific questions, service fit, subareas, and coverage inputs | Complete |
+| Content depth | Six location details | Built HTML | 707–779 visible words per page, four explained local operating conditions, three area-specific questions, service fit, subareas, and coverage inputs | Complete |
 | Content regression | Services and locations | `npm run audit:content` | All hubs and 12 detail pages pass minimum depth and structural-value checks | Complete |
 | Expanded content layout | Hotel service and Center City location | 1440 x 1000 and 390 x 844 | New planning sections stack clearly with no overflow or rounded treatments | Complete |
 | Visual regression | Locations hub and dark home panel | Desktop | Corrected shared panel-background specificity so white text renders on the intended navy surfaces; inverse breadcrumbs verified | Complete |
@@ -49,3 +49,5 @@
 | Footer discoverability | Shared footer | Built HTML | Descriptive service/location navigation remains, concise Philadelphia service context is present, and `Website by Redpath Labs` links to the verified Redpath Labs homepage | Complete |
 | Homepage breadcrumbs | Home | Built HTML and JSON-LD | No visible breadcrumb navigation and no BreadcrumbList entity; deeper-page breadcrumb behavior remains unchanged | Complete |
 | Hero caption removal | Home | Source and built HTML | `The operating idea` label, explanatory sentence, and navy image overlay are absent; hero image and descriptive alt text remain | Complete |
+| Ordinal restraint | Home, hubs, details, About, Contact | Source and built HTML | Visible numbering remains only on the homepage six-service index; all process, planning, value, service-card, and location-card ordinals are absent | Complete |
+| Favicon identity | Shared document head and `favicon.svg` | Source and live asset | Square navy-and-gold `VP` acronym is linked as the SVG favicon; no corner radius, symbol path, or competing on-page monogram is present | Complete |

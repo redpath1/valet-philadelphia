@@ -54,6 +54,8 @@ Vignelli and proportional-system refinement complete
 - Replaced the `V` logomark, stacked header label, and footer lockup with one reusable Archivo Medium wordmark and aligned the structured-data logo to the same type-only identity
 - Added a restrained Redpath Labs site credit and a concise local-service statement to the footer; added a regression that keeps the homepage free of visible and structured breadcrumbs
 - Removed the `The operating idea` caption overlay from the homepage hero so the photograph stands without redundant copy
+- Reserved visible numbering for the homepage's six-service index, removed redundant ordinals from all other section and card systems, and tightened the vacated grid columns
+- Added a square, sharp-cornered `VP` browser favicon without changing the type-only on-page wordmark
 
 ## Launch Confirmations
 

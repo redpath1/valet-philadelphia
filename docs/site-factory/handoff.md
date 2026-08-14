@@ -35,10 +35,11 @@
 - Made `/locations/philadelphia/` the sole primary target for `valet parking near me`, added useful proximity-intent copy, and extended the SEO audit to prevent duplicate ownership
 - Removed italic heading endings as a design possibility by forcing all heading content upright and extending the design audit to reject italic emphasis inside headings
 - Replaced the old square `V` mark and stacked brand lockups with a reusable, text-only `Valet Philadelphia` wordmark in self-hosted Archivo Medium
-- Rebuilt `public/logo.svg` as the same type-only wordmark, removed the favicon entirely, added the Archivo OFL license, and extended the design audit to preserve the identity rules
+- Rebuilt `public/logo.svg` as the same type-only wordmark, added a separate square `VP` browser favicon, added the Archivo OFL license, and extended the design audit to preserve both identity roles
 - Added a concise Philadelphia valet footer statement and a `Website by Redpath Labs` credit link to `https://www.redpathlabs.com/`
 - Added an SEO regression that keeps the homepage free of both visible breadcrumbs and BreadcrumbList schema
 - Removed the complete `The operating idea` caption overlay from the homepage hero while retaining the image and its descriptive alt text
+- Reserved visible numbering for the homepage six-service index and removed decorative ordinals from process, planning, value, service-card, and location-card systems
 
 ## Main Files
 
@@ -56,6 +57,7 @@
 - `scripts/content-audit.mjs`: service and location content-depth regression
 - `public/images/`: final original imagery
 - `public/logo.svg`: structured-data organization logo
+- `public/favicon.svg`: square browser-only `VP` acronym
 - `public/fonts/archivo-wordmark.woff2`: 1.4 KB self-hosted wordmark subset
 - `public/fonts/OFL.txt`: Archivo SIL Open Font License
 - `docs/site-factory/image-prompts.md`: image prompt record
@@ -77,10 +79,12 @@
 - Single-page ownership and description placement for the primary `near me` search target
 - Upright computed heading styles and source-level rejection of italic heading treatments
 - Text-only wordmark consistency across header, footer, SVG, font asset, and license checks
+- Browser-only `VP` favicon geometry, document-head link, and identity-role checks
+- Visible ordinal labels limited to the homepage service index
 - Footer credit, local-service context, and breadcrumb-free homepage checks in built HTML
 - Square-corner source audit and zero-radius computed-style checks
-- Services hub: 505 visible main-content words; locations hub: 554
-- Service detail range: 606–686 visible main-content words; location detail range: 726–798
+- Services hub: 483 visible main-content words; locations hub: 532
+- Service detail range: 606–686 visible main-content words; location detail range: 707–779
 - Required planning-item and page-specific FAQ counts on all 12 detail pages
 - XML sitemap modification-date and image-entry checks
 - Human sitemap and robots discovery checks

@@ -55,6 +55,7 @@ const footer = await readFile(join(root, 'src', 'components', 'Footer.astro'), '
 const wordmark = await readFile(join(root, 'src', 'components', 'Wordmark.astro'), 'utf8');
 const baseLayout = await readFile(join(root, 'src', 'layouts', 'BaseLayout.astro'), 'utf8');
 const logo = await readFile(join(root, 'public', 'logo.svg'), 'utf8');
+const favicon = await readFile(join(root, 'public', 'favicon.svg'), 'utf8');
 const wordmarkFont = await readFile(join(root, 'public', 'fonts', 'archivo-wordmark.woff2'));
 const wordmarkLicense = await readFile(join(root, 'public', 'fonts', 'OFL.txt'), 'utf8');
 
@@ -73,14 +74,38 @@ if (!/\.wordmark\s*\{[\s\S]*?font-family:\s*"Archivo Wordmark"[\s\S]*?font-style
 if ((logo.match(/<text\b/g) ?? []).length !== 1 || !logo.includes('>Valet Philadelphia</text>') || /<(?:path|polygon|circle|ellipse)\b/.test(logo)) {
   issues.push('public/logo.svg: structured-data logo must be the text-only Valet Philadelphia wordmark');
 }
-if (files.some((path) => relative(root, path) === 'public/favicon.svg') || /<link\b[^>]*rel="icon"/i.test(baseLayout)) {
-  issues.push('favicon must not reintroduce a symbol or monogram');
+if (!/<link\b[^>]*rel="icon"[^>]*href="\/favicon\.svg"/i.test(baseLayout)) {
+  issues.push('src/layouts/BaseLayout.astro: missing the shared SVG favicon link');
+}
+if (!favicon.includes('viewBox="0 0 48 48"') || !/<rect\b[^>]*width="48"[^>]*height="48"/.test(favicon) || !/<text\b[^>]*>VP<\/text>/.test(favicon) || /<(?:path|polygon|circle|ellipse)\b|\s(?:rx|ry)=/.test(favicon)) {
+  issues.push('public/favicon.svg: favicon must be one square field with the simple VP acronym');
 }
 if (wordmarkFont.subarray(0, 4).toString('ascii') !== 'wOF2') {
   issues.push('public/fonts/archivo-wordmark.woff2: invalid self-hosted WOFF2 font');
 }
 if (!/Archivo Project Authors/.test(wordmarkLicense) || !/SIL OPEN FONT LICENSE Version 1\.1/.test(wordmarkLicense)) {
   issues.push('public/fonts/OFL.txt: missing the Archivo SIL Open Font License');
+}
+
+const homePage = await readFile(join(root, 'src', 'pages', 'index.astro'), 'utf8');
+if ((homePage.match(/0\{index \+ 1\}/g) ?? []).length !== 1 || !/services\.map\(\(service, index\)[\s\S]*?0\{index \+ 1\}/.test(homePage)) {
+  issues.push('src/pages/index.astro: the six-service index must be the only retained visible numbering system');
+}
+
+for (const path of [
+  'src/components/LocationCard.astro',
+  'src/components/ServiceCard.astro',
+  'src/data/services.ts',
+  'src/pages/about.astro',
+  'src/pages/contact.astro',
+  'src/pages/locations/[slug].astro',
+  'src/pages/services/[slug].astro',
+  'src/pages/services/index.astro',
+]) {
+  const source = await readFile(join(root, path), 'utf8');
+  if (/0\{index \+ 1\}|\{step\.number\}|Service area 0|number:\s*'0[1-9]'|['"]0[1-9]['"]\s*,/.test(source)) {
+    issues.push(`${path}: contains a redundant visible section-number treatment`);
+  }
 }
 
 for (const [token, value] of [

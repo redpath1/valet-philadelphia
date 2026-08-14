@@ -7,7 +7,7 @@ export const siteConfig = {
   email: 'hello@valetparkingphiladelphia.com',
   locale: 'en_US',
   language: 'en-US',
-  sitemapLastModified: '2026-08-13',
+  sitemapLastModified: '2026-08-14',
   primaryCta: 'Request a parking plan',
   description:
     'Valet parking and parking operations for events, restaurants, hotels, healthcare properties, and private venues in Philadelphia and nearby communities.',

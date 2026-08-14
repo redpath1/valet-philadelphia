@@ -64,21 +64,20 @@ const seo = getKeywordTarget('/services/');
           <p class="eyebrow">What every plan considers</p>
           <h2 id="included-title" class="section-title mt-4">Six inputs shape every parking plan.</h2>
         </div>
-        <ol class="rule-list border-t border-white/15 p-0" role="list">
+        <ul class="rule-list border-t border-white/15 p-0" role="list">
           {[
-            ['01', 'Where is the safest, clearest vehicle handoff?'],
-            ['02', 'Where can cars be stored, and how long is the retrieval route?'],
-            ['03', 'When will arrivals and departures concentrate?'],
-            ['04', 'How are keys, tickets, and vehicle locations controlled?'],
-            ['05', 'What else uses the curb: pedestrians, deliveries, rideshare, transit, or shuttles?'],
-            ['06', 'Who makes the call when conditions change?'],
-          ].map(([number, text]) => (
-            <li class="grid gap-3 py-5 sm:grid-cols-[3rem_1fr] sm:items-start">
-              <span class="text-xs font-extrabold text-signal">{number}</span>
+            'Where is the safest, clearest vehicle handoff?',
+            'Where can cars be stored, and how long is the retrieval route?',
+            'When will arrivals and departures concentrate?',
+            'How are keys, tickets, and vehicle locations controlled?',
+            'What else uses the curb: pedestrians, deliveries, rideshare, transit, or shuttles?',
+            'Who makes the call when conditions change?',
+          ].map((text) => (
+            <li class="py-5">
               <p class="m-0 text-lg font-semibold text-white/82 sm:text-xl">{text}</p>
             </li>
           ))}
-        </ol>
+        </ul>
       </div>
     </div>
   </section>

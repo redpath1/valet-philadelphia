@@ -13,7 +13,7 @@
 - Page titles, descriptions, H1s, and hub copy are aligned to Philadelphia valet search intent without repeating boilerplate
 - A machine-readable keyword map assigns a distinct primary phrase and two supporting phrases to each of the 19 indexable pages; the SEO regression verifies natural visible usage and complete map coverage
 - `/locations/philadelphia/` owns the only primary `valet parking near me` target, with the phrase present in its title, H1, description, opening copy, and one practical local question
-- Service and location hubs now provide substantial selection and coverage guidance; service detail pages contain 606–686 visible words and location detail pages contain 726–798 visible words
+- Service and location hubs provide 483 and 532 visible words of selection and coverage guidance respectively; service detail pages contain 606–686 visible words and location detail pages contain 707–779 visible words
 - Each service detail explains four plan-shaping factors and answers at least four service-specific questions; each location detail explains four local operating conditions and answers at least three area-specific questions
 - XML sitemap contains all 19 canonical URLs, accurate release modification dates, and image entries where a page has a primary photograph
 - Human sitemap uses descriptive anchor text and covers every canonical public route
@@ -23,7 +23,8 @@
 - The interface now uses a quiet 13-unit editorial grid with reusable 5/8, 8/5, 6/7, and 7/6 splits, plus a Fibonacci-derived 8/13/21/34/55 spacing scale
 - Decorative background gradients, interface shadows, backdrop blur, image zoom, and block-style active navigation were removed in favor of flatter structural hierarchy
 - Heading typography is uniformly upright across all levels; nested emphasis cannot introduce italics or synthesized slanting
-- Visible identity now uses a single text-only `Valet Philadelphia` wordmark in self-hosted Archivo Medium across the header, footer, internal style guide, and structured-data logo; the old square `V` mark, favicon, and stacked subtitle are removed
+- Visible identity uses a single text-only `Valet Philadelphia` wordmark in self-hosted Archivo Medium across the header, footer, internal style guide, and structured-data logo; the old square `V` mark and stacked subtitle are removed, while a square browser-only `VP` favicon provides compact tab identity
+- Visible `01–06` labels are reserved for the homepage service index; redundant ordinals were removed from process, planning, values, service-card, and location-card systems
 - The footer includes descriptive service and location links, a concise Philadelphia valet statement, and a followed `Website by Redpath Labs` credit to `https://www.redpathlabs.com/`
 - The homepage remains breadcrumb-free in both visible markup and JSON-LD, enforced by the SEO regression
 - The homepage hero photograph now stands without the former `The operating idea` caption overlay

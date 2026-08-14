@@ -4,15 +4,13 @@ import Arrow from './Arrow.astro';
 
 interface Props {
   location: Location;
-  index?: number;
 }
 
-const { location, index = 0 } = Astro.props;
+const { location } = Astro.props;
 ---
 
 <article class="group flex min-h-full flex-col border border-line bg-paper p-5 sm:p-6">
-  <div class="flex items-center justify-between gap-4">
-    <span class="text-[0.68rem] font-extrabold tracking-[0.14em] text-ink/38 uppercase">Service area 0{index + 1}</span>
+  <div class="flex justify-end">
     <span class="arrow-circle text-navy"><Arrow direction="up-right" /></span>
   </div>
   <p class="mt-5 text-xs font-bold tracking-[0.12em] text-brick uppercase">{location.region}</p>

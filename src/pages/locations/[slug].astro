@@ -76,9 +76,8 @@ const schema = [
           <p class="mt-4 text-white/62">These are common considerations, not assumptions about every property. A site review resolves the actual curb and storage plan.</p>
         </div>
         <ol class="rule-list border-t border-white/15 p-0" role="list">
-          {location.operatingConditions.map((condition, index) => (
-            <li data-operating-condition class="grid gap-3 py-6 sm:grid-cols-[3rem_0.72fr_1.28fr] sm:items-start">
-              <span class="text-xs font-extrabold text-signal">0{index + 1}</span>
+          {location.operatingConditions.map((condition) => (
+            <li data-operating-condition class="grid gap-3 py-6 sm:grid-cols-[0.72fr_1.28fr] sm:items-start">
               <h3 class="m-0 text-xl font-semibold text-white/86">{condition.title}</h3>
               <p class="m-0 text-sm text-white/62">{condition.description}</p>
             </li>
@@ -132,9 +131,8 @@ const schema = [
           <h2 id="location-services-title" class="section-title mt-4">Services to consider for {location.name}.</h2>
         </div>
         <div class="rule-list border-t border-navy/15">
-          {services.map((service, index) => (
-            <a href={`/services/${service.slug}/`} class="group grid gap-3 py-5 no-underline sm:grid-cols-[2.5rem_0.7fr_1.3fr_auto] sm:items-center">
-              <span class="text-xs font-extrabold text-brick">0{index + 1}</span>
+          {services.map((service) => (
+            <a href={`/services/${service.slug}/`} class="group grid gap-3 py-5 no-underline sm:grid-cols-[0.7fr_1.3fr_auto] sm:items-center">
               <h3 class="m-0 font-display text-2xl leading-none tracking-[-0.03em]">{service.shortTitle}</h3>
               <p class="m-0 text-sm text-ink/62">{service.summary}</p>
               <span class="arrow-circle"><Arrow /></span>
@@ -155,7 +153,7 @@ const schema = [
         <a href="/locations/" class="text-link">All locations <span class="arrow-circle"><Arrow /></span></a>
       </div>
       <div class="mt-8 grid gap-4 md:grid-cols-3">
-        {nearbyLocations.map((item, index) => <LocationCard location={item} index={index} />)}
+        {nearbyLocations.map((item) => <LocationCard location={item} />)}
       </div>
     </div>
   </section>

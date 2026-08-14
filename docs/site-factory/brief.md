@@ -14,7 +14,7 @@
 - Content hierarchy reference: All About Parking
 - Original implementation, copy, tokens, and imagery only
 - Editorial layout with a high-contrast serif display face and restrained sans-serif body type
-- The logo is a text-only `Valet Philadelphia` wordmark in self-hosted Archivo Medium: one line, one upright face, one weight, one color, and no symbol, monogram, favicon, subtitle, or `LLC` suffix
+- The on-page logo is a text-only `Valet Philadelphia` wordmark in self-hosted Archivo Medium: one line, one upright face, one weight, one color, and no symbol, subtitle, or `LLC` suffix; the browser favicon is a separate square `VP` acronym
 - The footer preserves useful service and location navigation, includes one concise Philadelphia valet description, and credits `https://www.redpathlabs.com/` as `Website by Redpath Labs`
 - The homepage has no visible breadcrumb and emits no BreadcrumbList schema
 - All headings remain upright, including emphasized words or nested elements; no heading may end with an italic flourish
@@ -26,6 +26,7 @@
 - Editorial restraint is required: headlines should state a service, condition, or decision rather than rely on slogans, fragments, metaphors, or generic improvement language
 - Display headings should stay at or below 80px on wide desktop screens and roughly 50px on phones; section headings should stay at or below 56px on desktop and 40px on phones
 - Section padding and internal gaps should create clear grouping without turning every panel into an oversized presentation slide
+- Visible ordinal labels belong only to the homepage's six-service index; process, planning, value, and location sections rely on headings and grid position instead
 - Vignelli-informed refinement: semantics, structural consistency, typographic economy, and durable grid logic take priority over decorative novelty
 - Use a quiet 13-unit editorial grid with recurring 5/8 and 8/5 proportions where content hierarchy supports it
 - Use a Fibonacci-derived spacing sequence of 8, 13, 21, 34, and 55 pixels as the shared rhythm; close values may be fluid between breakpoints

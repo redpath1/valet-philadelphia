@@ -101,17 +101,17 @@ const homeFaqs = [
 
       <ol class="mt-8 grid gap-px overflow-hidden border border-line bg-line lg:grid-cols-3" role="list">
         <li class="bg-paper p-6 sm:p-8">
-          <span class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">01 · Site read</span>
+          <span class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">Site read</span>
           <h3 class="card-title mt-5">Map the route.</h3>
           <p class="mt-4 text-ink/64">Arrival lane, pedestrian path, vehicle storage, retrieval distance, lighting, and nearby conflicts.</p>
         </li>
         <li class="bg-paper p-6 sm:p-8">
-          <span class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">02 · Operating plan</span>
+          <span class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">Operating plan</span>
           <h3 class="card-title mt-5">Assign staff and custody.</h3>
           <p class="mt-4 text-ink/64">Staff posts, key control, ticketing, traffic direction, guest communication, and an overflow response.</p>
         </li>
         <li class="bg-paper p-6 sm:p-8">
-          <span class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">03 · Live adjustment</span>
+          <span class="text-xs font-extrabold tracking-[0.14em] text-brick uppercase">Live adjustment</span>
           <h3 class="card-title mt-5">Prepare for peak demand.</h3>
           <p class="mt-4 text-ink/64">A shift lead watches the line, retrieval pace, curb capacity, weather, and the final departure wave.</p>
         </li>
@@ -151,7 +151,7 @@ const homeFaqs = [
         </div>
       </div>
       <div class="mt-8 grid gap-4 lg:grid-cols-3">
-        {locations.slice(0, 3).map((location, index) => <LocationCard location={location} index={index} />)}
+        {locations.slice(0, 3).map((location) => <LocationCard location={location} />)}
       </div>
     </div>
   </section>

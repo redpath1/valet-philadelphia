@@ -1,5 +1,4 @@
 export type ServiceStep = {
-  number: string;
   title: string;
   description: string;
 };
@@ -66,9 +65,9 @@ export const services: Service[] = [
       { title: 'Departure pattern', description: 'A program end, last call, weather change, or transportation announcement can release many guests at once. Keys and vehicle locations should be organized for that known pressure point.' },
     ],
     process: [
-      { number: '01', title: 'Read the event', description: 'We review guest count, timing, venue access, nearby restrictions, and where vehicles can be stored.' },
-      { number: '02', title: 'Build the curb plan', description: 'We define the handoff point, pedestrian path, key station, staff positions, and overflow response.' },
-      { number: '03', title: 'Run the peaks', description: 'The shift lead adjusts the line during arrivals and stages retrieval before the event lets out.' },
+      { title: 'Read the event', description: 'We review guest count, timing, venue access, nearby restrictions, and where vehicles can be stored.' },
+      { title: 'Build the curb plan', description: 'We define the handoff point, pedestrian path, key station, staff positions, and overflow response.' },
+      { title: 'Run the peaks', description: 'The shift lead adjusts the line during arrivals and stages retrieval before the event lets out.' },
     ],
     faqs: [
       { question: 'How many attendants does an event need?', answer: 'The right number depends on arrival concentration, walking distance to vehicle storage, street conditions, and how quickly guests will leave. A guest count alone is not enough, so we review the full movement plan before recommending staffing.' },
@@ -111,9 +110,9 @@ export const services: Service[] = [
       { title: 'Host communication', description: 'The host team needs one simple way to request a vehicle or flag a guest need. That communication should not interrupt seating, payment, or the entrance line.' },
     ],
     process: [
-      { number: '01', title: 'Study the block', description: 'We look at legal loading space, crosswalks, deliveries, rideshare stops, neighboring businesses, and the storage route.' },
-      { number: '02', title: 'Match the dinner curve', description: 'Staffing follows reservation density and retrieval distance instead of staying flat all night.' },
-      { number: '03', title: 'Coordinate the door', description: 'The shift lead keeps the host stand informed when arrivals stack up or guests request their vehicles.' },
+      { title: 'Study the block', description: 'We look at legal loading space, crosswalks, deliveries, rideshare stops, neighboring businesses, and the storage route.' },
+      { title: 'Match the dinner curve', description: 'Staffing follows reservation density and retrieval distance instead of staying flat all night.' },
+      { title: 'Coordinate the door', description: 'The shift lead keeps the host stand informed when arrivals stack up or guests request their vehicles.' },
     ],
     faqs: [
       { question: 'Can valet work on a narrow city block?', answer: 'Sometimes, but the plan must protect pedestrians, legal loading activity, and traffic flow. We review the curb and vehicle-storage route before proposing a setup.' },
@@ -156,9 +155,9 @@ export const services: Service[] = [
       { title: 'End-of-night release', description: 'A send-off, last shuttle, bar close, or weather change can compress departures. Vehicle organization and retrieval staging should follow the reception timeline.' },
     ],
     process: [
-      { number: '01', title: 'Follow the timeline', description: 'We review ceremony start, vendor arrivals, photo windows, shuttle movements, and final send-off timing.' },
-      { number: '02', title: 'Protect the entrance', description: 'The handoff area stays clear for guests, accessible arrivals, vendors, and emergency access.' },
-      { number: '03', title: 'Stage the close', description: 'Vehicles are organized around the expected departure pattern so the final wave keeps moving.' },
+      { title: 'Follow the timeline', description: 'We review ceremony start, vendor arrivals, photo windows, shuttle movements, and final send-off timing.' },
+      { title: 'Protect the entrance', description: 'The handoff area stays clear for guests, accessible arrivals, vendors, and emergency access.' },
+      { title: 'Stage the close', description: 'Vehicles are organized around the expected departure pattern so the final wave keeps moving.' },
     ],
     faqs: [
       { question: 'When should wedding valet be planned?', answer: 'As soon as the venue, guest estimate, and parking arrangement are known. Early coordination gives the planner more options for curb use, overflow, lighting, and shuttle integration.' },
@@ -201,9 +200,9 @@ export const services: Service[] = [
       { title: 'Parking access', description: 'Garage credentials, height limits, reserved inventory, remote lots, and event overflow affect every vehicle cycle. The route must remain understandable to changing shifts.' },
     ],
     process: [
-      { number: '01', title: 'Map the front door', description: 'We study check-in, luggage, rideshare, deliveries, group arrivals, and the route to vehicle storage.' },
-      { number: '02', title: 'Define each handoff', description: 'Requests, keys, tickets, room references, and shift changes follow one understandable path.' },
-      { number: '03', title: 'Adjust by occupancy', description: 'Staffing and staging respond to occupancy, events, and known group movements.' },
+      { title: 'Map the front door', description: 'We study check-in, luggage, rideshare, deliveries, group arrivals, and the route to vehicle storage.' },
+      { title: 'Define each handoff', description: 'Requests, keys, tickets, room references, and shift changes follow one understandable path.' },
+      { title: 'Adjust by occupancy', description: 'Staffing and staging respond to occupancy, events, and known group movements.' },
     ],
     faqs: [
       { question: 'Can valet support hotel events at the same time as overnight guests?', answer: 'Yes, when the plan separates event peaks from regular check-in and assigns enough curb and storage capacity to both demand streams.' },
@@ -246,9 +245,9 @@ export const services: Service[] = [
       { title: 'Vehicle request flow', description: 'Patients may finish early, wait for discharge, or need a caregiver to request the vehicle. Ticket matching and communication should accommodate those changes without exposing private information.' },
     ],
     process: [
-      { number: '01', title: 'Confirm accessible access', description: 'We identify the safest curb position, ramp route, waiting space, and emergency access requirements.' },
-      { number: '02', title: 'Plan for variable pace', description: 'The handoff allows extra time for passengers, mobility equipment, caregivers, and questions.' },
-      { number: '03', title: 'Connect the entrance team', description: 'Reception, security, and valet share a defined process for arrivals and vehicle requests.' },
+      { title: 'Confirm accessible access', description: 'We identify the safest curb position, ramp route, waiting space, and emergency access requirements.' },
+      { title: 'Plan for variable pace', description: 'The handoff allows extra time for passengers, mobility equipment, caregivers, and questions.' },
+      { title: 'Connect the entrance team', description: 'Reception, security, and valet share a defined process for arrivals and vehicle requests.' },
     ],
     faqs: [
       { question: 'Can attendants assist guests getting out of a vehicle?', answer: 'Attendants can provide a steady, courteous handoff and help manage doors or mobility equipment within the defined service policy. Clinical or medical assistance remains with qualified care staff.' },
@@ -291,9 +290,9 @@ export const services: Service[] = [
       { title: 'Operating response', description: 'Overflow, closures, unauthorized parking, weather, and event releases require an agreed escalation path. Staff should know who can approve a route or inventory change.' },
     ],
     process: [
-      { number: '01', title: 'Observe the movement', description: 'We review how guests, staff, deliveries, rideshare vehicles, and pedestrians currently use the site.' },
-      { number: '02', title: 'Remove the conflicts', description: 'The plan assigns clear zones, routes, staff posts, and decision points for peak periods.' },
-      { number: '03', title: 'Make it repeatable', description: 'Briefing notes and shift controls help each operating period start from the same plan.' },
+      { title: 'Observe the movement', description: 'We review how guests, staff, deliveries, rideshare vehicles, and pedestrians currently use the site.' },
+      { title: 'Remove the conflicts', description: 'The plan assigns clear zones, routes, staff posts, and decision points for peak periods.' },
+      { title: 'Make it repeatable', description: 'Briefing notes and shift controls help each operating period start from the same plan.' },
     ],
     faqs: [
       { question: 'Is parking management the same as valet?', answer: 'Not always. Parking management may include directed self-parking, lot or garage flow, loading coordination, event traffic, and pedestrian separation. Valet can be one part of the plan.' },

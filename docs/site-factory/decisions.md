@@ -39,3 +39,5 @@
 ## 2026-08-14
 
 - Remove the homepage hero caption overlay labeled `The operating idea` without replacement copy. Reason: the operational message is already established by the headline and body copy, while the photograph reads more clearly without a competing panel.
+- Reserve visible `01–06` labels for the homepage service index and remove ordinals from every other page system. Reason: one fixed taxonomy benefits from scan cadence, while repeated numbering across process, planning, value, and location sections competes with the actual hierarchy.
+- Use a square navy-and-gold `VP` favicon as a browser-only acronym while keeping the on-page logo type-only. Reason: the constrained tab context needs a compact identifier, but introducing the acronym into the header or footer would create a competing brand lockup.
